@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import BurguerApp from './BurguerApp.js'
+import {BurguerApp} from './BurguerApp'
 
 
 const container = document.querySelector('#root');

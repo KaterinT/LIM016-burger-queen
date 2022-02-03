@@ -6,16 +6,17 @@
 html,body {
   background: #21232A; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
-  url("../../images/backgrounds/burguerVideo1.gif");
+  url("../../../images/backgrounds/burguerVideo1.gif");
   background-size: 100vw 100vh;
   background-attachment: fixed ;
+  padding: 0 2rem;
   
   h2 {
     color: #f1c375;
     font-family: "Luckiest Guy", cursive;
     font-size: 7rem;
     -webkit-text-stroke: 1px #362c0f;
-    margin: 1rem;
+    margin: 0rem;
   }
   h1 {
     color: #ffff;
@@ -27,9 +28,12 @@ html,body {
 
 .container {
   display: flex;
+  justify-content: flex-end;
   .container-title {
     display: flex;
     flex-direction: column;
+    margin:3rem;
+    left:2rem;
   }
 }
 .container-btn {

@@ -2,7 +2,7 @@ import React from "react";
 import ReacDOM from "react-dom";
 
 
-const Home = () => {
+export const Pedidos = () => {
   return (
     <div className="container">
       <div className="container-title">
@@ -24,5 +24,3 @@ const Home = () => {
 
   );
 };
-
-export default Home;
