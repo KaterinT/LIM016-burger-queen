@@ -1,6 +1,6 @@
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 import {Home} from "../components/home/Home";
-import {Pedidos} from "../components/home/Pedidos";
+import {Pedidos} from "../components/pedidos/Pedidos";
 
 export const AppRouter = () => {
   return (

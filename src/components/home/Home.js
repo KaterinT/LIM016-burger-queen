@@ -2,7 +2,7 @@ import React from "react";
 import ReacDOM from "react-dom";
 import './styles/home.scss'
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className="container">
       <div className="container-title">
@@ -25,4 +25,3 @@ const Home = () => {
   );
 };
 
-export default Home;
