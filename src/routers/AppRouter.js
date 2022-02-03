@@ -1,16 +1,15 @@
 import { Routes, Route,BrowserRouter } from "react-router-dom";
-import {Home} from "../components/home/Home";
-import {Pedidos} from "../components/pedidos/Pedidos";
-import {CerrarSesion} from "../components/cerrarSesion/CerrarSesion";
+
+import {Login} from "../components/login/Login";
+import { DashboardRoutes } from "./DashboardRoutes";
+
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-      <h1>Welcome to React Router!</h1>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="pedidos" element={<Pedidos />} />
-        <Route path="cerrarsesion" element={<CerrarSesion />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<DashboardRoutes />} />
       </Routes>
     </BrowserRouter>
   )

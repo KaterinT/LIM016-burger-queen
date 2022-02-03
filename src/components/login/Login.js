@@ -1,8 +1,11 @@
-import React from "react";
+// import React from "react";
 import ReacDOM from "react-dom";
-import './styles/home.scss'
+import './styles/login.scss'
 
-export const Home = () => {
+const handleLogin = () => {
+  console.log('HandleLogin')
+}
+export const Login = () => {
   return (
     <div className="container">
       <div className="container-title">
@@ -12,10 +15,10 @@ export const Home = () => {
         <h2>BURGUER</h2>
       
         <div className="button_options">
-          <button type="button" className="btn-orden">
+          <button  onClick={handleLogin} type="button" className="btn-orden">
             COCINERO
           </button>
-          <button type="button" className="btn-chef">
+          <button onClick={handleLogin} type="button" className="btn-chef">
             MESERO
           </button>
         </div>
