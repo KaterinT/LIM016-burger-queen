@@ -1,5 +1,5 @@
 import { Routes, Route,BrowserRouter } from "react-router-dom";
-import Home from "../components/home/Home";
+import {Home} from "../components/home/Home";
 import {Pedidos} from "../components/pedidos/Pedidos";
 import {CerrarSesion} from "../components/cerrarSesion/CerrarSesion";
 
