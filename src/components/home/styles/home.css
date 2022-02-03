@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+html, body {
+  background: #21232A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.842)), to(rgba(0, 0, 0, 0.87))), url("../../images/backgrounds/burguerVideo1.gif");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)), url("../../images/backgrounds/burguerVideo1.gif");
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+}
+
+html h2, body h2 {
+  color: #f1c375;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 7rem;
+  -webkit-text-stroke: 1px #362c0f;
+  margin: 1rem;
+}
+
+html h1, body h1 {
+  color: #ffff;
+  font-family: "Yellowtail", cursive;
+  font-size: 4rem;
+  margin: 0rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .container-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.button_options button {
+  background-color: #FDD70B;
+  border-radius: 13px;
+  font-size: 3rem;
+  margin: 2rem;
+  padding: 1rem 2rem;
+  -webkit-text-stroke: 1px #362c0f;
+  cursor: pointer;
+}
+/*# sourceMappingURL=home.css.map */
