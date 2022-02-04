@@ -1,11 +1,11 @@
+
 // import React from "react";
 import ReacDOM from "react-dom";
 
-
-export const Pedidos = () => {
+export const TomarOrden = () => {
   return (
     <div>
-      <p>Soy pedidos</p>
+      <p>soy mesero, pagina tomar orden</p>
     </div>
   );
 };
