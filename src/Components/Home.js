@@ -1,6 +1,7 @@
 //import React, { useState } from "react";
 // import { Fragment } from "react/cjs/react.production.min";
 // import PropTypes from "prop-types"; condiciones o sino error
+import { Link } from "react-router-dom";
 import Burger from "../assets/imagenes/Burger.png"
 
 export const Home = ({valueInit}) => {
@@ -31,8 +32,8 @@ export const Home = ({valueInit}) => {
                     <h1> BURGER </h1>
                 </div>
                 <div id ="bttnsHome">
-                    <button >Mesero</button>
-                    <button>Cocinero</button>
+                    <button> <Link to='/mesero'> Mesero </Link></button>
+                    <button> <Link to='/cocinero'>Cocinero </Link></button>
                 </div>
 
             </section>
