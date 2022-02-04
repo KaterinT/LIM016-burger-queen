@@ -1,14 +1,20 @@
 // import React from "react";
 import {useNavigate}  from 'react-router-dom'
 import ReacDOM from "react-dom";
-import './styles/login.scss'
+import './login.scss'
 
 export const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    navigate('/',{
+  const handleMesero = () => {
+    navigate('/tomarorden',{
+      replace:true
+    });
+  }
+
+  const handleCocinero = () => {
+    navigate('/cocinero',{
       replace:true
     });
   }
@@ -22,10 +28,10 @@ export const Login = () => {
         <h2>BURGUER</h2>
       
         <div className="button_options">
-          <button  onClick={handleLogin} type="button" className="btn-orden">
+          <button  onClick={handleCocinero} type="button" className="btn-orden">
             COCINERO
           </button>
-          <button onClick={handleLogin} type="button" className="btn-chef">
+          <button onClick={handleMesero} type="button" className="btn-chef">
             MESERO
           </button>
         </div>

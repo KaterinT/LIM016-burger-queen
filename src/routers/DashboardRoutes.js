@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import {Navbar} from "../components/navBar/NavBar";
 
 import {Pedidos} from "../components/pedidos/Pedidos";
-import {Mesero} from "../components/mesero/Mesero";
+import {TomarOrden} from "../components/tomarOrden/TomarOrden";
 
 
 export const DashboardRoutes = () => {
@@ -13,8 +13,7 @@ export const DashboardRoutes = () => {
       <Navbar />
       <Routes>
         <Route path="pedidos" element={<Pedidos />} />
-        <Route path="mesero" element={<Mesero />} />
-        <Route path="/" element={<Mesero />} />
+        <Route path="tomarorden" element={<TomarOrden />} />
       </Routes>
     </>
   )

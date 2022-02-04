@@ -1,55 +1,46 @@
 // import React from 'react'    -->Con la nueva actualización de react no es necesario importar React
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import logo from '../../imagenes/logo.png' 
 
 export const Navbar = () => {
 
-    const navigate=useNavigate();
-
-    const handleLogout = () => {
-        navigate('/login',{
-            replace:true
-        }); //navigate me permite 
-    }
-
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            
-            <Link 
-                className="navbar-brand" 
-                to="/login"
-            >
-                LOGIN
-            </Link>
 
-            <div className="navbar-collapse">
-                <div className="navbar-nav">
+        <>
+            <img src={logo} alt="" />
+            <nav className="">
+                
+                <Link 
+                    className="" 
+                    to="/login"
+                >
+                    LOGIN
+                </Link>
 
-                    <NavLink 
-                        
-                        className={({isActive}) => 'Nav-item nav-link' + (isActive ? 'active' : '')}
-            
-                        to="/mesero"
-                    >
-                        MESERO
-                    </NavLink>
+                <div className="">
+                    <div className="">
 
-                    <NavLink 
-                        
-                        className={({isActive}) => 'Nav-item nav-link' + (isActive ? 'active' : '')}
-                        
-                        to="/pedidos"
-                    >
-                        PEDIDOS
-                    </NavLink>
-                    <NavLink 
-                        className={({isActive}) => 'Nav-item nav-link' + (isActive ? 'active' : '')}
-                        
-                        to="/login" onClick={handleLogout}
-                    >
-                        CERRAR SESIÓN
-                    </NavLink>
+                        <NavLink 
+                            
+                            className=""
+                
+                            to="/mesero"
+                        >
+                            TOMAR ORDEN
+                        </NavLink>
+
+                        <NavLink 
+                            
+                            className=""
+                            
+                            to="/pedidos"
+                        >
+                            PEDIDOS
+                        </NavLink>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </>
+        
     )
 }
