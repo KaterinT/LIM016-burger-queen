@@ -1,15 +1,16 @@
-import { BrowserRouter, Route , Routes } from "react-router-dom";
-import { Home } from "../Components/Home";
-import { Mesero } from "../Components/mesero/MeseroInicio";
-import { Cocinero } from "../Components/cocinero/CocineroInicio";
+import { Routes, Route,BrowserRouter } from "react-router-dom";
 
-export const RouterOfApp = () => {
-    return <BrowserRouter>
-        <h1> Estamos en el router principal de la aplicación  </h1>
-        <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/mesero' element={<Mesero />}/>
-            <Route path='/cocinero' element={<Cocinero />} />
-        </Routes>
+import {Login} from "../components/login/Login";
+import { DashboardRoutes } from "./DashboardRoutes";
+
+
+export const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/*" element={<DashboardRoutes />} />
+      </Routes>
     </BrowserRouter>
+  )
 }
