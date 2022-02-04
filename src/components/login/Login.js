@@ -1,11 +1,18 @@
 // import React from "react";
+import {useNavigate}  from 'react-router-dom'
 import ReacDOM from "react-dom";
 import './styles/login.scss'
 
-const handleLogin = () => {
-  console.log('HandleLogin')
-}
 export const Login = () => {
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate('/',{
+      replace:true
+    });
+  }
+
   return (
     <div className="container">
       <div className="container-title">

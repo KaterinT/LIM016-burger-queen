@@ -1,7 +1,16 @@
 // import React from 'react'    -->Con la nueva actualización de react no es necesario importar React
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+
+    const navigate=useNavigate();
+
+    const handleLogout = () => {
+        navigate('/login',{
+            replace:true
+        }); //navigate me permite 
+    }
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             
@@ -35,7 +44,7 @@ export const Navbar = () => {
                     <NavLink 
                         className={({isActive}) => 'Nav-item nav-link' + (isActive ? 'active' : '')}
                         
-                        to="/login"
+                        to="/login" onClick={handleLogout}
                     >
                         CERRAR SESIÓN
                     </NavLink>
