@@ -3,9 +3,5 @@
 import ReacDOM from "react-dom";
 
 export const TomarOrden = () => {
-  return (
-    <div>
-      <p>soy mesero, pagina tomar orden</p>
-    </div>
-  );
+  return <h1 className="usuario">Mesero</h1>;
 };

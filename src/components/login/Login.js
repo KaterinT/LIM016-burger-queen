@@ -1,6 +1,5 @@
 // import React from "react";
 import {useNavigate}  from 'react-router-dom'
-import ReacDOM from "react-dom";
 import './login.scss'
 
 export const Login = () => {
@@ -8,15 +7,11 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const handleMesero = () => {
-    navigate('/tomarorden',{
-      replace:true
-    });
+    navigate('/tomarorden');
   }
 
   const handleCocinero = () => {
-    navigate('/cocinero',{
-      replace:true
-    });
+    navigate('/cocinero');
   }
 
   return (
@@ -28,10 +23,10 @@ export const Login = () => {
         <h2>BURGUER</h2>
       
         <div className="button_options">
-          <button  onClick={handleCocinero} type="button" className="btn-orden">
+          <button  onClick={handleCocinero} id='CocineroBttn' className="btn-chef">
             COCINERO
           </button>
-          <button onClick={handleMesero} type="button" className="btn-chef">
+          <button onClick={handleMesero} id='MeseroBttn' className="btn-orden">
             MESERO
           </button>
         </div>

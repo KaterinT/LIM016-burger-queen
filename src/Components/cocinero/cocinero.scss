@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+h4 {
+  width: 15%;
+  background-color: #5a5120;
+  color: #fdd70b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px 0px;
+  height: 5vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+}
+.pedidos-al-chef{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        font-family: Roboto;
+        font-style: italic;
+        font-size: 25px;
+    }
+    #toDo{
+        border-radius: 20px 0px 0px 0px;
+    }
+    #done{
+        border-radius: 0px 20px 0px 0px;
+    }
+}
+#eventosChef{
+    padding: 2%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid #FFD809;
+    box-sizing: border-box;
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.pedidos{
+    background: rgba(245, 196, 123, 0.36);
+    border-radius: 7px;
+    color: blanchedalmond;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    position: relative;
+    .infoPedido p{
+        margin: 3px;
+    }
+}
+.infoMesa{
+    color: black;
+    font-size: 18px;
+    background: #F1C375;
+    border-radius: 0px 7px;
+    top: 0;
+    position: absolute;
+    right: 0;
+    padding: 2px;
+}
+.clicked{
+    background-color:#FFD809;
+    color: black;
+    height: 50px;
+}
+.no-clicked{
+    background-color:rgba(0, 0, 0, 0.55);
+    color: #F1C375;;
+}

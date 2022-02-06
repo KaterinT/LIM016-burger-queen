@@ -11,6 +11,7 @@ html,body {
   background-attachment: fixed ;
   padding: 0 2rem;
   
+  
   h2 {
     color: #f1c375;
     font-family: "Luckiest Guy", cursive;
@@ -27,24 +28,20 @@ html,body {
 }
 
 .container {
+  height: 70vh;
   display: flex;
+  margin: 15vh 0;
+  align-items: center;
   justify-content: flex-end;
   .container-title {
-    display: flex;
     flex-direction: column;
-    margin:3rem;
-    left:2rem;
+    margin: 0 3rem;
   }
-}
-.container-btn {
-  display: flex;
 }
 
 .button_options {
   display: flex;
   flex-direction: column;
-
-
   button {
     background-color:$yellowColor;
     border-radius: 13px;
