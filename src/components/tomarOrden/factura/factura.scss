@@ -1,0 +1,99 @@
+@import "../../../variables.scss";
+
+.boxFactura {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.boxMesaCliente {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  .boxnumMesa {
+    input {
+      // width: 100%;
+    }
+  }
+  div {
+    display: flex;
+    // width: 50%;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      text-decoration: none;
+      color: #ffff;
+      font-family: "Roboto", sans-serif;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+    input {
+      // width: 100%;
+      width: 5rem;
+      background: $naranjaColor;
+      border: 2px solid $brownBordes;
+      height: 1.6rem;
+      border-radius: 0.2rem;
+      
+    }
+  }
+
+  // background: aqua;
+}
+.boxItemOrden {
+  align-content: center;
+  height: 3rem;
+  background: $yellowColor;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  p {
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 23px;
+    color: $brownOscuro2;
+    margin: 0;
+  }
+
+}
+
+.boxDescripcionCadaItemOrden {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0.5rem;
+  .descripcionOrdenItem {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  p {
+    text-decoration: none;
+    color: #ffff;
+    font-family: "Roboto", sans-serif;
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+}
+
+.boxTotal {
+  height: 3rem;
+  background: $naranjaColor;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+
+  .boxTotalDesc {
+    font-family: Roboto;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 23px;
+    color: $brownOscuro2;
+    margin: 0;
+  }
+}

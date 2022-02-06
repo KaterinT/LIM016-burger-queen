@@ -1,16 +1,17 @@
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 
-import {Login} from "../components/login/Login";
-import { DashboardRoutes } from "./DashboardRoutes";
+import {Inicio} from "../components/inicio/Inicio";
+import { DashboardRoutes,DashboardRoutesCocinero } from "./DashboardRoutes";
 
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/*" element={<DashboardRoutes />} />
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path={"/*"}  element={<DashboardRoutes />} />
+        <Route path="/cocinero" element={<DashboardRoutesCocinero />} />
       </Routes>
     </BrowserRouter>
   )

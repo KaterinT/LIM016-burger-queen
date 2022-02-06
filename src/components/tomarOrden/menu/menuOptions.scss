@@ -1,0 +1,43 @@
+@import "../../../variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.boxContenedorBtn {
+  display: flex;
+  margin: 0rem 1.5rem;
+  height: 55px;
+  flex-direction: column;
+  align-items: flex-start;
+  .boxBtn {
+    padding: 1rem 0 0 0;
+    display: flex;
+    height: 60%;
+    
+    button {
+      background: 0;
+      color: $naranjaColor;
+      border: 0;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: bold;
+      margin: 0 0.4rem;
+      padding: 0 1rem;
+  
+      &:hover {
+        background: $yellowColor;
+        border-radius: 10px 10px 0px 0px;
+        color:$blackColor
+      }
+      // &:active {
+      //   background: $yellowColor;
+      // }
+     
+    }
+  }
+  .linea {
+    border-top: 2px solid $brownLineas;
+    width: 98%;
+  }
+}
+

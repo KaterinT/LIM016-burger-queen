@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 
 
-html,body {
-  background: #21232A; 
+.container {
+  background: $blackOscuro; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
   url("../../imagenes/burguerVideo1.gif");
   background-size: 100vw 100vh;
@@ -12,14 +12,14 @@ html,body {
   padding: 0 2rem;
   
   h2 {
-    color: #f1c375;
+    color: $naranjaColor;
     font-family: "Luckiest Guy", cursive;
     font-size: 7rem;
-    -webkit-text-stroke: 1px #362c0f;
+    -webkit-text-stroke: 1px $brownOscuro;
     margin: 0rem;
   }
   h1 {
-    color: #ffff;
+    color: $white;
     font-family: "Yellowtail", cursive;
     font-size: 4rem;
     margin: 0rem;
