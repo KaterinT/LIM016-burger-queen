@@ -10,9 +10,8 @@
   .boxTomarOrden {
     // background:$brownLineas;
     height: 100% ;
-    .boxtitleUsuario {
+    /* .boxtitleUsuario {
       display: flex;
-      // background: #ffff;
       height: 9%;
       flex-direction: row;
       align-items: center;
@@ -34,7 +33,7 @@
           font-size: larger;
         }
       }
-    }
+    } */
     .boxTomarOrdenMenu {
       // background-color:#232344;
       display: flex;
@@ -44,6 +43,8 @@
         display: flex;
         justify-content: space-between;
         height: 90%;
+        // margin: 1.8rem 1rem 1rem 1rem;
+        margin: 2.5vh 2% 1.4% 2%;
         .boxMenu {
           width: 63%;
           background: rgba(0, 0, 0, 0.55);
@@ -60,16 +61,18 @@
       }
       .boxBtnTomarOrden {
         align-items: center;
+        width: 100%;
         // background-color: aliceblue;
         display: flex;
+        flex-wrap: wrap;
         height: 10%;
         justify-content: center;
-        .boxBtnTomarOrden2 {
+        /* .boxBtnTomarOrden2 {
           align-items: center;
           display: flex;
           justify-content: center;
           width: 100%;
-          padding: 1rem;
+          padding: 1rem; */
           button {
             background: $yellowColor;
             border: 2px solid $brownLineas;
@@ -81,12 +84,12 @@
             font-size: 1.3rem;
             font-style: italic;
             font-weight: bold;
-            margin: 0 1rem;
+            margin: 0.5rem;
             width: 12rem;
             padding: 0.2rem;
 
             // border-radius: 9px;
-          }
+          /* } */
         }
 
       }

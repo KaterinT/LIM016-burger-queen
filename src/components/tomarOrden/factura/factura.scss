@@ -12,37 +12,36 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  .boxnumMesa {
-    input {
-      // width: 100%;
-    }
-  }
   div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    h3 {
-      text-decoration: none;
-      color: #ffff;
-      font-family: "Roboto", sans-serif;
-      margin: 0 10px;
-      font-size: 1rem;
+    .boxnombreCliente {
+      margin: 0.2rem;
+      h3 {
+        text-decoration: none;
+        color: #ffff;
+        font-family: "Roboto", sans-serif;
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      input {
+        // width: 100%;
+        width: 5rem;
+        background: $naranjaColor;
+        border: 2px solid $brownBordes;
+        height: 1.2rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+          border:  solid #854F25;
+          }
+      }
     }
-    input {
-      // width: 100%;
-      width: 5rem;
-      background: $naranjaColor;
-      border: 2px solid $brownBordes;
-      height: 1.2rem;
-      border-radius: 0.2rem;
-      cursor: pointer;
-      &:focus {
-        outline: none;
-        border:  solid #854F25;
-        }
-    }
+    
   }
 
   // background: aqua;
