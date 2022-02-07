@@ -9,21 +9,15 @@ export const TomarOrden = () => {
   return (
     <div className="containert">
       <div className="boxTomarOrden">
-        <div className="boxtitleUsuario">
-          <div className="boxTitle">
-            <p>Mesero</p>
-          </div>
-        </div>
+        <h4>Mesero</h4>
         <div className="boxTomarOrdenMenu">
           <div className="boxTomarOrdenMenu2">
             <Menu />
             <Factura />
           </div>
           <div className="boxBtnTomarOrden">
-            <div className="boxBtnTomarOrden2">
                 <button>CANCELAR</button>
                 <button>CONFIRMAR</button>
-            </div>
           </div>
         </div>
       </div>

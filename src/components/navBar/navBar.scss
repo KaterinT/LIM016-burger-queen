@@ -4,6 +4,19 @@
 body {
   margin: 0;
 }
+h4 {
+  width: 10%;
+  background-color: #5a5120;
+  color: #fdd70b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0px;
+  height: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin: 2.5vh 0 0 4%;
+}
 .cocinero {
   display: none;
 }
@@ -12,12 +25,13 @@ body {
   url("../../imagenes/background2.png");
   background-size: 100vw 100vh;
   background-attachment: fixed ;
-  min-height: auto;
+  min-height: 100vh;
 }
 
 .boxNav {
   display: flex;
-  padding: 1rem 2rem 0.5rem;
+  margin: 0 4%;
+  padding: 1rem 0;
   justify-content: space-between;
   .boxOptions {
     width: 85%

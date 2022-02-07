@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
-h4 {
-  width: 15%;
-  background-color: #5a5120;
-  color: #fdd70b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 23px 0px;
-  height: 5vh;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  line-height: 23px;
-}
+
 .pedidos-al-chef{
     width: 100%;
     display: flex;
@@ -20,7 +8,9 @@ h4 {
     button{
         font-family: Roboto;
         font-style: italic;
-        font-size: 25px;
+        font-size: 22px;
+        padding: 1vh 1.5%;
+        cursor: pointer;
     }
     #toDo{
         border-radius: 20px 0px 0px 0px;
@@ -30,32 +20,60 @@ h4 {
     }
 }
 #eventosChef{
-    margin: 0 3%;
-    padding: 2%;
-    height: auto;
+    overflow: auto;
+    margin: 0 4%;
+    padding: 1%;
+    height: 58vh;
     background: rgba(0, 0, 0, 0.55);
     border: 1px solid #FFD809;
     box-sizing: border-box;
-    display: grid;
-    gap: 2%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
 }
+#eventosChef::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+#eventosChef::-webkit-scrollbar-thumb {
+    background: #FFD809;
+    border-radius: 5px;
+  }
+  
+#eventosChef::-webkit-scrollbar-thumb:active {
+    background: #c5a60d;
+  }
 .pedidos{
+    margin: 1%;
+    height: 75%;
+    padding: 1%;
+    width: 21%;
     background: rgba(245, 196, 123, 0.36);
     border-radius: 7px;
     color: blanchedalmond;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
     .infoPedido p{
         margin: 3px;
     }
+    .infoPedido button{
+        background: #FDD70B;
+        border-radius: 10px;
+        width: 26%;
+        margin: 0 30%;
+        position: absolute;
+        bottom: 4%;
+        color: rgb(0, 0, 0);
+    }
+    .infoPedido ul {
+        margin-top: 0;
+        margin-left: 8%;
+        padding: 1%;
+    }
 }
 .infoMesa{
     color: black;
-    font-size: 18px;
+    font-size: 17px;
     background: #F1C375;
     border-radius: 0px 7px;
     top: 0;
@@ -64,11 +82,14 @@ h4 {
     padding: 2px;
 }
 .clicked{
+    border: 2px solid #854F25;
     background-color:#FFD809;
     color: black;
     height: 50px;
+    border-color: #FFD809;
 }
 .no-clicked{
+    border: 2px solid #854F25;
     background-color:rgba(0, 0, 0, 0.55);
-    color: #F1C375;;
+    color: #F1C375;
 }
