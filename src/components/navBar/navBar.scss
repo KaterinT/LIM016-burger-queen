@@ -1,3 +1,53 @@
+@import "../../variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+}
 .cocinero {
-    display: none;
+  display: none;
+}
+.boxContainer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
+  url("../../imagenes/background2.png");
+  background-size: 100vw 100vh;
+  background-attachment: fixed ;
+  min-height: auto;
+}
+
+.boxNav {
+  display: flex;
+  padding: 1rem 2rem 0.5rem;
+  justify-content: space-between;
+  .boxOptions {
+    width: 85%
+  }
+  img {
+    width: 6rem;
+  }
+
+  nav {
+    height: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin: 0 0px 0 20%;
+    
+    a{
+      text-decoration: none;
+      color: $white;
+      font-family: 'Roboto', sans-serif;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      &:hover {
+        color:$yellowClaro;
+      }
+    }
+  }
+  .linea {
+    border-top: 2px solid $brownLineas;
+    height: 4px;
+    padding: 0;
+    margin: 20px 10px 0 auto;
+  }
 }

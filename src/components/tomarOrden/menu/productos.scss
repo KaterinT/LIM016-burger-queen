@@ -1,0 +1,87 @@
+@import "../../../variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.boxProductos {
+  // height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+// padding: 1rem;
+  .boxProdUnidad {
+    height: 9rem;
+    width: 18rem;
+    background: $white;
+    margin: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    .boxDescripcionProd {
+      // width: 70%;
+      // display: flex;
+      // align-items: flex-start;
+      // justify-content: center;
+      // flex-direction: column;
+
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 1rem 0;
+
+      .descripcionProd {
+        display: flex;
+        flex-direction: column;
+        // margin: 1rem;
+        align-items: flex-start;
+        p {
+          color: $blackColor;
+          margin: 0rem;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 1rem;
+          line-height: 23px;
+          font-family: 'RocknRoll One', sans-serif;
+          padding: 0rem 1.2rem;
+        }
+      }
+      .btnAgregar {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      button {
+        padding: 0.4rem;
+        width: 6.4rem;
+        background: $yellowClaro;
+        border-radius: 4px;
+        font-size: 1rem;
+        border: 2px solid $brownBordes;
+        // margin: 0 0 1rem 0;
+        font-family: Roboto;
+        font-style: italic;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          background: $yellowColor;
+        }
+      }
+      }
+    }
+    .boxImagenProd {
+      display: flex;
+      justify-content: flex-end;
+      width: 40%;
+      img {
+        width: 100%;
+        border: white;
+        border: 4px solid #ffffff;
+        box-sizing: border-box;
+        border-radius: 0rem 0.5rem 0.5rem 0rem;
+      }
+    }
+
+  }
+}

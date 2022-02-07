@@ -1,8 +1,9 @@
 // import React from "react";
 import {useNavigate}  from 'react-router-dom'
-import './login.scss'
+// import ReacDOM from "react-dom";
+import './inicio.scss'
 
-export const Login = () => {
+export const Inicio = () => {
 
   const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ export const Login = () => {
         <h1>
           Original Taste
         </h1>
-        <h2>BURGUER</h2>
+        <h2>BURGER</h2>
       
         <div className="button_options">
           <button  onClick={handleCocinero} id='CocineroBttn' className="btn-chef">

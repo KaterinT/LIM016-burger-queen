@@ -31,13 +31,13 @@ export const DashboardRoutes =() => {
   }
   const valorInitChef = <TemplatePedidoToDo objetoPedido={objetoPrueba} />
   return (
-    <>
+    <div className="boxContainer">
       <Navbar condicion={((useLocation().pathname==='/cocinero')? 'cocinero' :'')}/>
       <Routes>
         <Route path="cocinero" element={<Cocinero renderInicial={valorInitChef}/>}/>
         <Route path="pedidos" element={<Pedidos />} />
         <Route path="tomarorden" element={<TomarOrden />} />
       </Routes>
-    </>
+    </div>
   )
 }
