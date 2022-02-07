@@ -5,7 +5,8 @@
 .containert {
   // height: 79%;
   padding: 0rem 1.5rem;
-  margin: 0rem 0;
+  // margin: 0rem 0;
+  margin: 0 1.3rem;
   .boxTomarOrden {
     // background:$brownLineas;
     height: 100% ;
@@ -30,6 +31,7 @@
           color: $yellowColor;
           margin: 0;
           font-family: 'Roboto', sans-serif;
+          font-size: larger;
         }
       }
     }
@@ -43,7 +45,7 @@
         justify-content: space-between;
         height: 90%;
         .boxMenu {
-          width: 65%;
+          width: 63%;
           background: rgba(0, 0, 0, 0.55);
           border: 1px solid #F1C375;
           box-sizing: border-box;

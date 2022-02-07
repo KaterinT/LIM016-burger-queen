@@ -6,14 +6,17 @@ export const Factura = () => {
     <div className="boxFactura">
       <div className="boxDescripcion">
         <div className="boxMesaCliente">
-          <div className="boxnombreCliente">
-            <h3>CLIENTE</h3>
-            <input type="text" />
+          <div className="BoxMC">
+            <div className="boxnombreCliente">
+              <h3>CLIENTE</h3>
+              <input type="text" />
+            </div>
+            <div className="boxnumMesa">
+              <h3>MESA</h3>
+              <input type="text" />
+            </div>
           </div>
-          <div className="boxnumMesa">
-            <h3>MESA</h3>
-            <input type="text" />
-          </div>
+          
         </div> 
         <div className="boxItemOrden">
           <p>Cantidad</p>
