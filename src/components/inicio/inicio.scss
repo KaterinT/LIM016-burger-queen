@@ -1,15 +1,34 @@
 @import "../../variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
 
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(8, 8, 6);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $brownLineas;
+  border-radius: 12px;
+  border: 2.2px solid $brownBordes;
+}
 
 .container {
   background: $blackOscuro; 
   background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
-  url("../../imagenes/burguerVideo1.gif");
+  url("../../imagenes/burguerVideo2.gif");
   background-size: 100vw 100vh;
   background-attachment: fixed ;
   padding: 0 2rem;
+  
   
   h2 {
     color: $naranjaColor;
@@ -27,25 +46,39 @@
 }
 
 .container {
+  height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   .container-title {
-    display: flex;
     flex-direction: column;
-    margin:3rem;
-    left:2rem;
+    margin: 0 3rem;
   }
-}
-.container-btn {
-  display: flex;
 }
 
 .button_options {
   display: flex;
   flex-direction: column;
 
-
-  button {
+  // button {
+  //   background-color:$yellowColor;
+  //   border-radius: 13px;
+  //   font-size: 3rem;
+  //   margin: 2rem;
+  //   padding: 1rem 2rem;
+  //   -webkit-text-stroke: 1px rgb(54, 44, 15);
+  //   cursor: pointer;
+  //   border-style: solid;
+  //   border-color: #ffc107;
+  //   /* border-width: 10px; */
+  //   font-weight: bold;
+  //   color: #3d2904;
+  //   &:hover {
+  //     background: #362c0f;
+  //     color: #f1c375;
+  //   }
+  // }
+    button {
     background-color:$yellowColor;
     border-radius: 13px;
     font-size: 3rem;
@@ -53,6 +86,33 @@
     padding: 1rem 2rem;
     -webkit-text-stroke: 1px rgb(54, 44, 15);
     cursor: pointer;
-  }
+    border-style: solid;
+    border-color: #ffc107;
+    /* border-width: 10px; */
+    font-weight: bold;
+    color: #3d2904;
+    @keyframes button {
+      0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    
+      40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+    
+      80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+      }
+    }
+    &:hover {
+      animation: button 1s;
+      background: #362c0f;
+      color: #f1c375;
+    }
+    }
+
 }
 

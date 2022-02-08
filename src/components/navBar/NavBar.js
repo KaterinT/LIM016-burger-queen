@@ -1,41 +1,30 @@
 // import React from 'react'    -->Con la nueva actualización de react no es necesario importar React
-import { Link, NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 
 import logo from "../../imagenes/logo.png";
 import './navBar.scss'
 
-export const Navbar = () => {
+const activeStyle =  ({ isActive }) => isActive? {color: '#E7D15E'}
+:{}
+
+export const Navbar = ({condicion}) => {
   return (
     <div className="boxNav">
       <img src={logo} alt="" />
       <div className="boxOptions">
-      <nav className="">
-            <NavLink className="" to="/inicio">
+      <nav className="" >
+            <NavLink className="" style={activeStyle}to="/">
               INICIO
             </NavLink>
-            <NavLink className="" to="/tomarorden">
+            <NavLink className={condicion} style={activeStyle} to="/tomarorden">
               TOMAR ORDEN
             </NavLink>
-            <NavLink className="" to="/pedidos">
+            <NavLink className={condicion} style={activeStyle} to="/pedidos">
               PEDIDOS
             </NavLink>
         </nav>
-      <div class="linea"></div>
+      <div className="linea"></div>
       </div>
     </div>
   );
 };
-
-export const NavbarC = () => {
-  return (
-    <>
-      <img src={logo} alt="" />
-      <nav className="">
-        <Link className="" to="/inicio">
-          INICIO
-        </Link>
-      </nav>
-    </>
-  );
-};
-

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+.pedidos-al-chef{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        font-family: Roboto;
+        font-style: italic;
+        font-size: 22px;
+        padding: 0.8vh 1.5%;
+        cursor: pointer;
+    }
+    #toDo{
+        border-radius: 20px 0px 0px 0px;
+    }
+    #done{
+        border-radius: 0px 20px 0px 0px;
+    }
+}
+#eventosChef{
+    overflow: auto;
+    margin: 0 5.3%;
+    padding: 1%;
+    height: 58vh;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid #FFD809;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+#eventosChef::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+#eventosChef::-webkit-scrollbar-thumb {
+    background: #FFD809;
+    border-radius: 5px;
+  }
+  
+#eventosChef::-webkit-scrollbar-thumb:active {
+    background: #c5a60d;
+  }
+.pedidos{
+    margin: 1%;
+    height: 75%;
+    padding: 1%;
+    width: 21%;
+    background: rgba(245, 196, 123, 0.36);
+    border-radius: 7px;
+    color: blanchedalmond;
+    font-family: Roboto;
+    font-size: 18px;
+    position: relative;
+    .infoPedido p{
+        margin: 3px;
+    }
+    .infoPedido button{
+        background: #FDD70B;
+        border-radius: 10px;
+        width: 26%;
+        margin: 0 30%;
+        position: absolute;
+        bottom: 4%;
+        color: black;
+        height: 1.8rem;
+        border: beige;
+        cursor: pointer;
+    }
+    .infoPedido ul {
+        margin-top: 0;
+        margin-left: 8%;
+        padding: 1%;
+    }
+}
+.infoMesa{
+    color: black;
+    font-size: 17px;
+    background: #F1C375;
+    border-radius: 0px 7px;
+    top: 0;
+    position: absolute;
+    right: 0;
+    padding: 2px;
+}
+.clicked{
+    border: 2px solid #854F25;
+    background-color:#FFD809;
+    color: black;
+    height: 7vh;
+    border-color: #FFD809;
+}
+.no-clicked{
+    border: 2px solid #854F25;
+    background-color:rgba(0, 0, 0, 0.55);
+    color: #F1C375;
+}

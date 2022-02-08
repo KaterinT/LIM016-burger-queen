@@ -1,20 +1,15 @@
 import './menuOptions.scss'
 
-export const MenuOptions = () => {
+export const MenuOptions = ({categories,filterItems}) => {
   return (
     <div className="boxContenedorBtn">
       <nav className="boxBtn">
-      <button >
-        DESAYUNO
-      </button>
-      <button >
-        KIDS
-      </button>
-      <button>
-        BEBIDAS
-      </button>
+        {categories.map((category, index) => {
+          return(   
+          <button type='button' key={index} onClick={() => filterItems(category)} className="filter-btn">{category}</button>
+          )})}
       </nav>
-      <div class="linea"></div>
+      <div className="linea"></div>
     </div>
   );
 };

@@ -8,15 +8,11 @@ export const Inicio = () => {
   const navigate = useNavigate();
 
   const handleMesero = () => {
-    navigate('/tomarorden',{
-      replace:true
-    });
+    navigate('/tomarorden');
   }
 
   const handleCocinero = () => {
-    navigate('/cocinero',{
-      replace:true
-    });
+    navigate('/cocinero');
   }
 
   return (
@@ -28,10 +24,10 @@ export const Inicio = () => {
         <h2>BURGER</h2>
       
         <div className="button_options">
-          <button  onClick={handleCocinero} type="button" className="btn-orden">
+          <button  onClick={handleCocinero} id='CocineroBttn' className="btn-chef">
             COCINERO
           </button>
-          <button onClick={handleMesero} type="button" className="btn-chef">
+          <button onClick={handleMesero} id='MeseroBttn' className="btn-orden">
             MESERO
           </button>
         </div>

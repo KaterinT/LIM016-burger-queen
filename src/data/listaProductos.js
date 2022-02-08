@@ -1,4 +1,18 @@
-const Categories=[
+
+// import cafeAmericano from '../imagenes/cafeAmericano.jpg'
+// import cafeConLeche from '../imagenes/cafeConLeche.jpg'
+// import sadwishJamonYQueso from '../imagenes/sandwishJamonYQueso.webp'
+// import jugoFrutas from '../imagenes/jugoFrutas.jpg'
+// import hamburguesaSimple from '../imagenes/hamburguesaSimple.webp'
+// import hamburguesaDoble from '../imagenes/hamburguesaDoble.webp'
+// import papasFrita from '../imagenes/papasFrita.webp'
+// import arosCebolla from '../imagenes/arosCebolla.jpg'
+// import agua500ml from '../imagenes/agua500ml.webp'
+// import agua750ml from '../imagenes/agua750ml.jpg'
+// import gaseosaPepsi500ml from '../imagenes/gaseosaPepsi500.jpg'
+// import gaseosaPepsi750ml from '../imagenes/gaseosaPepsi750.jpg'
+
+export const items=[
   {
     id:1,
     title:"Café americano",
