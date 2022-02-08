@@ -4,9 +4,9 @@
 
 .containert {
   // height: 79%;
-  padding: 0rem 1.5rem;
-  // margin: 0rem 0;
-  margin: 0 1.3rem;
+  // padding: 0rem 1.5rem;
+  margin: 0;
+  // margin: 0 1.3rem;
   .boxTomarOrden {
     // background:$brownLineas;
     height: 100% ;
@@ -39,6 +39,8 @@
       display: flex;
       flex-direction: column;
       height: 91%;
+      margin: 0 1.3rem;
+      padding: 0rem 1.5rem;
       .boxTomarOrdenMenu2 {
         display: flex;
         justify-content: space-between;
