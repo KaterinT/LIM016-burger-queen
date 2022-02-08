@@ -5,10 +5,9 @@ import './pedidos.scss'
 const TemplatePedidosListos = ({pedidosListos}) => {
   return pedidosListos.map((pedido) => {
     return <li key={pedido.id}>
-              <section>
+              <section className='pedidosListos'>
                 <div>CLIENTE: {pedido.cliente}</div>
-                <div>MESA: {pedido.mesa}</div>
-                <div><button>Ver Orden</button></div>
+                <div>N° MESA: {pedido.mesa}</div>
                 <div><button>Entregar</button></div>
               </section>
             </li>
@@ -52,8 +51,8 @@ const arrayObjPrueba =[ {
 export const Pedidos = () => {
   return <>
           <h4>Mesero</h4>
-          <p>PEDIDOS LISTOS</p>
-          <ul>
+          <ul id='listaPedidos'>
+            <p>PEDIDOS LISTOS</p>
             <TemplatePedidosListos pedidosListos={arrayObjPrueba} />
           </ul>
          </>
