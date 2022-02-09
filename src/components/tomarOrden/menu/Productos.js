@@ -9,7 +9,7 @@ export const Productos = ({items}) => {
   return (
     <div className='boxProductos'>
       {items.map((menuItem) => {
-        const{id,descripcion,price,imagen} = menuItem;
+        const{id,descripcion,precio,imagen} = menuItem;
 
         return (
         <div key={id}> 
@@ -17,7 +17,7 @@ export const Productos = ({items}) => {
             <div className="boxDescripcionProd">
               <div  className="descripcionProd">
                 <p>{descripcion}</p>
-                <p>S/{price}.00</p>
+                <p>S/{precio}.00</p>
               </div>
               <div className="btnAgregar">
                 <button>
