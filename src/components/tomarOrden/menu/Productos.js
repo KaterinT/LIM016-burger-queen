@@ -1,23 +1,18 @@
 import './productos.scss'
-// import cafeAmericano from '../../../imagenes/cafeAmericano.jpg'
-import {Categories} from '../../../data/listaProductos.js'
-import { useState } from 'react';
 
-// export const getByCategories = (category) => console.log(Categories.filter ((prod) => (prod.category===category))) 
-
-export const Productos = ({items}) => {
+export const Productos = ({menuItems}) => {
   return (
     <div className='boxProductos'>
-      {items.map((menuItems) => {
-        const{id, title, price,category,image} = menuItems;
-        
+      {menuItems.map((menuItem) => {
+        const{id,descripcion,precio,imagen} = menuItem;
+
         return (
         <div key={id}> 
           <div  className="boxProdUnidad" >
             <div className="boxDescripcionProd">
               <div  className="descripcionProd">
-                <p>{title}</p>
-                <p>S/{price}.00</p>
+                <p>{descripcion}</p>
+                <p>S/{precio}.00</p>
               </div>
               <div className="btnAgregar">
                 <button>
@@ -26,21 +21,11 @@ export const Productos = ({items}) => {
               </div>
             </div>
             <div className="boxImagenProd">
-              <img src={image} alt={title} />
+              <img src={imagen} alt={descripcion} />
             </div>
           </div>
         </div>)
       })}
-     
-      {/* <div className="boxProdUnidad">
-        
-      </div>
-      <div className="boxProdUnidad">
-
-      </div>
-      <div className="boxProdUnidad">
-        
-      </div> */}
     </div>
   );
 };
