@@ -1,11 +1,11 @@
 import './menuOptions.scss'
 
-export const MenuOptions = ({categorias,filterItems}) => {
-  console.log(categorias)
+export const MenuOptions = ({categories,filterItems}) => {
+  console.log(categories)
   return (
     <div className="boxContenedorBtn">
       <nav className="boxBtn">
-        {categorias.map((category, index) => {
+        {categories.map((category, index) => {
           return(   
           <button type='button' key={index} onClick={() => filterItems(category)} className="filter-btn">{category}</button>
           )})}
