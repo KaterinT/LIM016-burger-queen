@@ -1,7 +1,4 @@
 import './productos.scss'
-// import cafeAmericano from '../../../imagenes/cafeAmericano.jpg'
-import {Categories} from '../../../data/listaProductos.js'
-import { useState } from 'react';
 
 // export const getByCategories = (category) => console.log(Categories.filter ((prod) => (prod.category===category))) 
 

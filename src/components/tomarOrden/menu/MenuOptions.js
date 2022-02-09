@@ -6,7 +6,7 @@ export const MenuOptions = ({categories,filterItems}) => {
       <nav className="boxBtn">
         {categories.map((category, index) => {
           return(   
-          <button type='button' key={index} onClick={() => filterItems(category)} className="filter-btn">{category}</button>
+          <button key={index} onClick={() => filterItems(category)} className="filter-btn">{category}</button>
           )})}
       </nav>
       <div className="linea"></div>

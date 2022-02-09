@@ -1,16 +1,20 @@
+import { db } from "../firebase.config";
+import { getDocs, collection } from "firebase/firestore"
 
-// import cafeAmericano from '../imagenes/cafeAmericano.jpg'
-// import cafeConLeche from '../imagenes/cafeConLeche.jpg'
-// import sadwishJamonYQueso from '../imagenes/sandwishJamonYQueso.webp'
-// import jugoFrutas from '../imagenes/jugoFrutas.jpg'
-// import hamburguesaSimple from '../imagenes/hamburguesaSimple.webp'
-// import hamburguesaDoble from '../imagenes/hamburguesaDoble.webp'
-// import papasFrita from '../imagenes/papasFrita.webp'
-// import arosCebolla from '../imagenes/arosCebolla.jpg'
-// import agua500ml from '../imagenes/agua500ml.webp'
-// import agua750ml from '../imagenes/agua750ml.jpg'
-// import gaseosaPepsi500ml from '../imagenes/gaseosaPepsi500.jpg'
-// import gaseosaPepsi750ml from '../imagenes/gaseosaPepsi750.jpg'
+
+const colleccionRef = collection(db,'ordenes');
+export const veamos =() => {
+  const array = getDocs(colleccionRef).then((arrayData) => {
+    let arrayMenu = [];
+    arrayData.forEach((docs) => {
+        arrayMenu.push({...docs.data(), id:docs.id});
+      });
+      return arrayMenu
+  });
+  return array
+} 
+
+
 
 export const items=[
   {

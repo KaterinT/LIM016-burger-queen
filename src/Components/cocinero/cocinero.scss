@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     button{
+        border: none;
         font-family: Roboto;
         font-style: italic;
         font-size: 22px;
@@ -84,14 +85,11 @@
     padding: 2px;
 }
 .clicked{
-    border: 2px solid #854F25;
     background-color:#FFD809;
     color: black;
     height: 7vh;
-    border-color: #FFD809;
 }
 .no-clicked{
-    border: 2px solid #854F25;
     background-color:rgba(0, 0, 0, 0.55);
     color: #F1C375;
 }
