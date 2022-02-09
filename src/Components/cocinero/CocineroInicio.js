@@ -1,7 +1,7 @@
 import "./cocinero.scss";
 import React, { useEffect, useState } from "react";
 import { obtenerDataOrdenes } from "../../data/listaProductos";
-import { PedidoEstadoFalse, TemplatePedidos } from "./templatesCocinero";
+import { TemplatePedidos } from "./templatesCocinero";
 import { updateDoc, doc} from "firebase/firestore";
 import { db } from "../../firebase.config";
 
@@ -12,27 +12,25 @@ import { db } from "../../firebase.config";
 export const Cocinero = () => {
   
   const [ordenes, setOrdenes] = useState();
+  const [classNameBttns, setNameClass]=useState(['clicked','no-clicked'])
+  const [bttnToDo, bttnDone] =classNameBttns
 
   const recibirOrdenes= async (estadoBoleano) => {
     const arrayData =await obtenerDataOrdenes();
-      const newArray = arrayData.filter((orden) => orden.estado === estadoBoleano);
-        return newArray
+      return arrayData.filter((orden) => orden.estado === estadoBoleano);
   };
 
   useEffect(() => {
     async function fetchOrdenes() {
       const ordenesFalso =await recibirOrdenes(false)
       setOrdenes(ordenesFalso)
-    }
-    fetchOrdenes()
+    };
+    fetchOrdenes();
   },[])
 
-  const handleToDo = ({currentTarget}) => {
+  const handleToDo = () => {
     // Agregando estilos a los botones seleccionados
-    currentTarget.classList.add("clicked");
-    currentTarget.classList.remove("no-clicked");
-    document.getElementById("done").classList.add("no-clicked");
-    document.getElementById("done").classList.remove("clicked");
+    setNameClass(['clicked','no-clicked'])
 
     async function fetchOrdenes() {
       const ordenesFalso =await recibirOrdenes(false)
@@ -41,13 +39,9 @@ export const Cocinero = () => {
     fetchOrdenes()
   };
 
-  const handleDone = ({currentTarget}) => {
+  const handleDone = () => {
     // Agregando estilos a los botones seleccionados
-    currentTarget.classList.add("clicked");
-    currentTarget.classList.remove("no-clicked");
-    document.getElementById("toDo").classList.add("no-clicked");
-    document.getElementById("toDo").classList.remove("clicked");
-   
+    setNameClass(['no-clicked','clicked'])
     // la funcion obtenerDataOrdenes se renombrara y se sacara de la coleccion 'ordenes'
     obtenerDataOrdenes().then((arrayObjetos2) => {
       const ordenesTrue = arrayObjetos2.filter((orden) => orden.estado === true);
@@ -67,30 +61,18 @@ export const Cocinero = () => {
     <div id="cocinero">
       <h4>Cocinero</h4>
       <section className="pedidos-al-chef">
-        <button onClick={handleToDo} id="toDo" className="clicked">
+        <button onClick={handleToDo} id="toDo" className={bttnToDo}>
           <b>Por Preparar</b>
         </button>
-        <button onClick={handleDone} id="done" className="no-clicked">
+        <button onClick={handleDone} id="done" className={bttnDone}>
           <b>Preparados</b>
         </button>
       </section>
       <section id="eventosChef">
         {ordenes!==undefined&&(
-          ordenes.map((objeto) => {
-            if(objeto.estado===true){
-              return <div key={objeto.id} id={objeto.id} className='pedidos'> 
-                        <div className="infoMesa"> <b>Mesa: </b>{objeto.mesa}</div>
-                        <div className="infoPedido">
-                          <TemplatePedidos objetoPedido={objeto} />
-                        </div>
-              
-                     </div>
-            }else{
-              return <div key={objeto.id} id={objeto.id} className='pedidos'> 
-                        <PedidoEstadoFalse objeto={objeto} cambioEstado={cambioEstadoOrden} />
-                      </div>}
-            })//array filtrado
-        )}
+          ordenes.map((objeto) => <div key={objeto.id} id={objeto.id} className='pedidos'> 
+                                    <TemplatePedidos objeto={objeto} cambioEstado={cambioEstadoOrden} />
+                                  </div>))}
       </section>
     </div>
   );
