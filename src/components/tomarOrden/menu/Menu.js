@@ -7,9 +7,10 @@ import {Productos} from './Productos'
 import {items} from '../../../data/listaProductos'
 
 const allCategories = [...new Set((items.map((item) => item.category)))]
+const newItemsInicio = items.filter((item) => item.category === "Desayuno");
 
 export const Menu = () => {
-  const [menuItems,setMenuItems] = useState(items);
+  const [menuItems,setMenuItems] = useState(newItemsInicio);
 
   const filterItems = (category) => {
     const newItems = items.filter((item) => item.category === category);
