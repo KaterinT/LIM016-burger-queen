@@ -1,5 +1,4 @@
-import { updateDoc, doc } from "firebase/firestore";
-import { db } from "../../firebase.config";
+
 
 export const TemplatePedidos = ({ objetoPedido }) => {
     return <>
@@ -12,15 +11,13 @@ export const TemplatePedidos = ({ objetoPedido }) => {
           </>
   };
   
-  export const PedidoEstadoFalse = ({objeto}) => {
-    const  reconocimiento = (e) => {
-        updateDoc(doc(db,'ordenes',e.target.name),{estado:true});
-    }
+  export const PedidoEstadoFalse = ({objeto, cambioEstado}) => {
+    
     return <>
             <div className="infoMesa"> <b>Mesa: </b>{objeto.mesa}</div>
             <div className="infoPedido">
                 <TemplatePedidos objetoPedido={objeto} />
-                <button name={objeto.id} onClick={reconocimiento}>Listo?</button>
+                <button name={objeto.id} onClick={cambioEstado}>Listo?</button>
             </div>
            </>
   }

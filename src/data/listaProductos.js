@@ -3,13 +3,13 @@ import { getDocs, collection } from "firebase/firestore"
 
 
 const colleccionRef = collection(db,'ordenes');
-export const veamos =() => {
+export const obtenerDataOrdenes =() => {
   const array = getDocs(colleccionRef).then((arrayData) => {
-    let arrayMenu = [];
+    let arrayOrdenes = [];
     arrayData.forEach((docs) => {
-        arrayMenu.push({...docs.data(), id:docs.id});
+        arrayOrdenes.push({...docs.data(), id:docs.id});
       });
-      return arrayMenu
+      return arrayOrdenes
   });
   return array
 } 
