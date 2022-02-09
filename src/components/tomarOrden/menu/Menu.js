@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react'
 import { db } from '../../../firebase.config'
-import { collection, doc, getDocs,onSnapshot, snapshotEqual,query,where,get} from 'firebase/firestore'
+import { collection, getDocs} from 'firebase/firestore'
 
 import './menu.scss'
 
 import {MenuOptions} from './MenuOptions'
 import {Productos} from './Productos'
-import {items} from '../../../data/listaProductos'
-
-
+// import {items} from '../../../data/listaProductos'
 
 export const Menu = () => {
-
   const [orders, setOrders] = useState([]);
+  const [menuItems,setMenuItems] = useState([]);
+  const [currentCategory,setCurrentCategory] =  useState("Desayuno");
+
+  const allCategories = ["Desayuno","Hamburguesas","Bebidas"]
+
+  useEffect (() => {
+
+    setMenuItems(orders.filter((item) => item.categoria === currentCategory));
+    
+  },[currentCategory, orders])
+  // console.log(menuItems)
+
+  // **Trae la data de Firebase en un array de objetos**
   const getOrdersFirebase = async () => {
       const document = [];
       const querySnapshot = await getDocs(collection(db, "Menu"));
@@ -40,32 +50,11 @@ export const Menu = () => {
      
     }, [])
 
-
-
-  console.log(orders);
-
-  // const allCategories = [...new Set((orders.map((item) => item.categoria)))]
-  
-  // allCategories.push(allCategories[0]);
-  // allCategories.shift()
-
-  const allCategories = ["Desayuno","Hamburguesas","Bebidas"]
-
-  const newItemsInicio =orders.filter((item) => item.categoria === "Desayuno");
-  console.log(newItemsInicio)
-
- 
-  const [menuItems,setMenuItems] = useState(newItemsInicio);
-console.log(menuItems)
-  const filterItems = (category) => {
-    const newItems = orders.filter((item) => item.categoria === category);
-    setMenuItems(newItems);
-  }
-
+  // console.log(orders);
   return (
     <div className="boxMenu">
-      <MenuOptions categories={allCategories} filterItems={filterItems} />
-      <Productos items={menuItems}/>
+      <MenuOptions categories={allCategories} setCurrentCategory={setCurrentCategory} />
+      <Productos menuItems={menuItems} currentCategory = {currentCategory} />
     </div>
   );
 };
