@@ -1,9 +1,14 @@
 import './productos.scss'
 
-export const Productos = ({menuItems}) => {
+export const Productos = ({menuItems,moreClick}) => {
+
+  const prueba = () => {
+    console.log('probando click')
+  }
   return (
     <div className='boxProductos'>
       {menuItems.map((menuItem) => {
+          
         const{id,descripcion,precio,imagen} = menuItem;
 
         return (
@@ -15,7 +20,7 @@ export const Productos = ({menuItems}) => {
                 <p>S/{precio}.00</p>
               </div>
               <div className="btnAgregar">
-                <button>
+                <button onClick={() => moreClick(menuItem)}>
                   Agregar
                 </button>
               </div>
