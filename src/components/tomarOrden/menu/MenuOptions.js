@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './menuOptions.scss'
 
 export const MenuOptions = ({categories, setCurrentCategory}) => {
-  console.log(categories)
+ /*  console.log(categories) */
   return (
     <div className="boxContenedorBtn">
       <nav className="boxBtn">

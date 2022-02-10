@@ -12,49 +12,39 @@ import { db } from "../../firebase.config";
 export const Cocinero = () => {
   
   const [ordenes, setOrdenes] = useState();
-  const [classNameBttns, setNameClass]=useState(['clicked','no-clicked'])
-  const [bttnToDo, bttnDone] =classNameBttns
+  const [[bttnToDo, bttnDone], setNameClass]=useState(['clicked','no-clicked']);
+  const [estadoOrdenes, setEstado] =useState(false) 
 
   const recibirOrdenes= async (estadoBoleano) => {
     const arrayData =await obtenerDataOrdenes();
-      return arrayData.filter((orden) => orden.estado === estadoBoleano);
+    setOrdenes(arrayData.filter((orden) => orden.estado === estadoBoleano));
   };
 
   useEffect(() => {
-    async function fetchOrdenes() {
-      const ordenesFalso =await recibirOrdenes(false)
-      setOrdenes(ordenesFalso)
+    recibirOrdenes(false);
+    return () => {
+      setOrdenes([]);
     };
-    fetchOrdenes();
   },[])
 
-  const handleToDo = () => {
-    // Agregando estilos a los botones seleccionados
-    setNameClass(['clicked','no-clicked'])
+  useEffect(() => {
+    recibirOrdenes(estadoOrdenes);
+  },[estadoOrdenes,ordenes])
 
-    async function fetchOrdenes() {
-      const ordenesFalso =await recibirOrdenes(false)
-      setOrdenes(ordenesFalso)
-    }
-    fetchOrdenes()
+  const handleToDo = () => {
+    setNameClass(['clicked','no-clicked']);
+    setEstado(false)
   };
 
   const handleDone = () => {
     // Agregando estilos a los botones seleccionados
-    setNameClass(['no-clicked','clicked'])
-    // la funcion obtenerDataOrdenes se renombrara y se sacara de la coleccion 'ordenes'
-    obtenerDataOrdenes().then((arrayObjetos2) => {
-      const ordenesTrue = arrayObjetos2.filter((orden) => orden.estado === true);
-      setOrdenes(ordenesTrue);
-    })
+    setNameClass(['no-clicked','clicked']);
+    setEstado(true)
     
   };
   const  cambioEstadoOrden = (e) => {
     updateDoc(doc(db,'ordenes',e.target.name),{estado:true});
-    obtenerDataOrdenes().then((arrayObjetos2) => {
-      const arrayObjetosF = arrayObjetos2.filter((e) => e.estado === false);      
-      setOrdenes(arrayObjetosF)
-    })
+    setEstado(false)
   };
 
   return (

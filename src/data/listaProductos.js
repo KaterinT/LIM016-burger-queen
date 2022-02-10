@@ -3,6 +3,8 @@ import { getDocs, collection } from "firebase/firestore"
 
 
 const colleccionRef = collection(db,'ordenes');
+
+
 export const obtenerDataOrdenes =() => {
   const array = getDocs(colleccionRef).then((arrayData) => {
     let arrayOrdenes = [];

@@ -34,8 +34,8 @@ export const Menu = () => {
           descripcion:doc.data().descripcion,
           imagen:doc.data().imagen,
           precio:doc.data().precio,
-        })
-        console.log(document);
+        })/* 
+        console.log(document); */
         
       });
       
