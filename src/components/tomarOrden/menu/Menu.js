@@ -8,7 +8,7 @@ import {MenuOptions} from './MenuOptions'
 import {Productos} from './Productos'
 // import {items} from '../../../data/listaProductos'
 
-export const Menu = () => {
+export const Menu = ({pedido,setPedido}) => {
   const [orders, setOrders] = useState([]);
   const [menuItems,setMenuItems] = useState([]);
   const [currentCategory,setCurrentCategory] =  useState("Desayuno");
@@ -18,7 +18,7 @@ export const Menu = () => {
   useEffect (() => {
 
     setMenuItems(orders.filter((item) => item.categoria === currentCategory));
-    
+
   },[currentCategory, orders])
   // console.log(menuItems)
 
@@ -50,31 +50,28 @@ export const Menu = () => {
      
     }, [])
 
+    const moreClick = (menuItem) => {
+      if (pedido.find((obj) => obj.id === menuItem.id)) {
+        // eslint-disable-next-line array-callback-return
+        pedido.map((p) => {
+          if (p.id === menuItem.id) {
+            p.count = p.count + 1;
+          }
+        });
+  
+        setPedido([...pedido]);
+      } else {
+        menuItem.count = 1;
+        setPedido([...pedido, menuItem]);
+      }
+      console.log('va bien')
+    };
+
   // console.log(orders);
   return (
     <div className="boxMenu">
       <MenuOptions categories={allCategories} setCurrentCategory={setCurrentCategory} />
-      <Productos menuItems={menuItems} currentCategory = {currentCategory} />
+      <Productos menuItems={menuItems} currentCategory = {currentCategory} moreClick = {moreClick}/>
     </div>
   );
 };
-
-// *********************
-// const allCategories = [...new Set((items.map((item) => item.category)))]
-// const newItemsInicio = items.filter((item) => item.category === "Desayuno");
-
-// export const Menu = () => {
-//   const [menuItems,setMenuItems] = useState(newItemsInicio);
-
-//   const filterItems = (category) => {
-//     const newItems = items.filter((item) => item.category === category);
-//     setMenuItems(newItems);
-//   }
-
-//   return (
-//     <div className="boxMenu">
-//       <MenuOptions categories={allCategories} filterItems={filterItems} />
-//       <Productos items={menuItems}/>
-//     </div>
-//   );
-// };
