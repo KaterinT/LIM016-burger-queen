@@ -9,7 +9,7 @@ import { Productos } from "./Productos";
 import { obtenerDataFirestore } from "../../../data/listaProductos";
 // import {items} from '../../../data/listaProductos'
 
-export const Menu = ({ /* pedido, */ setPedido, setEstadoModal }) => {
+export const Menu = ({ /* pedido, */ setPedido, setEstadoModal ,setPedidoModal}) => {
   const [orders, setOrders] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("Desayuno");
@@ -33,31 +33,23 @@ export const Menu = ({ /* pedido, */ setPedido, setEstadoModal }) => {
     }
     fetchList();
   }, []);
-
+console.log()
   const moreClick = (menuItem) => {
-    setPedido((listaPedidosAnterior) =>{
-      return [...listaPedidosAnterior,menuItem]
-    })
+
     console.log(menuItem.descripcion);
-    /* if (pedido.find((obj) => obj.id === menuItem.id)) {
-      // eslint-disable-next-line array-callback-return
-      pedido.map((p) => {
-        if (p.id === menuItem.id) {
-          p.count = p.count + 1;
-        }
-      });
-
-      setPedido([...pedido]);
-    } else {
-      menuItem.count = 1;
-      setPedido([...pedido, menuItem]);
-    }
-    console.log("va bien"); */
-
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<
+ 
     if (menuItem.descripcion === "Hamburguesa simple"||menuItem.descripcion === "Hamburguesa doble") {
       console.log("reconoce burgers");
       setEstadoModal(true);
+      setPedidoModal((listaPedidosAnterior) =>{
+        
+        return [...listaPedidosAnterior,menuItem]
+      })
+    }else {
+      setPedido((listaPedidosAnterior) =>{
+        console.log(listaPedidosAnterior)
+        return [...listaPedidosAnterior,menuItem]
+      })
     }
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   };

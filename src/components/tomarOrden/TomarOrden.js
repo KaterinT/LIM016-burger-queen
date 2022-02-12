@@ -8,6 +8,7 @@ export const TomarOrden = () => {
   const [estadoModal,setEstadoModal] =useState(false);
   
   const [pedido, setPedido] = useState([])
+  const [pedidoModal, setPedidoModal] = useState([])
 
   useEffect(()=>{
     console.log(pedido);
@@ -15,13 +16,14 @@ export const TomarOrden = () => {
 
   const confirmarModal=(arrayExtras) =>{
     const [burger,adicional]=arrayExtras
-    if(pedido[pedido.length-1].categoria==='Hamburguesas'){
-      setPedido((listaPedidos) =>{
-        const ultimoPedido=listaPedidos[listaPedidos.length-1];
-        ultimoPedido.descripcion=ultimoPedido.descripcion+' '+burger;
+    if(pedidoModal[pedidoModal.length-1].categoria==='Hamburguesas'){
+      setPedidoModal((pedidoModal) =>{
+        let ultimoPedido=pedidoModal[pedidoModal.length-1];
+        ultimoPedido.descripcion2=ultimoPedido.descripcion+' '+burger;
        // ultimoPedido.burger=burger;
         ultimoPedido.adicional=adicional;
-        return listaPedidos;
+        console.log(ultimoPedido)
+        return ultimoPedido;
       })
     }
     console.log(burger,adicional);
@@ -38,7 +40,7 @@ export const TomarOrden = () => {
         <h4>Mesero</h4>
         <div className="boxTomarOrdenMenu">
           <div className="boxTomarOrdenMenu2">
-            <Menu /* pedido={pedido} */ setPedido={setPedido} setEstadoModal={setEstadoModal} />
+            <Menu /* pedido={pedido} */ setPedido={setPedido} setEstadoModal={setEstadoModal} setPedidoModal={setPedidoModal}/>
             <Factura pedido={pedido} />
           </div>
           <div className="boxBtnTomarOrden">
