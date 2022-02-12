@@ -4,7 +4,7 @@ import './pedidos.scss';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase.config';
 import { useEffect, useState } from 'react';
-import { obtenerDataOrdenes } from '../../data/listaProductos';
+import { obtenerDataFirestore } from '../../data/listaProductos';
 
 const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   return pedidosListos.map((pedido) => {
@@ -29,7 +29,7 @@ export const Pedidos = () => {
 const [ordenesListas, setOrdenes]=useState();
 
 const obtenerOrdenesListas = async () => {
-  const ordenes = await obtenerDataOrdenes();
+  const ordenes = await obtenerDataFirestore('ordenes');
   setOrdenes(ordenes.filter((orden) => orden.estado===true));
 }
 

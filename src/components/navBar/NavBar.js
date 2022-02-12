@@ -12,18 +12,18 @@ export const Navbar = ({condicion}) => {
     <div className="boxNav">
       <img src={logo} alt="" />
       <div className="boxOptions">
-      <nav className="" >
-            <NavLink className="" style={activeStyle}to="/">
-              INICIO
-            </NavLink>
-            <NavLink className={condicion} style={activeStyle} to="/tomarorden">
-              TOMAR ORDEN
-            </NavLink>
-            <NavLink className={condicion} style={activeStyle} to="/pedidos">
-              PEDIDOS
-            </NavLink>
+        <nav className="" >
+              <NavLink className="" style={activeStyle}to="/">
+                INICIO
+              </NavLink>
+              <NavLink className={condicion} style={activeStyle} to="/tomarorden">
+                TOMAR ORDEN
+              </NavLink>
+              <NavLink className={condicion} style={activeStyle} to="/pedidos">
+                PEDIDOS
+              </NavLink>
         </nav>
-      <div className="linea"></div>
+        <div className="linea"></div>
       </div>
     </div>
   );

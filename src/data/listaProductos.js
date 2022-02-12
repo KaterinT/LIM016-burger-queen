@@ -2,10 +2,11 @@ import { db } from "../firebase.config";
 import { getDocs, collection } from "firebase/firestore"
 
 
-const colleccionRef = collection(db,'ordenes');
 
 
-export const obtenerDataOrdenes =() => {
+
+export const obtenerDataFirestore =(nameColection) => {
+  const colleccionRef = collection(db,nameColection);
   const array = getDocs(colleccionRef).then((arrayData) => {
     let arrayOrdenes = [];
     arrayData.forEach((docs) => {
