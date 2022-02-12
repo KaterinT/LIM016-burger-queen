@@ -3,28 +3,85 @@ import {Factura} from './factura/Factura'
 import {Menu} from './menu/Menu'
 import { Modal } from './modalExtras/modal';
 import './tomarOrden.scss'
+import { obtenerDataById } from '../../data/listaProductos';
 
 export const TomarOrden = () => {
-  const [estadoModal,setEstadoModal] =useState(false);
-  
-  const [pedido, setPedido] = useState([])
 
-  useEffect(()=>{
-    console.log(pedido);
-  },[pedido])
+  const [estadoModal,setEstadoModal] =useState(false);
+  const [pedidos, setPedidos] = useState([]);
+  const [factura,setFactura] =useState([]);
+
+/*   useEffect(()=>{
+    if (ultimoPedido.sendToFactura===true) {
+        console.log('no estaba, y se agrego');
+        setPedido((listaPedidosAnterio) => {
+          return [...listaPedidosAnterio,ultimoPedido]
+        })      
+    }
+    
+  },[ultimoPedido]) */
+
+/* 
+
+  if(!pedido.includes(ultimoPedido)){
+    setPedido([...pedido,{...ultimoPedido,count:1}])
+  }else{
+    setPedido((ultimaListPedido) =>{
+      const index=ultimaListPedido.indexOf(ultimoPedido);
+      ultimaListPedido[index]={...ultimaListPedido[index], count:ultimaListPedido[index].count+1}
+      return ultimaListPedido
+    })
+  }
+ */
+
+
+  const moreClick =(e) => {
+    obtenerDataById(e.target.name,'Menu').then((pedido) => {
+        
+      if (pedido.descripcion === "Hamburguesa simple"||pedido.descripcion === "Hamburguesa doble") {
+        console.log("reconoce burgers");
+        setEstadoModal(true);
+      } else{
+        const p =pedidos.find((obj) => obj.id===pedido.id);
+        if(p===undefined){
+          setPedidos((ultimaListPedido)=>{
+            return [...ultimaListPedido,{...pedido,count:1}]})
+        }else{
+          pedidos.find((obj,index) => {
+            if(obj.id===pedido.id){
+              console.log(index);
+              setPedidos((ultimaListPedido) =>{
+                ultimaListPedido[index]={...ultimaListPedido[index], count:ultimaListPedido[index].count+1}
+                return ultimaListPedido
+              }) 
+            }
+            return true
+          });
+          /* setPedidos((ultimaListPedido) =>{
+            
+            const index=ultimaListPedido.indexOf(pedido);
+            ultimaListPedido[index]={...ultimaListPedido[index], count:ultimaListPedido[index].count+1}
+            return ultimaListPedido
+          }) */
+        }
+        
+      }
+    })
+  }; 
+useEffect(()=>{
+  console.log(pedidos);
+},[pedidos])
+
 
   const confirmarModal=(arrayExtras) =>{
     const [burger,adicional]=arrayExtras
-    if(pedido[pedido.length-1].categoria==='Hamburguesas'){
-      setPedido((listaPedidos) =>{
-        const ultimoPedido=listaPedidos[listaPedidos.length-1];
-        ultimoPedido.descripcion=ultimoPedido.descripcion+' '+burger;
-       // ultimoPedido.burger=burger;
-        ultimoPedido.adicional=adicional;
-        return listaPedidos;
-      })
-    }
-    console.log(burger,adicional);
+
+   /*  setUltimoPedido((ultimPedido) =>{
+      return {...ultimPedido,
+        id: ultimPedido.id+burger+adicional,
+        descripcion:ultimPedido.descripcion+' '+burger+',con  '+adicional,
+        sendToFactura:true}
+    }) */
     setEstadoModal(false)
   }
 
@@ -38,7 +95,7 @@ export const TomarOrden = () => {
         <h4>Mesero</h4>
         <div className="boxTomarOrdenMenu">
           <div className="boxTomarOrdenMenu2">
-            <Menu /* pedido={pedido} */ setPedido={setPedido} setEstadoModal={setEstadoModal} />
+            <Menu  moreClick={moreClick} />
             <Factura />
           </div>
           <div className="boxBtnTomarOrden">

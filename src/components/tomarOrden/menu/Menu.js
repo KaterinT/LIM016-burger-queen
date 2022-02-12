@@ -6,39 +6,55 @@ import "./menu.scss";
 
 import { MenuOptions } from "./MenuOptions";
 import { Productos } from "./Productos";
-import { obtenerDataFirestore } from "../../../data/listaProductos";
+import { obtenerDataById, obtenerDataFirestore } from "../../../data/listaProductos";
 // import {items} from '../../../data/listaProductos'
 
-export const Menu = ({ /* pedido, */ setPedido, setEstadoModal }) => {
-  const [orders, setOrders] = useState([]);
+export const Menu = ({ /* pedido, */ moreClick}) => {
+  /* const [orders, setOrders] = useState([]); */
   const [menuItems, setMenuItems] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("Desayuno");
 
-  const allCategories = ["Desayuno", "Hamburguesas", "Bebidas"];
+    // **Trae la data de Firebase en un array de objetos**
+    const getOrdersFirebase = async (category) => {
+      const document = await obtenerDataFirestore("Menu");
+      setMenuItems(document.filter((item) => item.categoria === category))
+    };
 
   useEffect(() => {
-    setMenuItems(orders.filter((item) => item.categoria === currentCategory));
-  }, [currentCategory, orders]);
+    getOrdersFirebase(currentCategory)
+   /*  setMenuItems(orders.filter((item) => item.categoria === currentCategory)); */
+  }, [currentCategory/* , orders */]);
   // console.log(menuItems)
 
-  // **Trae la data de Firebase en un array de objetos**
-  const getOrdersFirebase = async () => {
-    const document = await obtenerDataFirestore("Menu");
-    return document;
-  };
-  useEffect(() => {
+ /*  useEffect(() => {
     async function fetchList() {
       const listMenu = await getOrdersFirebase();
       setOrders(listMenu);
     }
     fetchList();
-  }, []);
+  }, []); */
 
-  const moreClick = (menuItem) => {
-    setPedido((listaPedidosAnterior) =>{
-      return [...listaPedidosAnterior,menuItem]
+/*   const moreClick =(e) => {
+    obtenerDataById(e.target.name,'Menu').then((pedido) => {
+        
+      if (pedido.descripcion === "Hamburguesa simple"||pedido.descripcion === "Hamburguesa doble") {
+        console.log("reconoce burgers");
+        setEstadoModal(true);
+        setUltimoPedido({...pedido, sendToFactura :false})  
+      } else{
+        setUltimoPedido((list)=>{
+
+        }{...pedido, sendToFactura :true})  
+      }
     })
-    console.log(menuItem.descripcion);
+  };  */ 
+    /* const itemSelected=pedido.filter((item) => item.id===e.target.name);
+    console.log(itemSelected[0]);
+
+    setPedido((listaPedidosAnterior) =>{
+      return [...listaPedidosAnterior,itemSelected[0]]
+    })
+    console.log(menuItem.descripcion); */
     /* if (pedido.find((obj) => obj.id === menuItem.id)) {
       // eslint-disable-next-line array-callback-return
       pedido.map((p) => {
@@ -55,17 +71,17 @@ export const Menu = ({ /* pedido, */ setPedido, setEstadoModal }) => {
     console.log("va bien"); */
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<
-    if (menuItem.descripcion === "Hamburguesa simple"||menuItem.descripcion === "Hamburguesa doble") {
+    /* if (itemSelected[0].descripcion === "Hamburguesa simple"||itemSelected[0].descripcion === "Hamburguesa doble") {
       console.log("reconoce burgers");
       setEstadoModal(true);
-    }
+    } */
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  };
+ 
 
   return (
     <div className="boxMenu">
-      <MenuOptions categories={allCategories}  setCurrentCategory={setCurrentCategory} />
-      <Productos  menuItems={menuItems} currentCategory={currentCategory} moreClick={moreClick} />
+      <MenuOptions  setCurrentCategory={setCurrentCategory} />
+      <Productos  menuItems={menuItems} /* currentCategory={currentCategory}  */moreClick={moreClick} />
     </div>
   );
 };

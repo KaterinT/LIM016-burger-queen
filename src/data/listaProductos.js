@@ -1,5 +1,5 @@
 import { db } from "../firebase.config";
-import { getDocs, collection } from "firebase/firestore"
+import { getDocs, collection, doc, getDoc, deleteDoc } from "firebase/firestore"
 
 
 
@@ -16,7 +16,15 @@ export const obtenerDataFirestore =(nameColection) => {
   });
   return array
 } 
+export const obtenerDataById = (id, nameColeccion) => {
+  const docRef = doc(db, nameColeccion, id);
+  const querySnapshot = getDoc(docRef).then((docs) => docs.data());
+  return querySnapshot;
+};
 
+export const eliminarDocFirestore = (id,nameColection) => {
+  deleteDoc(doc(db,nameColection,id))
+}
 
 
 

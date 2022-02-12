@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export const Modal = ({confirmarModal,cancelarModal}) => {
+
     const [burger,setBurger] =useState('');
     const [adicional,setAdicional] =useState('')
 
@@ -9,13 +10,13 @@ export const Modal = ({confirmarModal,cancelarModal}) => {
                 <h2>Opciones de hamburguesa</h2>
                 <div>
                     <label>
-                        <input type="radio" name="burger" /*value="res"  checked={burger==='res'&&true} */ onChange={()=>{setBurger('res')}}/>
+                        <input type="radio" name="burger"  onChange={()=>{setBurger('res')}}/>
                         Res    
                     </label>
                     <label>
-                        <input type="radio" name="burger" /*value="pollo"  checked={burger==='pollo'&&true} */ onChange={()=>{setBurger('pollo')}} />Pollo</label>
+                        <input type="radio" name="burger"  onChange={()=>{setBurger('pollo')}} />Pollo</label>
                     <label>
-                        <input type="radio" name="burger" /*value="vegana"  checked={burger==='vegana'&&true} */ onChange={()=>{setBurger('vegana')}}/>Vegana</label>
+                        <input type="radio" name="burger"  onChange={()=>{setBurger('vegana')}}/>Vegana</label>
                 </div>
                 <h2>Adicionales</h2>
                 <div>

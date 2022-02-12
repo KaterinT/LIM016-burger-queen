@@ -1,7 +1,28 @@
 import './factura.scss'
 import tacho from '../../../imagenes/basuraLlena2.png'
+import { useEffect, useState } from 'react';
 
-export const Factura = () => {
+export const Factura = ({factura}) => {
+//  const [pedido, setPedido] = useState([]);
+/* 
+  console.log(ultimoPedido); */
+/*   if (pedido.find((obj) => obj.id === ultimoPedido.id)) {
+    // eslint-disable-next-line array-callback-return
+    pedido.map((p) => {
+      if (p.id === ultimoPedido.id) {
+        p.count = p.count + 1;
+      }
+    });
+
+    setPedido([...pedido]);
+  } else {
+    ultimoPedido.count = 1;
+    setPedido([...pedido, ultimoPedido]);
+  }
+  useEffect(()=>{
+    console.log(pedido);
+  },[pedido])
+ */
   return (
     <div className="boxFactura">
       <div className="boxDescripcion">

@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
 import './menuOptions.scss'
 
-export const MenuOptions = ({categories, setCurrentCategory}) => {
+export const MenuOptions = ({ setCurrentCategory}) => {
+  
+  const categories = ["Desayuno", "Hamburguesas", "Bebidas"];
  /*  console.log(categories) */
   return (
     <div className="boxContenedorBtn">
