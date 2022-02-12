@@ -23,7 +23,7 @@
 
 .container {
   background: $blackOscuro; 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
+  background-image: linear-gradient(rgba(20, 10, 10, 0.829), rgba(31, 28, 17, 0.719)),
   url("../../imagenes/burguerVideo2.gif");
   background-size: 100vw 100vh;
   background-attachment: fixed ;
@@ -32,14 +32,20 @@
   
   h2 {
     color: $naranjaColor;
-    font-family: "Luckiest Guy", cursive;
+    // font-family: "Luckiest Guy", cursive;
+    font-family: 'Roboto';
     font-size: 7rem;
     -webkit-text-stroke: 1px $brownOscuro;
     margin: 0rem;
   }
   h1 {
-    color: $white;
-    font-family: "Yellowtail", cursive;
+    // color: $white;
+    // font-family: "Yellowtail", cursive;
+    // font-size: 4rem;
+    // margin: 0rem;
+
+    color: #c07e1d;
+    font-family: math;
     font-size: 4rem;
     margin: 0rem;
   }
@@ -79,18 +85,31 @@
   //   }
   // }
     button {
-    background-color:$yellowColor;
+    // background-color:$yellowColor;
+    // border-radius: 13px;
+    // font-size: 3rem;
+    // margin: 2rem;
+    // padding: 1rem 2rem;
+    // -webkit-text-stroke: 1px rgb(54, 44, 15);
+    // cursor: pointer;
+    // border-style: solid;
+    // border-color: #ffc107;
+    // /* border-width: 10px; */
+    // font-weight: bold;
+    // color: #3d2904;
+    background-color: #1c1b19;
     border-radius: 13px;
-    font-size: 3rem;
+    // font-size: 3rem;
+    font-size: 2rem;
     margin: 2rem;
     padding: 1rem 2rem;
-    -webkit-text-stroke: 1px rgb(54, 44, 15);
+    -webkit-text-stroke: 1px #362c0f;
     cursor: pointer;
     border-style: solid;
     border-color: #ffc107;
     /* border-width: 10px; */
     font-weight: bold;
-    color: #3d2904;
+    color: #c89d4e;
     @keyframes button {
       0%, 20%, 60%, 100% {
         -webkit-transform: translateY(0);

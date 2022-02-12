@@ -3,7 +3,8 @@
 .boxFactura {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:flex-start;
+  
 }
 .boxMesaCliente {
   display: flex;
@@ -28,7 +29,8 @@
     input {
       // width: 100%;
       width: 5rem;
-      background: $naranjaColor;
+      // background: $naranjaColor;
+      background: #100f0c;
       border: 2px solid $brownBordes;
       height: 1.2rem;
       border-radius: 0.2rem;
@@ -45,7 +47,8 @@
 .boxItemOrden {
   align-content: center;
   height: 3rem;
-  background: $yellowColor;
+  // background: $yellowColor;
+  background: #2e2d2a;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -57,7 +60,8 @@
     font-style: italic;
     font-weight: bold;
     line-height: 23px;
-    color: $brownOscuro2;
+    // color: $brownOscuro2;
+    color: #f1c375;
     margin: 0;
   }
 
@@ -97,3 +101,31 @@
     margin: 0;
   }
 }
+
+// thead,
+// tfoot {
+//     background-color: #838577;
+//     color: rgb(255, 255, 255);
+// }
+
+// tbody {
+//     background-color: #d3b551;
+// }
+
+// table {
+//   border-collapse: collapse;
+//   border: 2px solid rgb(200, 200, 200);
+//   letter-spacing: 1px;
+//   font-family: sans-serif;
+//   font-size: 0.9rem;
+// }
+
+// td,
+// th {
+//     // border: 1px solid rgb(253, 247, 247);
+//     padding: 5px 10px;
+// }
+
+// td {
+//     text-align: center;
+// }

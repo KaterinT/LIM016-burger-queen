@@ -9,8 +9,8 @@ import './tomarOrden.scss'
 export const TomarOrden = () => {
 
   const [pedido, setPedido] = useState([]);
-  console.log(pedido);
-
+  // console.log(pedido);
+  
   return (
     <div className="containert">
       <div className="boxTomarOrden">
@@ -18,7 +18,7 @@ export const TomarOrden = () => {
         <div className="boxTomarOrdenMenu">
           <div className="boxTomarOrdenMenu2">
             <Menu pedido={pedido} setPedido={setPedido} />
-            <Factura />
+            <Factura pedido={pedido} />
           </div>
           <div className="boxBtnTomarOrden">
                 <button>CANCELAR</button>

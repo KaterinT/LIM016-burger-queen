@@ -20,7 +20,7 @@ export const Productos = ({menuItems,moreClick}) => {
                 <p>S/{precio}.00</p>
               </div>
               <div className="btnAgregar">
-                <button onClick={() => moreClick(menuItem)}>
+                <button onClick={() => moreClick(menuItem)} name={id}>
                   Agregar
                 </button>
               </div>

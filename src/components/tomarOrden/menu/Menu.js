@@ -53,12 +53,11 @@ export const Menu = ({pedido,setPedido}) => {
     const moreClick = (menuItem) => {
       if (pedido.find((obj) => obj.id === menuItem.id)) {
         // eslint-disable-next-line array-callback-return
-        pedido.map((p) => {
-          if (p.id === menuItem.id) {
-            p.count = p.count + 1;
+        pedido.map((obj) => {
+          if (obj.id === menuItem.id) {
+            obj.count += 1;
           }
         });
-  
         setPedido([...pedido]);
       } else {
         menuItem.count = 1;
