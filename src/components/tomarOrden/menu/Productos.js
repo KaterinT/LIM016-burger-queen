@@ -2,9 +2,6 @@ import './productos.scss'
 
 export const Productos = ({menuItems,moreClick}) => {
 
-  const prueba = () => {
-    console.log('probando click')
-  }
   return (
     <div className='boxProductos'>
       {menuItems.map((menuItem) => {

@@ -1,6 +1,6 @@
 import "./cocinero.scss";
 import React, { useEffect, useState } from "react";
-import { obtenerDataOrdenes } from "../../data/listaProductos";
+import { obtenerDataFirestore } from "../../data/listaProductos";
 import { TemplatePedidos } from "./templatesCocinero";
 import { updateDoc, doc} from "firebase/firestore";
 import { db } from "../../firebase.config";
@@ -16,19 +16,17 @@ export const Cocinero = () => {
   const [estadoOrdenes, setEstado] =useState(false) 
 
   const recibirOrdenes= async (estadoBoleano) => {
-    const arrayData =await obtenerDataOrdenes();
+    const arrayData =await obtenerDataFirestore('ordenes');
     setOrdenes(arrayData.filter((orden) => orden.estado === estadoBoleano));
   };
-
-  useEffect(() => {
-    recibirOrdenes(false);
+   useEffect(() => {
     return () => {
       setOrdenes([]);
     };
-  },[])
+   },[])
 
   useEffect(() => {
-    recibirOrdenes(estadoOrdenes);
+    recibirOrdenes(estadoOrdenes);    
   },[estadoOrdenes,ordenes])
 
   const handleToDo = () => {
