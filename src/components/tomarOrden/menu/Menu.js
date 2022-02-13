@@ -6,7 +6,7 @@ import "./menu.scss";
 
 import { MenuOptions } from "./MenuOptions";
 import { Productos } from "./Productos";
-import { obtenerDataById, obtenerDataFirestore } from "../../../data/listaProductos";
+import { obtenerDataById, obtenerDataFiltrada, obtenerDataFirestore } from "../../../data/listaProductos";
 // import {items} from '../../../data/listaProductos'
 
 export const Menu = ({ /* pedido, */ moreClick}) => {
@@ -16,8 +16,8 @@ export const Menu = ({ /* pedido, */ moreClick}) => {
 
     // **Trae la data de Firebase en un array de objetos**
     const getOrdersFirebase = async (category) => {
-      const document = await obtenerDataFirestore("Menu");
-      setMenuItems(document.filter((item) => item.categoria === category))
+      const document = await obtenerDataFiltrada("Menu","categoria",category);
+      setMenuItems(document)
     };
 
   useEffect(() => {
