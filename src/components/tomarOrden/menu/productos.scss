@@ -53,20 +53,33 @@
       width: 100%;
       justify-content: center;
       button {
+        // padding: 0.4rem;
+        // width: 6.4rem;
+        // background: $yellowClaro;
+        // border-radius: 4px;
+        // font-size: 1rem;
+        // border: 2px solid $brownBordes;
+        // // margin: 0 0 1rem 0;
+        // font-family: Roboto;
+        // font-style: italic;
+        // font-weight: bold;
+        // cursor: pointer;
         padding: 0.4rem;
         width: 6.4rem;
-        background: $yellowClaro;
+        background: #bea81b;
         border-radius: 4px;
         font-size: 1rem;
-        border: 2px solid $brownBordes;
-        // margin: 0 0 1rem 0;
+        border: 2px solid #6a5720;
         font-family: Roboto;
         font-style: italic;
         font-weight: bold;
         cursor: pointer;
+        color: #fff8bd;
+
         &:hover {
           background: $yellowColor;
         }
+
       }
       }
     }

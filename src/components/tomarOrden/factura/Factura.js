@@ -1,5 +1,6 @@
 import './factura.scss'
-import tacho from '../../../imagenes/basuraLlena2.png'
+import tacho from '../../../imagenes/contenedor.png'
+import { useEffect, useState } from 'react';
 
 export const Factura = ({pedido}) => {
 
@@ -24,18 +25,23 @@ export const Factura = ({pedido}) => {
           <p>Item</p>
           <p>Precio C/U</p>
         </div>
+        <div className="boxPedidos">
         {pedido.length > 0 && pedido.map((element) => (
         <div key={element.id} className="boxDescripcionCadaItemOrden">
           <section className="descripcionOrdenItem">
-            <p>{element.count}</p>
+            <p>2</p>
           </section><section className="descripcionOrdenItem">
             <p>{element.descripcion}</p>
           </section><section className="descripcionOrdenItem">
             <p>S/ {element.precio}.00</p>
+          </section>
+          <section className="descripcionOrdenItem">
             <img src={tacho} alt="" />
           </section>
         </div>
         ))}
+        </div>
+
       </div>
       <div className="boxTotal">
         <p className="boxTotalDesc">TOTAL</p>
@@ -45,51 +51,3 @@ export const Factura = ({pedido}) => {
 
   );  
 };
-
-// export const Factura = ({pedido}) => {
-//   return (
-//     <div className='boxFactura'>
-//       <div classNameName="boxDescripcion">
-//         <div classNameName="BoxMC">
-//           <div classNameName="boxnombreCliente">
-//             <h3>CLIENTE</h3>
-//             <input type="text" />
-//           </div>
-//           <div classNameName="boxnumMesa">
-//             <h3>MESA</h3>
-//             <input type="text" />
-//           </div>
-//         </div>
-//       </div>
-      
-//       <table className="table table-borderless factura">
-//         <thead>
-//           <tr>
-//             <th>Cant.</th>
-//             <th>Descripcion</th>
-//             <th>Precio Unitario</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           <tr>
-//             <td>1</td>
-//             <td>Clases de Cha-Cha-Cha</td>
-//             <td>3,000.00</td>
-//           </tr>
-//           <tr>
-//             <td>3</td>
-//             <td>Clases de Salsa</td>
-//             <td>4,000.00</td>
-//           </tr>
-//         </tbody>
-//         <tfoot>
-//           <tr>
-//             <th></th>
-//             <th>Total Factura</th>
-//             <th>RD$15,000.00</th>
-//           </tr>
-//         </tfoot>
-//       </table>
-//     </div>
-//   );
-// };

@@ -17,6 +17,9 @@ export const Inicio = () => {
 
   return (
     <div className="container">
+      <div>
+        <p>hola hola</p>
+      </div>
       <div className="container-title">
         <h1>
           Original Taste
