@@ -18,6 +18,7 @@
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
+    box-shadow: rgb(255 255 255 / 27%) 0px 0px 0.25em, rgb(224 235 255 / 17%) 0px 0.25em 1em;
     .boxDescripcionProd {
       // width: 70%;
       // display: flex;
@@ -75,6 +76,7 @@
         font-weight: bold;
         cursor: pointer;
         color: #fff8bd;
+        box-shadow: rgb(28 24 13 / 25%) 0px 5px 15px 0px;
 
         &:hover {
           background: $yellowColor;
