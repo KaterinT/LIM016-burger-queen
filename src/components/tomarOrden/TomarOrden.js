@@ -35,7 +35,7 @@ export const TomarOrden = () => {
   };
 
   const confirmarModal = (arrayExtras) => {
-    const [burger, adicional] = arrayExtras;
+    const [burger, adicional] = arrayExtras;// burger sea requerido estrictamente y el adicional y ponerle condiciones
     obtenerDataById(identificador, "Menu").then((pedido) => {
       const p = pedidos.find((obj) => obj.id === pedido.id + burger + adicional);
       
@@ -62,9 +62,11 @@ export const TomarOrden = () => {
   const cancelarModal = () => {
     setEstadoModal(false);
   };
+
+
   const subirDataPedido = () =>{
-    const cliente=document.getElementById('cliente').value;
-    const mesa=document.getElementById('numeroMesa').value;
+    const cliente=document.getElementById('cliente').value;//requerido estrictamente
+    const mesa=document.getElementById('numeroMesa').value;//requerido estrictamente
     const pedidoToSubir ={
       cliente:cliente,
       mesa:mesa,

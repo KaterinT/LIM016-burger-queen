@@ -10,7 +10,8 @@ import { db } from "../../firebase.config";
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
 export const Cocinero = () => {
-  
+/*   const [pedidoHechos, setHechos] =useState()
+  const [pedidosNoHechos, setNoHcehos] =useState() */
   const [ordenes, setOrdenes] = useState();
   const [[bttnToDo, bttnDone], setNameClass]=useState(['clicked','no-clicked']);
   const [estadoOrdenes, setEstado] =useState(false) 
@@ -27,7 +28,7 @@ export const Cocinero = () => {
 
   useEffect(() => {
     recibirOrdenes(estadoOrdenes);    
-  },[estadoOrdenes])
+  },[estadoOrdenes/*,ordenes */])
 
   const handleToDo = () => {
     setNameClass(['clicked','no-clicked']);
