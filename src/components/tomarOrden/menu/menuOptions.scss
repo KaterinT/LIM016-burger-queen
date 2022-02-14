@@ -27,7 +27,8 @@
       &:hover {
         background: $yellowColor;
         border-radius: 10px 10px 0px 0px;
-        color:$blackColor
+        color:$blackColor;
+        transition: 0.5s;
       }
       // &:active {
       //   background: $yellowColor;
@@ -39,5 +40,19 @@
     border-top: 2px solid $brownLineas;
     width: 98%;
   }
+  @media(max-width:775px) {
+    .boxMenu {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid #F1C375;
+      box-sizing: border-box;
+    }
+    .boxBtn {
+      button {
+        padding: 0 0.3rem;  
+      }
+    }
+  }
+
 }
 

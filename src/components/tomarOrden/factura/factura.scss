@@ -1,9 +1,23 @@
 @import "../../../variables.scss";
 
 .boxFactura {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content:space-between;
+  // height: auto;
+  // width: 34%;
+  // background: rgba(0, 0, 0, 0.55);
+  // border: 1px solid $naranjaColor;
+  // box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
+  height: auto;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #f1c375;
+  box-sizing: border-box;
+  margin: 0 0 0 2rem;
   
 }
 .boxMesaCliente {
@@ -99,8 +113,15 @@
 
 }
 
-@media (max-width: 1214px) {
+      
+@media(max-width:775px) {
   .boxPedidos {
     height: 570px;
+
+  }
+  .boxFactura {
+    width: 100%;
+    margin: 2rem 0 0 0;
   }
 }
+
