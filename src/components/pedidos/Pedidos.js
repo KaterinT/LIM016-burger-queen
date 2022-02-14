@@ -1,10 +1,6 @@
-// import React from "react";
-// import ReacDOM from "react-dom";
 import './pedidos.scss';
-import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from '../../firebase.config';
 import { useEffect, useState } from 'react';
-import { obtenerDataFirestore } from '../../data/listaProductos';
+import { eliminarDocFirestore, obtenerDataFirestore } from '../../data/listaProductos';
 
 const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   return pedidosListos.map((pedido) => {
@@ -25,7 +21,6 @@ const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
 
 export const Pedidos = () => {
 
-  
 const [ordenesListas, setOrdenes]=useState();
 
 const obtenerOrdenesListas = async () => {
@@ -46,7 +41,7 @@ useEffect(() => {
 },[ordenesListas])
 
 const entregarPedido = (e) => {
-  deleteDoc(doc(db,'ordenes',e.target.name))
+  eliminarDocFirestore(e.target.name,'ordenes')
 }
   return <>
           <h4>Mesero</h4>
