@@ -1,14 +1,29 @@
 @import "../../../variables.scss";
 
 .boxFactura {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content:space-between;
+  // height: auto;
+  // width: 34%;
+  // background: rgba(0, 0, 0, 0.55);
+  // border: 1px solid $naranjaColor;
+  // box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: auto;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #f1c375;
+  box-sizing: border-box;
+  margin: 0 0 0 2rem;
+  
 }
 .boxMesaCliente {
   display: flex;
   flex-direction: row;
-  height: 36%;
+  height: 3.5rem;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -28,7 +43,8 @@
     input {
       // width: 100%;
       width: 5rem;
-      background: $naranjaColor;
+      // background: $naranjaColor;
+      background: #100f0c;
       border: 2px solid $brownBordes;
       height: 1.2rem;
       border-radius: 0.2rem;
@@ -39,61 +55,73 @@
         }
     }
   }
-
-  // background: aqua;
 }
-.boxItemOrden {
-  align-content: center;
-  height: 3rem;
-  background: $yellowColor;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
 
+.boxItemOrden,.boxTotal{
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr 1fr;
+  text-align: center;
+  font-size: 1rem;
+  align-content: stretch;
+  justify-content: space-evenly;
+  font-family: "RocknRoll One", sans-serif;
+  color: aliceblue;
+  align-items: center;
+  // margin: 0.5rem 0;
+  // padding: 1rem 0;
+  // background-color: #3a372c;
+  
+  background-color: #483b0a;
+  padding: 0.4rem;
   p {
-    font-family: Roboto;
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: bold;
-    line-height: 23px;
-    color: $brownOscuro2;
     margin: 0;
   }
-
 }
 
-.boxDescripcionCadaItemOrden {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0.5rem;
-  .descripcionOrdenItem {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  p {
-    text-decoration: none;
-    color: #ffff;
-    font-family: "Roboto", sans-serif;
-    margin: 0 10px;
-    font-size: 1.2rem;
+.boxPedidos {
+  height: 210px;
+  overflow: scroll;
+  .boxDescripcionCadaItemOrden {
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr 1fr;
+    grid-column-gap: -3rem;
+    column-gap: 1%;
+    padding: -1rem;
+    /* row-gap: 37%; */
+    text-align: center;
+    grid-template-rows: auto;
+    align-items: center;
+    margin: 0.5rem 0;
+    p {
+      margin: 0;
+      font-size: 1rem;
+      font-family: "RocknRoll One", sans-serif;
+    }
+    img {
+      width: 1.1rem;
+      cursor:pointer;
+    }
   }
 }
 
 .boxTotal {
-  height: 3rem;
-  background: $naranjaColor;
-  align-items: center;
-  justify-content: space-evenly;
   display: flex;
+  // background:#413932;
+  background-color: #483b0a;
+  justify-content: space-around;
 
-  .boxTotalDesc {
-    font-family: Roboto;
-    font-size: 1.2rem;
-    font-style: italic;
-    font-weight: bold;
-    line-height: 23px;
-    color: $brownOscuro2;
-    margin: 0;
+}
+
+      
+@media(max-width:775px) {
+  .boxPedidos {
+    height: 570px;
+
+  }
+  .boxFactura {
+    width: 100%;
+    margin: 2rem 0 0 0;
   }
 }
+

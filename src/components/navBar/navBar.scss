@@ -33,8 +33,10 @@ h4 {
 .boxNav {
   display: flex;
   margin: 0 4%;
-  padding: 1rem 0;
+  // padding: 1rem 0;
   justify-content: space-between;
+  // max-width: 1200px;
+  // margin: 0 auto;
   .boxOptions {
     width: 85%
   }
@@ -48,14 +50,19 @@ h4 {
     align-items: flex-end;
     justify-content: space-around;
     margin: 0 0px 0 20%;
-    a{
+    a,.iconNav {
+    
+      size:1rem;
+      color:#ffff;
+      background: none;
       text-decoration: none;
       color: $white;
       font-family: 'Roboto', sans-serif;
       margin: 0 10px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       &:hover {
         color:$yellowClaro;
+        transition: 0.5s;
 
       }
     }
@@ -66,4 +73,84 @@ h4 {
     padding: 0;
     margin: 20px 10px 0 auto;
   }
+}
+
+.navToggle {
+  color: #ffff;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  padding: 0 20 px;
+  display:none;
+}
+
+@media(max-width:775px) {
+
+  .navOptions {
+    flex-direction: column;
+    background-color: rgba(23, 48, 48, 0.404);
+    position: fixed;
+    top: 72px;
+    left: 100%;
+    transition: left 0.9s;
+  
+  }
+
+  .navOptionsOpen {
+    left: 0;
+    flex-direction: column;
+    background-color: rgba(7, 6, 6, 0.938);
+    position: fixed;
+    top: 72px;
+    transition: 0.9s;
+  }
+
+  .boxOptions {
+    nav {
+    margin: 0;
+    align-items: center;
+    width: 100%;
+    }
+  }
+
+  img {
+    width: 6rem;
+  }
+
+  .navToggle {
+    height: 4.5rem;
+    display: block;
+    position: fixed;
+    width: 100%;
+    background: #040206;
+    margin: 0;
+    text-align: -webkit-right;
+    padding: 0 1.5rem;
+    color: #ffff;
+    border: none;
+    font-size: 2rem;
+  }
+  .boxNav {
+    flex-direction: column;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h4 {
+    margin: 3rem 0 0 3.5rem;
+  }
+
+  .boxMenu {
+    width: 100%;
+    .boxProdUnidad {
+      width: 16rem;
+    }
+  }
+  @media(max-width:775px) {
+    .logo {
+      display: none;
+    }
+  }
+
 }

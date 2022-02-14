@@ -12,44 +12,15 @@
   background-color: rgba(0, 0, 0, 0.856);
   .modalOpciones{
     width: 40%;
-    
     background-color: aliceblue;
   }
 }
 .containert {
-  // height: 79%;
-  // padding: 0rem 1.5rem;
   margin: 0;
-  // margin: 0 1.3rem;
   .boxTomarOrden {
-    // background:$brownLineas;
     height: 100% ;
-    /* .boxtitleUsuario {
-      display: flex;
-      height: 9%;
-      flex-direction: row;
-      align-items: center;
-      .boxTitle {
-        align-items: center;
-        background: $yellowOscuro;
-        display: flex;
-        height: 2rem;
-        justify-content: space-evenly;
-        width: 8rem;
-        // margin: 0 1rem;
-        border-radius: 23px 0px;
-        // position: absolute;
-        margin: 1rem 0;
-        p {
-          color: $yellowColor;
-          margin: 0;
-          font-family: 'Roboto', sans-serif;
-          font-size: larger;
-        }
-      }
-    } */
+
     .boxTomarOrdenMenu {
-      // background-color:#232344;
       display: flex;
       flex-direction: column;
       height: 91%;
@@ -59,36 +30,21 @@
         display: flex;
         justify-content: space-between;
         height: 90%;
-        // margin: 1.8rem 1rem 1rem 1rem;
         margin: 2.5vh 2% 1.4% 2%;
-        .boxMenu {
-          width: 63%;
-          background: rgba(0, 0, 0, 0.55);
-          border: 1px solid #F1C375;
-          box-sizing: border-box;
-        }
-        .boxFactura {
-          width: 34%;
-          background: rgba(0, 0, 0, 0.55);
-          border: 1px solid $naranjaColor;
-          box-sizing: border-box;
-
-        }
+      }
+      .boxMenu {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid #F1C375;
+        box-sizing: border-box;
       }
       .boxBtnTomarOrden {
         align-items: center;
         width: 100%;
-        // background-color: aliceblue;
         display: flex;
         flex-wrap: wrap;
         height: 10%;
         justify-content: center;
-        /* .boxBtnTomarOrden2 {
-          align-items: center;
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          padding: 1rem; */
           button {
             background: $yellowColor;
             border: 2px solid $brownLineas;
@@ -103,11 +59,28 @@
             margin: 0.5rem;
             width: 12rem;
             padding: 0.2rem;
-
-            // border-radius: 9px;
-          /* } */
         }
       }
     }
   }
+  @media(max-width:775px) {
+
+    .boxTomarOrdenMenu {
+      display: flex;
+      flex-direction: column;
+      height: 91%;
+      margin: 0 1.3rem;
+      padding: 0rem 1.5rem;
+      .boxTomarOrdenMenu2 {
+        display: flex;
+        flex-direction: column;
+        height: 91%;
+        margin: 0 1.3rem;
+        padding: 0rem 1.5rem;
+        
+      }
+    }
+
+  }
+
 }

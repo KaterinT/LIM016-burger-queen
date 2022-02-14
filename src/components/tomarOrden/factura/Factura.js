@@ -1,5 +1,6 @@
 import './factura.scss'
-import tacho from '../../../imagenes/basuraLlena2.png'
+import tacho from '../../../imagenes/contenedor.png'
+import { useEffect, useState } from 'react';
 
 export const Factura = ({factura}) => {
   let total = 0;
@@ -48,5 +49,6 @@ export const Factura = ({factura}) => {
         <span className="boxTotalDesc">s/{total}.00</span>
       </div>
     </div>
-  );
+
+  );  
 };

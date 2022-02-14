@@ -2,6 +2,7 @@
 import {useNavigate}  from 'react-router-dom'
 // import ReacDOM from "react-dom";
 import './inicio.scss'
+import promo from '../../imagenes/deliciosBurger.gif'
 
 export const Inicio = () => {
 
@@ -17,6 +18,9 @@ export const Inicio = () => {
 
   return (
     <div className="container">
+      <div>
+        <img src="" alt="" />
+      </div>
       <div className="container-title">
         <h1>
           Original Taste
