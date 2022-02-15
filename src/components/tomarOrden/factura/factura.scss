@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: auto;
-  width: 50%;
+  width: 90%;
   background: rgba(0, 0, 0, 0.55);
   border: 1px solid #f1c375;
   box-sizing: border-box;
@@ -79,7 +79,7 @@
 }
 
 .boxPedidos {
-  height: 210px;
+  height: 258px;
   overflow: scroll;
   .boxDescripcionCadaItemOrden {
     color: aliceblue;
@@ -116,7 +116,7 @@
       
 @media(max-width:775px) {
   .boxPedidos {
-    height: 570px;
+    height: 168px;
 
   }
   .boxFactura {

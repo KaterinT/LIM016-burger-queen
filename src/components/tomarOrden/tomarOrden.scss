@@ -19,6 +19,17 @@
   margin: 0;
   .boxTomarOrden {
     height: 100% ;
+    .horaAc{
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      border-radius: 20px 0px;
+      height: 2rem;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      margin: 2.5vh 5rem 0 5.3%;
+    }
 
     .boxTomarOrdenMenu {
       display: flex;
@@ -33,10 +44,17 @@
         margin: 2.5vh 2% 1.4% 2%;
       }
       .boxMenu {
+        // width: 100%;
+        // width: 70%;
+        // background: rgba(0, 0, 0, 0.55);
+        // border: 1px solid #F1C375;
+        // box-sizing: border-box;
+
         width: 100%;
         background: rgba(0, 0, 0, 0.55);
         border: 1px solid #F1C375;
         box-sizing: border-box;
+        padding: 0 1rem 1rem 1rem;
       }
       .boxBtnTomarOrden {
         align-items: center;
@@ -62,7 +80,9 @@
         }
       }
     }
+
   }
+
   @media(max-width:775px) {
 
     .boxTomarOrdenMenu {
@@ -80,7 +100,18 @@
         
       }
     }
+    .containert {
+      .boxTomarOrden {
+        .horaAc {
+          margin: 8.5vh 5rem 0 5.3%;
+        }
+      }
+    }
 
   }
 
+
+
 }
+
+
