@@ -29,6 +29,7 @@ export const Factura = ({factura}) => {
           <p>Item</p>
           <p>Precio C/U</p>
         </div>
+        <div className='boxPedidos'>
         {factura.map((pedido)=>{
           const {id, count,descripcion,precio}=pedido;
         return (<div key={id} className="boxDescripcionCadaItemOrden">
@@ -43,6 +44,7 @@ export const Factura = ({factura}) => {
                   <img src={tacho} alt="" />
                 </section>
               </div>)})}
+              </div>
       </div>
       <div className="boxTotal">
         <p className="boxTotalDesc">TOTAL</p>
