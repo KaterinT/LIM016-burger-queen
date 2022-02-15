@@ -93,3 +93,45 @@
     background-color:rgba(0, 0, 0, 0.55);
     color: #F1C375;
 }
+@media (max-width:820px){
+    .pedidos{
+
+        height: 46%;
+        width: 46%;
+    }
+    #eventosChef{
+        height: 76vh;
+    }
+    .pedidos-al-chef{
+        margin-top: 2vh;
+        button{
+            font-size: 18px;
+            height: 50%;
+            width: 25%;
+        }
+    }
+
+
+
+
+
+
+}
+
+@media (max-width:425px){
+    .pedidos-al-chef{
+        button{
+            font-size: 18px;
+            height: 60%;
+            width: 40%;
+        }
+    }
+    .pedidos{
+        width: 90%;
+        margin: 4%;
+    }
+    #eventosChef{
+        width: 80%;
+        margin: 0 10%;
+    }
+}
