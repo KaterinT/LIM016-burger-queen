@@ -14,12 +14,23 @@ const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   } )
 }
 
-
-
-
-
-
 export const Pedidos = () => {
+
+  const locale = 'en';
+  const [today, setDate] = useState(new Date()); 
+
+  useEffect(() => {
+      const timer = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, []);
+
+  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
+
+  //*****/
 
 const [ordenesListas, setOrdenes]=useState();
 
@@ -43,7 +54,9 @@ useEffect(() => {
 const entregarPedido = (e) => {
   eliminarDocFirestore(e.target.name,'ordenes')
 }
+
   return <>
+          <p className="horaAc">{horaAc}</p>
           <h4>Mesero</h4>
           <ul id='listaPedidos'>
             <p>PEDIDOS LISTOS</p>

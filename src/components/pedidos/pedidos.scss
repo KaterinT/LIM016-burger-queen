@@ -17,7 +17,7 @@
   }
   button {
     background: #f59300;
-    mix-blend-mode: lighten;
+    // mix-blend-mode: lighten;
     border: 2px solid #a06102;
     border-radius: 9px;
   }
@@ -34,4 +34,16 @@
     justify-content: center;
     font-size: 28px;
   }
+}
+
+.horaAc{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20px 0px;
+  height: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  margin: 2.5vh 5rem 0 5.3%;
 }

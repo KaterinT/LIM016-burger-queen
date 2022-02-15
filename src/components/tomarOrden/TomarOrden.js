@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { Factura } from "./factura/Factura";
 import { Menu } from "./menu/Menu";
 import { Modal } from "./modalExtras/modal";
@@ -6,6 +6,22 @@ import "./tomarOrden.scss";
 import { obtenerDataById, subirPedidoFirestore } from "../../data/listaProductos";
 
 export const TomarOrden = () => {
+
+  const locale = 'en';
+  const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
+
+  useEffect(() => {
+      const timer = setInterval(() => { 
+      setDate(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, []);
+
+  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
+
+  // ****************
   const [estadoModal, setEstadoModal] = useState(false);
   const [pedidos, setPedidos] = useState([]);
   const [identificador, setId] = useState("");
@@ -63,7 +79,9 @@ export const TomarOrden = () => {
     setEstadoModal(false);
   };
 
-
+  // 
+  // 
+  
   const subirDataPedido = () =>{
     const cliente=document.getElementById('cliente').value;//requerido estrictamente
     const mesa=document.getElementById('numeroMesa').value;//requerido estrictamente
@@ -71,7 +89,7 @@ export const TomarOrden = () => {
       cliente:cliente,
       mesa:mesa,
       pedidosArray:pedidos,
-      hora:'nose',
+      hora: horaAc,
       estado:false,
     }
     subirPedidoFirestore(pedidoToSubir);
@@ -86,6 +104,7 @@ export const TomarOrden = () => {
     <>
       <div className="containert">
         <div className="boxTomarOrden">
+          <p className="horaAc">{horaAc}</p>
           <h4>Mesero</h4>
           <div className="boxTomarOrdenMenu">
             <div className="boxTomarOrdenMenu2">

@@ -10,6 +10,22 @@ import { db } from "../../firebase.config";
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
 export const Cocinero = () => {
+
+  const locale = 'en';
+  const [today, setDate] = useState(new Date());
+
+  useEffect(() => {
+      const timer = setInterval(() => { 
+      setDate(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(timer); 
+    }
+  }, []);
+
+  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
+
+  // ****************
 /*   const [pedidoHechos, setHechos] =useState()
   const [pedidosNoHechos, setNoHcehos] =useState() */
   const [ordenes, setOrdenes] = useState();
@@ -48,6 +64,7 @@ export const Cocinero = () => {
 
   return (
     <div id="cocinero">
+      <p className="horaAc">{horaAc}</p>
       <h4>Cocinero</h4>
       <section className="pedidos-al-chef">
         <button onClick={handleToDo} id="toDo" className={bttnToDo}>
