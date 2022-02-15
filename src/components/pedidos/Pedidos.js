@@ -1,6 +1,6 @@
 import './pedidos.scss';
 import { useEffect, useState } from 'react';
-import { eliminarDocFirestore, obtenerDataFirestore } from '../../data/listaProductos';
+import { eliminarDocFirestore, obtenerDataFiltrada, obtenerDataFirestore } from '../../data/listaProductos';
 
 const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   return pedidosListos.map((pedido) => {
@@ -32,24 +32,28 @@ export const Pedidos = () => {
 
   //*****/
 
-const [ordenesListas, setOrdenes]=useState();
+const [ordenesListas, setOrdenes]=useState([]);
 
-const obtenerOrdenesListas = async () => {
-  const ordenes = await obtenerDataFirestore('ordenes');
-  setOrdenes(ordenes.filter((orden) => orden.estado===true));
-}
-
-
+/* const obtenerOrdenesListas = async () => {
+  const ordenes = await obtenerDataFiltrada('ordenes','estado',true);
+  setOrdenes(ordenes);
+} */
+/* 
 useEffect(() => {
-  obtenerOrdenesListas();
-  return () => {
-    setOrdenes([]);
-  };
+  return () =>{
+    setOrdenes([])
+  }
+
 },[])
 
 useEffect(() => {
+  setOrdenes(ordersListas.filter((obj) => obj.estado===true))
+
+},[ordersListas]) */
+/* 
+useEffect(() => {
   obtenerOrdenesListas();
-},[ordenesListas])
+},[ordenesListas]) */
 
 const entregarPedido = (e) => {
   eliminarDocFirestore(e.target.name,'ordenes')

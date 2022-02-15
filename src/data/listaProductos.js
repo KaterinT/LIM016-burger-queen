@@ -1,5 +1,5 @@
 import { db } from "../firebase.config";
-import { getDocs, collection, doc, getDoc, deleteDoc, query, where, addDoc } from "firebase/firestore"
+import { getDocs, collection, doc, getDoc, deleteDoc, query, where, addDoc, onSnapshot } from "firebase/firestore"
 
 
 export const obtenerDataFiltrada =(nameColection,filter,condition) =>{

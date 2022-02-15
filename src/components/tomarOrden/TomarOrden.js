@@ -23,6 +23,7 @@ export const TomarOrden = () => {
 
   // ****************
   const [estadoModal, setEstadoModal] = useState(false);
+  const [alarmBurger, setAlarm] = useState('noActive')
   const [pedidos, setPedidos] = useState([]);
   const [identificador, setId] = useState("");
 
@@ -52,6 +53,8 @@ export const TomarOrden = () => {
 
   const confirmarModal = (arrayExtras) => {
     const [burger, adicional] = arrayExtras;// burger sea requerido estrictamente y el adicional y ponerle condiciones
+    console.log(adicional);
+    if(burger!==''){
     obtenerDataById(identificador, "Menu").then((pedido) => {
       const p = pedidos.find((obj) => obj.id === pedido.id + burger + adicional);
       
@@ -62,7 +65,7 @@ export const TomarOrden = () => {
               count: 1,
               descripcion: pedido.descripcion + " " + burger + " " + adicional,
               id: pedido.id + burger + adicional,
-              precio:pedido.precio+1
+              precio:(adicional==='')?pedido.precio:pedido.precio+1
             },
           ]);
       } else {
@@ -72,7 +75,11 @@ export const TomarOrden = () => {
         setPedidos([...pedidos]);
       }
     });
+    
     setEstadoModal(false);
+  }else{
+    setAlarm('isActive')
+  }
   };
 
   const cancelarModal = () => {
@@ -119,7 +126,7 @@ export const TomarOrden = () => {
         </div>
       </div>
       {estadoModal === true && (
-        <Modal confirmarModal={confirmarModal} cancelarModal={cancelarModal} />
+        <Modal confirmarModal={confirmarModal} cancelarModal={cancelarModal} alarm={alarmBurger} alarmSet={setAlarm} />
       )}
     </>
   );
