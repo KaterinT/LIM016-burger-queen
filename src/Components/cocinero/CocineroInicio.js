@@ -1,12 +1,9 @@
 import "./cocinero.scss";
 import React, { useEffect, useState } from "react";
-import {
-  obtenerDataFiltrada,
-  obtenerDataFirestore,
-} from "../../data/listaProductos";
 import { TemplatePedidos } from "./templatesCocinero";
-import { updateDoc, doc, onSnapshot, collection } from "firebase/firestore";
+import { updateDoc, doc} from "firebase/firestore";
 import { db } from "../../firebase.config";
+import { actualizarDoc } from "../../data/listaProductos";
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
  Aqui empieza la vista COCINERO
@@ -33,20 +30,19 @@ export const Cocinero = ({orders}) => {
   });
 
   // ****************
-  const [ordenes, setOrdenes] = useState();
+  const [ordenesFiltradas, setOrdenesFilter] = useState();
   const [[bttnToDo, bttnDone], setNameClass] = useState(["clicked","no-clicked"]);
   const [estadoOrdenes, setEstado] = useState(false);
   
 
   useEffect(() => {
-    console.log(orders);
     return () => {
-      setOrdenes([]);
+      setOrdenesFilter([]);
     };
   }, []);
 
   useEffect(() => {
-    setOrdenes(orders.filter((obj) => obj.estado === estadoOrdenes));
+    setOrdenesFilter(orders.filter((obj) => obj.estado === estadoOrdenes));
   }, [estadoOrdenes, orders]);
 
   const handleToDo = () => {
@@ -60,8 +56,8 @@ export const Cocinero = ({orders}) => {
     setEstado(true);
   };
   const cambioEstadoOrden = (id) => {
-    console.log(id);
-    updateDoc(doc(db, "ordenes",id), { estado: true, horaEntrega:horaAc });
+    actualizarDoc('ordenes',id,{ estado: true, horaEntrega:horaAc });
+    //updateDoc(doc(db, "ordenes",id), { estado: true, horaEntrega:horaAc });
     setEstado(false);
   };
 
@@ -78,8 +74,8 @@ export const Cocinero = ({orders}) => {
         </button>
       </section>
       <section id="eventosChef">
-        {ordenes !== undefined &&
-          ordenes.map((objeto) => (
+        {ordenesFiltradas !== undefined &&
+          ordenesFiltradas.map((objeto) => (
             <div key={objeto.id} id={objeto.id} className="pedidos">
               <TemplatePedidos
                 objeto={objeto}

@@ -44,8 +44,6 @@ export const TomarOrden = () => {
           let agregarCount=pedidos[index]
           agregarCount.count= agregarCount.count+1;
           setPedidos([...pedidos])
-        
-
         }
       }
     });
