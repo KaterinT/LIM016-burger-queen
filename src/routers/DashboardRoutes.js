@@ -11,7 +11,20 @@ import { db } from "../firebase.config";
 
 export const DashboardRoutes = () => {
   
+  const [orders, setOrders] = useState([]);
 
+  useEffect(()=>{
+    const unsubscribe=onSnapshot(collection(db, "ordenes"), (snapshot) => {
+      const tempOrders=[]
+      snapshot.forEach((doc) =>{
+        tempOrders.push({...doc.data(),id:doc.id});
+      })
+      setOrders(tempOrders)
+    });
+    return () =>{
+      unsubscribe();
+    }
+  },[])
 
   return <>
     <div className="boxContainer">
@@ -19,8 +32,8 @@ export const DashboardRoutes = () => {
         condicion={useLocation().pathname === "/cocinero" ? "cocinero" : ""}
       />
       <Routes>
-        <Route path="cocinero" element={<Cocinero />} />
-        <Route path="pedidos" element={<Pedidos />} />
+        <Route path="cocinero" element={<Cocinero orders={orders} />} />
+        <Route path="pedidos" element={<Pedidos orders={orders} />} />
         <Route path="tomarorden" element={<TomarOrden />} />
       </Routes>
     </div>

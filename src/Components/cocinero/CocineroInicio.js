@@ -12,7 +12,7 @@ import { db } from "../../firebase.config";
  Aqui empieza la vista COCINERO
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
-export const Cocinero = () => {
+export const Cocinero = ({orders}) => {
   const locale = "en";
   const [today, setDate] = useState(new Date());
 
@@ -36,52 +36,9 @@ export const Cocinero = () => {
   const [ordenes, setOrdenes] = useState();
   const [[bttnToDo, bttnDone], setNameClass] = useState(["clicked","no-clicked"]);
   const [estadoOrdenes, setEstado] = useState(false);
-  const [orders, setOrders] = useState([]);
-
-  const veamosOnsnap = async () => {
-    const data = await onSnapshot(collection(db, "ordenes"), (snapshot) => {
-      console.log(snapshot);
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          setOrders((anterior) => {
-            return [
-              ...anterior,
-              { ...change.doc.data(), id: change.doc.id, tipo: change.type },
-            ];
-          });
-        }
-        if (change.type === "modified") {
-          setOrders((anterior) => {
-            const indexModif = anterior.findIndex(
-              (obj) => obj.id === change.doc.id
-            );
-            let objModif = anterior[indexModif];
-            objModif = {
-              ...change.doc.data(),
-              id: change.doc.id,
-              tipo: change.type,
-            };
-            return [
-              ...anterior.filter((obj, index) => index !== indexModif),
-              objModif,
-            ];
-          }); //[...orders.filter((obj,index) => index!==indexModif),objModif])
-        }
-        if (change.type === "removed") {
-          setOrders((anterior) => {
-            const indeRemov = anterior.findIndex(
-              (obj) => obj.id === change.doc.id
-            );
-            return [...anterior.filter((obj, index) => index !== indeRemov)];
-          }); //[...orders.filter((obj,index) => index!==indeRemov)])
-        }
-      });
-    });
-    return data;
-  };
+  
 
   useEffect(() => {
-    veamosOnsnap();
     console.log(orders);
     return () => {
       setOrdenes([]);
@@ -102,8 +59,9 @@ export const Cocinero = () => {
     setNameClass(["no-clicked", "clicked"]);
     setEstado(true);
   };
-  const cambioEstadoOrden = (e) => {
-    updateDoc(doc(db, "ordenes", e.target.name), { estado: true, horaEntrega:horaAc });
+  const cambioEstadoOrden = (id) => {
+    console.log(id);
+    updateDoc(doc(db, "ordenes",id), { estado: true, horaEntrega:horaAc });
     setEstado(false);
   };
 

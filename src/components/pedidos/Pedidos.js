@@ -1,6 +1,6 @@
 import './pedidos.scss';
 import { useEffect, useState } from 'react';
-import { eliminarDocFirestore, obtenerDataFiltrada, obtenerDataFirestore } from '../../data/listaProductos';
+import { eliminarDocFirestore } from '../../data/listaProductos';
 
 const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   return pedidosListos.map((pedido) => {
@@ -8,13 +8,13 @@ const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
               <section className='pedidosListos'>
                 <div>CLIENTE: {pedido.cliente}</div>
                 <div>N° MESA: {pedido.mesa}</div>
-                <div><button name={pedido.id} onClick={entregarPedido}>Entregar</button></div>
+                <div><button onClick={() => entregarPedido(pedido.id)}>Entregar</button></div>
               </section>
             </li>
   } )
 }
 
-export const Pedidos = () => {
+export const Pedidos = ({orders}) => {
 
   const locale = 'en';
   const [today, setDate] = useState(new Date()); 
@@ -32,31 +32,9 @@ export const Pedidos = () => {
 
   //*****/
 
-const [ordenesListas, setOrdenes]=useState([]);
 
-/* const obtenerOrdenesListas = async () => {
-  const ordenes = await obtenerDataFiltrada('ordenes','estado',true);
-  setOrdenes(ordenes);
-} */
-/* 
-useEffect(() => {
-  return () =>{
-    setOrdenes([])
-  }
-
-},[])
-
-useEffect(() => {
-  setOrdenes(ordersListas.filter((obj) => obj.estado===true))
-
-},[ordersListas]) */
-/* 
-useEffect(() => {
-  obtenerOrdenesListas();
-},[ordenesListas]) */
-
-const entregarPedido = (e) => {
-  eliminarDocFirestore(e.target.name,'ordenes')
+const entregarPedido = (id) => {
+  eliminarDocFirestore(id,'ordenes')
 }
 
   return <>
@@ -64,8 +42,7 @@ const entregarPedido = (e) => {
           <h4>Mesero</h4>
           <ul id='listaPedidos'>
             <p>PEDIDOS LISTOS</p>
-            {ordenesListas!==undefined&&(<TemplatePedidosListos pedidosListos={ordenesListas} entregarPedido={entregarPedido} />)}
-            
+            <TemplatePedidosListos pedidosListos={orders.filter((obj) => obj.estado===true)} entregarPedido={entregarPedido} />)
           </ul>
          </>
 };

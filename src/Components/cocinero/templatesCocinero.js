@@ -14,7 +14,7 @@
                             </li>)
                   } )}
                 </ul>
-                {objeto.estado===false&&(<button name={objeto.id} onClick={cambioEstado}>Listo?</button>)}
+                {objeto.estado===false&&(<button onClick={() => cambioEstado(objeto.id)}>Listo?</button>)}
             </div>
            </>
   }
