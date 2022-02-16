@@ -1,7 +1,10 @@
+// import { AiOutlineMinusCircle,AiOutlinePlusCircle } from "react-icons/ai";
+import plus from '../../../imagenes/plus.png'
+import minus2 from '../../../imagenes/minus2.png'
 import './factura.scss'
 import tacho from '../../../imagenes/contenedor.png'
 
-export const Factura = ({factura,eliminarItemPedido}) => {
+export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
   let total = 0;
   for (const objeto of factura) {
     total= total+objeto.count*objeto.precio
@@ -33,8 +36,10 @@ export const Factura = ({factura,eliminarItemPedido}) => {
         {factura.map((pedido)=>{
           const {id, count,descripcion,precio}=pedido;
         return (<div key={id} className="boxDescripcionCadaItemOrden" id={id}>
-                <section className="descripcionOrdenItem">
+                <section className="descripcionOrdenItem count">
+                  <img src={plus} onClick={countPlus} className="plus" />
                   <p>{count}</p>
+                  <img src={minus2} onClick={countMinus} className="minus" />
                 </section>
                 <section className="descripcionOrdenItem">
                   <p>{descripcion}</p>
