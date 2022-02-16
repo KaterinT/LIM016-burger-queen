@@ -49,6 +49,7 @@
       height: 1.2rem;
       border-radius: 0.2rem;
       cursor: pointer;
+      color: azure;
       &:focus {
         outline: none;
         border:  solid #854F25;
@@ -103,6 +104,12 @@
       cursor:pointer;
     }
   }
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .boxTotal {

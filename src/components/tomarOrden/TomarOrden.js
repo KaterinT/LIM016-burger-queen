@@ -87,21 +87,26 @@ export const TomarOrden = () => {
     setEstadoModal(false);
   };
 
-  // 
-  // 
-  
   const subirDataPedido = () =>{
-    const cliente=document.getElementById('cliente').value;//requerido estrictamente
-    const mesa=document.getElementById('numeroMesa').value;//requerido estrictamente
-    const pedidoToSubir ={
-      cliente:cliente,
-      mesa:mesa,
-      pedidosArray:pedidos,
-      hora: horaAc,
-      estado:false,
+    let cliente=document.getElementById('cliente').value;//requerido estrictamente
+    let mesa=document.getElementById('numeroMesa').value;//requerido estrictamente
+    if (cliente==="" || mesa==="" ) {
+      console.log('cliente y/o mesa vaxio')
+    }else if (pedidos.length=== 0) {
+      console.log('Orden Vacia')
+    }else {
+      const pedidoToSubir ={
+        cliente:cliente,
+        mesa:mesa,
+        pedidosArray:pedidos,
+        hora: horaAc,
+        estado:false,
+      }
+      subirPedidoFirestore(pedidoToSubir);
+      setPedidos([]);
     }
-    subirPedidoFirestore(pedidoToSubir);
-    setPedidos([]);
+    // cliente=document.getElementById('cliente').reset();//requerido estrictamente
+    // mesa=document.getElementById('numeroMesa').reset();//req
   };
 
   const cancelarPedido = () => {
@@ -118,6 +123,29 @@ export const TomarOrden = () => {
     console.log(padre.id);
   }
 
+  const countPlus = (e) =>{
+    const padre =e.target.parentNode.parentNode;
+    const indexE = pedidos.findIndex((obj) => obj.id===padre.id);
+    let agregarCount=pedidos[indexE]
+    agregarCount.count= agregarCount.count+1;
+    setPedidos([...pedidos])
+    console.log(indexE);
+  }
+  
+  const countMinus = (e) =>{
+    const padre =e.target.parentNode.parentNode;
+    const indexE = pedidos.findIndex((obj) => obj.id===padre.id);
+    let restarCount=pedidos[indexE]
+    if (restarCount.count === 1) {
+      setPedidos((anterior) => {
+        return [...anterior.filter((obj,index) => index !== indexE)]
+      })
+    } else {
+    restarCount.count= restarCount.count-1;
+    setPedidos([...pedidos])
+    console.log(padre.id);
+  }}
+
   return (
     <>
       <div className="containert">
@@ -127,7 +155,7 @@ export const TomarOrden = () => {
           <div className="boxTomarOrdenMenu">
             <div className="boxTomarOrdenMenu2">
               <Menu moreClick={moreClick} />
-              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} />
+              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} countPlus={countPlus} countMinus={countMinus}/>
             </div>
             <div className="boxBtnTomarOrden">
               <button onClick={cancelarPedido}>CANCELAR</button>

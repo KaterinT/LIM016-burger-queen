@@ -39,6 +39,7 @@ export const eliminarDocFirestore = (id,nameColection) => {
 }
 
 export const subirPedidoFirestore = (pedido) => {
+  
   const colRef =collection(db,'ordenes');
   const functionAdd = addDoc(colRef, pedido);
   return functionAdd;
