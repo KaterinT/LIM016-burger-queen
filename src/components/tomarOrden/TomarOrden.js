@@ -53,11 +53,11 @@ export const TomarOrden = () => {
 
   const confirmarModal = (arrayExtras) => {
     const [burger, adicional] = arrayExtras;// burger sea requerido estrictamente y el adicional y ponerle condiciones
-    console.log(adicional);
+    console.log(identificador);
     if(burger!==''){
     obtenerDataById(identificador, "Menu").then((pedido) => {
       const p = pedidos.find((obj) => obj.id === pedido.id + burger + adicional);
-      
+      console.log(p);
       if (p === undefined) {
         setPedidos([...pedidos,
             {
@@ -83,6 +83,7 @@ export const TomarOrden = () => {
   };
 
   const cancelarModal = () => {
+    setAlarm('noActive')
     setEstadoModal(false);
   };
 
@@ -107,6 +108,16 @@ export const TomarOrden = () => {
     setPedidos([])
   }
 
+
+  const eliminarItemPedido = (e) =>{
+    const padre =e.target.parentNode.parentNode;
+    const indexE = pedidos.findIndex((obj) => obj.id===padre.id);
+    setPedidos((anterior) => {
+      return [...anterior.filter((obj,index) => index !== indexE)]
+    })
+    console.log(padre.id);
+  }
+
   return (
     <>
       <div className="containert">
@@ -116,7 +127,7 @@ export const TomarOrden = () => {
           <div className="boxTomarOrdenMenu">
             <div className="boxTomarOrdenMenu2">
               <Menu moreClick={moreClick} />
-              <Factura factura={pedidos} />
+              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} />
             </div>
             <div className="boxBtnTomarOrden">
               <button onClick={cancelarPedido}>CANCELAR</button>
