@@ -28,7 +28,9 @@ export const obtenerDataFirestore =(nameColection) => {
 
 export const obtenerDataById = (id, nameColeccion) => {
   const docRef = doc(db, nameColeccion, id);
-  const querySnapshot = getDoc(docRef).then((docs) => docs.data());
+  const querySnapshot = getDoc(docRef).then((docs) => {
+    return {...docs.data(),id:docs.id}
+  });
   return querySnapshot;
 };
 

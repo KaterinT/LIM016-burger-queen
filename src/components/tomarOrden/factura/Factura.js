@@ -1,12 +1,12 @@
 import './factura.scss'
 import tacho from '../../../imagenes/contenedor.png'
-import { useEffect, useState } from 'react';
 
-export const Factura = ({factura}) => {
+export const Factura = ({factura,eliminarItemPedido}) => {
   let total = 0;
   for (const objeto of factura) {
     total= total+objeto.count*objeto.precio
   }
+
 
   return (
     <div className="boxFactura">
@@ -32,7 +32,7 @@ export const Factura = ({factura}) => {
         <div className='boxPedidos'>
         {factura.map((pedido)=>{
           const {id, count,descripcion,precio}=pedido;
-        return (<div key={id} className="boxDescripcionCadaItemOrden">
+        return (<div key={id} className="boxDescripcionCadaItemOrden" id={id}>
                 <section className="descripcionOrdenItem">
                   <p>{count}</p>
                 </section>
@@ -41,7 +41,9 @@ export const Factura = ({factura}) => {
                 </section>
                 <section className="descripcionOrdenItem">
                   <p>S/ {precio}.00</p>
-                  <img src={tacho} alt="" />
+                </section>
+                <section className="descripcionOrdenItem">
+                  <img src={tacho} alt="" onClick={eliminarItemPedido}/>
                 </section>
               </div>)})}
               </div>
