@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empecemos a testear vista Cocinero Dberiamos renderizar Cocinero 1`] = `
+<div>
+  <div
+    id="cocinero"
+  >
+    <p
+      class="horaAc"
+    >
+      2:35:00pm
+    </p>
+    <h4>
+      Cocinero
+    </h4>
+    <section
+      class="pedidos-al-chef"
+    >
+      <button
+        class="clicked"
+        id="toDo"
+      >
+        <b>
+          Por Preparar
+        </b>
+      </button>
+      <button
+        class="no-clicked"
+        id="done"
+      >
+        <b>
+          Preparados
+        </b>
+      </button>
+    </section>
+    <section
+      id="eventosChef"
+    >
+      <div
+        class="pedidos"
+        id="2"
+      >
+        <div>
+          <p>
+            usuario21
+          </p>
+          <button>
+            falso
+          </button>
+        </div>
+      </div>
+      <div
+        class="pedidos"
+        id="3"
+      >
+        <div>
+          <p>
+            usuario32
+          </p>
+          <button>
+            falso
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import './pedidos.scss';
 import { useEffect, useState } from 'react';
-import { eliminarDocFirestore } from '../../data/listaProductos';
+import { eliminarDocFirestore } from '../../data/funcionesFirestore';
 
 const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   return pedidosListos.map((pedido) => {

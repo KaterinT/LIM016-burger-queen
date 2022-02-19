@@ -37,9 +37,9 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
           const {id, count,descripcion,precio}=pedido;
         return (<div key={id} className="boxDescripcionCadaItemOrden" id={id}>
                 <section className="descripcionOrdenItem count">
-                  <img src={plus} onClick={countPlus} className="plus" />
+                  <img src={plus} alt='' onClick={countPlus} className="plus" />
                   <p>{count}</p>
-                  <img src={minus2} onClick={countMinus} className="minus" />
+                  <img src={minus2} alt='' onClick={countMinus} className="minus" />
                 </section>
                 <section className="descripcionOrdenItem">
                   <p>{descripcion}</p>

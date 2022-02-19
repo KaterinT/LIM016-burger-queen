@@ -1,39 +1,16 @@
 import "./cocinero.scss";
 import React, { useEffect, useState } from "react";
 import { TemplatePedidos } from "./templatesCocinero";
-import { updateDoc, doc} from "firebase/firestore";
-import { db } from "../../firebase.config";
-import { actualizarDoc } from "../../data/listaProductos";
+import { actualizarDoc } from "../../data/funcionesFirestore";
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
  Aqui empieza la vista COCINERO
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
-export const Cocinero = ({orders}) => {
-  const locale = "en";
-  const [today, setDate] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  const horaAc = today.toLocaleTimeString(locale, {
-    hour: "numeric",
-    hour12: true,
-    minute: "numeric",
-    second: "numeric",
-  });
-
-  // ****************
-  const [ordenesFiltradas, setOrdenesFilter] = useState();
-  const [[bttnToDo, bttnDone], setNameClass] = useState(["clicked","no-clicked"]);
-  const [estadoOrdenes, setEstado] = useState(false);
+export const Cocinero = ({orders, horaAc}) => {
   
+  const [ordenesFiltradas, setOrdenesFilter] = useState();
+  const [estadoOrdenes, setEstado] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -46,19 +23,14 @@ export const Cocinero = ({orders}) => {
   }, [estadoOrdenes, orders]);
 
   const handleToDo = () => {
-    setNameClass(["clicked", "no-clicked"]);
     setEstado(false);
   };
 
   const handleDone = () => {
-    // Agregando estilos a los botones seleccionados
-    setNameClass(["no-clicked", "clicked"]);
     setEstado(true);
   };
   const cambioEstadoOrden = (id) => {
     actualizarDoc('ordenes',id,{ estado: true, horaEntrega:horaAc });
-    //updateDoc(doc(db, "ordenes",id), { estado: true, horaEntrega:horaAc });
-    setEstado(false);
   };
 
   return (
@@ -66,10 +38,10 @@ export const Cocinero = ({orders}) => {
       <p className="horaAc">{horaAc}</p>
       <h4>Cocinero</h4>
       <section className="pedidos-al-chef">
-        <button onClick={handleToDo} id="toDo" className={bttnToDo}>
+        <button onClick={handleToDo} id="toDo" className={(estadoOrdenes===false)?'clicked':'no-clicked'}>
           <b>Por Preparar</b>
         </button>
-        <button onClick={handleDone} id="done" className={bttnDone}>
+        <button onClick={handleDone} id="done" className={(estadoOrdenes===true)?'clicked':'no-clicked'}>
           <b>Preparados</b>
         </button>
       </section>
