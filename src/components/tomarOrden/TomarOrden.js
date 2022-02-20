@@ -3,7 +3,7 @@ import { Factura } from "./factura/Factura";
 import { Menu } from "./menu/Menu";
 import { Modal } from "./modalExtras/modal";
 import "./tomarOrden.scss";
-import { obtenerDataById, subirPedidoFirestore } from "../../data/listaProductos";
+import { obtenerDataById, subirPedidoFirestore } from "../../data/funcionesFirestore";
 
 export const TomarOrden = ({horaAc}) => {
 
@@ -41,7 +41,6 @@ export const TomarOrden = ({horaAc}) => {
     if(burger!==''){
     obtenerDataById(identificador, "Menu").then((pedido) => {
       const p = pedidos.find((obj) => obj.id === pedido.id + burger + adicional);
-      console.log(p);
       if (p === undefined) {
         setPedidos([...pedidos,
             {

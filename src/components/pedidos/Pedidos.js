@@ -1,5 +1,5 @@
 import './pedidos.scss';
-import { eliminarDocFirestore } from '../../data/listaProductos';
+import { eliminarDocFirestore } from '../../data/funcionesFirestore';
 import { TemplatePedidosListos } from "./templatesPedidos";
 
 const entregarPedido = (id) => {
@@ -15,7 +15,7 @@ export const Pedidos = ({orders,horaAc }) => {
           <h4>Mesero</h4>
           <ul id='listaPedidos'>
             <p>PEDIDOS LISTOS</p>
-            <TemplatePedidosListos data-testid="templatePedidos"pedidosListos={orders.filter((obj) => obj.estado===true)} entregarPedido={entregarPedido} />)
+            <TemplatePedidosListos pedidosListos={orders.filter((obj) => obj.estado===true)} entregarPedido={entregarPedido} />)
           </ul>
          </>
 };

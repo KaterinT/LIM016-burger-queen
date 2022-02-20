@@ -4,12 +4,7 @@ import {BurguerApp} from './BurguerApp';
 
 const container = document.querySelector('#root');
 
-// ReactDOM.render(<BurguerApp saludo="Hola juju" />,container);
 // es buena practica dejar un espacio despues del Home
 
 ReactDOM.render(<BurguerApp />,container);
-
-
-
-
 

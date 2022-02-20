@@ -1,5 +1,4 @@
 // este archivo se encarga de que todas las rutas que queramos este en el NavBar
-
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -8,23 +7,20 @@ import { Navbar } from "../components/navBar/NavBar";
 import { Pedidos } from "../components/pedidos/Pedidos";
 import { TomarOrden } from "../components/tomarOrden/TomarOrden";
 import { db } from "../firebase.config";
+import { OrdersContext } from "../OrdersContext";
 
 export const DashboardRoutes = () => {
   
   const [orders, setOrders] = useState([]);
   const [today, setDate] = useState(new Date()); 
 
-  useEffect(() => {
-      const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    }
-  }, []);
-
   const locale = 'en';
-  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
+  const horaAc = today.toLocaleTimeString(locale, {
+    hour: "numeric",
+    hour12: true,
+    minute: "numeric",
+    second: "numeric",
+  });
 
   useEffect(()=>{
     const unsubscribe=onSnapshot(collection(db, "ordenes"), (snapshot) => {
@@ -32,10 +28,16 @@ export const DashboardRoutes = () => {
       snapshot.forEach((doc) =>{
         tempOrders.push({...doc.data(),id:doc.id});
       })
+      //sessionStorage.setItem('ArrayDePedidos', JSON.stringify(tempOrders));
       setOrders(tempOrders)
     });
+    const timer = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
     return () =>{
+      //sessionStorage.clear();
       unsubscribe();
+      clearInterval(timer);
     }
   },[])
 

@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 // import { shallow } from 'enzyme';
 import { screen,render,cleanup,fireEvent } from '@testing-library/react';
 import { TemplatePedidosListos } from '../components/pedidos/templatesPedidos';
-import eliminarDocFirestore from '../data/listaProductos';
+import eliminarDocFirestore from '../data/funcionesFirestore';
 
 // describe('Pruebas en Pedidos />' , () => {
 //   test('debe mostrarse corrrect',() => {

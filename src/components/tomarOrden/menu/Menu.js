@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { MenuOptions } from "./MenuOptions";
 import { Productos } from "./Productos";
-import { obtenerDataFiltrada, obtenerDataFirestore } from "../../../data/listaProductos";
+import { obtenerDataFirestore } from "../../../data/funcionesFirestore";
 import "./menu.scss";
 // import {items} from '../../../data/listaProductos'
 
