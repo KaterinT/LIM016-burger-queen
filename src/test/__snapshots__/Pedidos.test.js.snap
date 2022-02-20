@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en Pedidos /> debe renderizar Pedidos 1`] = `
+<div>
+  <p
+    class="horaAc"
+  >
+    6:16:38 PM
+  </p>
+  <h4>
+    Mesero
+  </h4>
+  <ul
+    id="listaPedidos"
+  >
+    <p>
+      PEDIDOS LISTOS
+    </p>
+    <li>
+      <section
+        class="pedidosListos"
+      >
+        <div>
+          CLIENTE: 
+          kate
+        </div>
+        <div>
+          N° MESA: 
+          1
+        </div>
+        <div>
+          <button
+            data-testid="clickEntregarPedido"
+          >
+            Entregar
+          </button>
+        </div>
+      </section>
+    </li>
+    )
+  </ul>
+</div>
+`;

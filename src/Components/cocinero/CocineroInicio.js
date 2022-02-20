@@ -9,27 +9,8 @@ import { actualizarDoc } from "../../data/listaProductos";
  Aqui empieza la vista COCINERO
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
-export const Cocinero = ({orders}) => {
-  const locale = "en";
-  const [today, setDate] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  const horaAc = today.toLocaleTimeString(locale, {
-    hour: "numeric",
-    hour12: true,
-    minute: "numeric",
-    second: "numeric",
-  });
-
-  // ****************
+export const Cocinero = ({orders,horaAc}) => {
+  
   const [ordenesFiltradas, setOrdenesFilter] = useState();
   const [[bttnToDo, bttnDone], setNameClass] = useState(["clicked","no-clicked"]);
   const [estadoOrdenes, setEstado] = useState(false);

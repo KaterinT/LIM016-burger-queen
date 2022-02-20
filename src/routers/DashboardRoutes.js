@@ -12,6 +12,19 @@ import { db } from "../firebase.config";
 export const DashboardRoutes = () => {
   
   const [orders, setOrders] = useState([]);
+  const [today, setDate] = useState(new Date()); 
+
+  useEffect(() => {
+      const timer = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+    }
+  }, []);
+
+  const locale = 'en';
+  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
 
   useEffect(()=>{
     const unsubscribe=onSnapshot(collection(db, "ordenes"), (snapshot) => {
@@ -32,9 +45,9 @@ export const DashboardRoutes = () => {
         condicion={useLocation().pathname === "/cocinero" ? "cocinero" : ""}
       />
       <Routes>
-        <Route path="cocinero" element={<Cocinero orders={orders} />} />
-        <Route path="pedidos" element={<Pedidos orders={orders} />} />
-        <Route path="tomarorden" element={<TomarOrden />} />
+        <Route path="cocinero" element={<Cocinero orders={orders} horaAc={horaAc}/>} />
+        <Route path="pedidos" element={<Pedidos orders={orders} horaAc={horaAc}/>} />
+        <Route path="tomarorden" element={<TomarOrden horaAc={horaAc} />} />
       </Routes>
     </div>
     </>;
