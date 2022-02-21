@@ -3,28 +3,20 @@ import { MenuOptions } from "./MenuOptions";
 import { Productos } from "./Productos";
 import { obtenerDataFirestore } from "../../../data/funcionesFirestore";
 import "./menu.scss";
-// import {items} from '../../../data/listaProductos'
 
-export const Menu = ({ /* pedido, */ moreClick}) => {
+export const Menu = ({moreClick}) => {
   const [orders, setOrders] = useState([]);
   const [menuItems, setMenuItems] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("Desayuno");
 
-    // **Trae la data de Firebase en un array de objetos**
-
-/*     const getOrdersFirebase = async (category) => {
-      const document = await obtenerDataFiltrada("Menu","categoria",category);
-      setMenuItems(document)
-    }; */
-
   useEffect(() => {
-    //getOrdersFirebase(currentCategory)
     setMenuItems(orders.filter((item) => item.categoria === currentCategory));
   }, [currentCategory, orders]);
   // console.log(menuItems)
 
   useEffect(() => {
     async function fetchList() {
+          // **Trae la data de Firebase en un array de objetos**
       const listMenu = await obtenerDataFirestore('Menu');
       setOrders(listMenu);
     }
@@ -34,7 +26,7 @@ export const Menu = ({ /* pedido, */ moreClick}) => {
   return (
     <div className="boxMenu">
       <MenuOptions  setCurrentCategory={setCurrentCategory} />
-      <Productos  menuItems={menuItems} /* currentCategory={currentCategory}  */moreClick={moreClick} />
+      <Productos  menuItems={menuItems} moreClick={moreClick} />
     </div>
   );
 };

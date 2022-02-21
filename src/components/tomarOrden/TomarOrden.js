@@ -27,20 +27,20 @@ export const TomarOrden = () => {
   const [pedidos, setPedidos] = useState([]);
   const [identificador, setId] = useState("");
 
-  const moreClick = (e) => {
-    obtenerDataById(e.target.name, "Menu").then((pedido) => {
+  const moreClick = (id) => {
+    obtenerDataById(id, "Menu").then((pedido) => {
       if (pedido.descripcion === "Hamburguesa simple" || pedido.descripcion === "Hamburguesa doble") {
         
         setEstadoModal(true);
-        setId(e.target.name);
+        setId(id);
 
       } else {
 
-        const p = pedidos.find((obj) => obj.id === e.target.name);
+        const p = pedidos.find((obj) => obj.id === id);
         if (p === undefined) {
-          setPedidos([...pedidos, { ...pedido, count: 1,id:e.target.name }]);
+          setPedidos([...pedidos, { ...pedido, count: 1,id:id }]);
         } else {
-          const index =pedidos.findIndex((obj) => obj.id===e.target.name)
+          const index =pedidos.findIndex((obj) => obj.id===id)
           let agregarCount=pedidos[index]
           agregarCount.count= agregarCount.count+1;
           setPedidos([...pedidos])
@@ -102,8 +102,6 @@ export const TomarOrden = () => {
       subirPedidoFirestore(pedidoToSubir);
       setPedidos([]);
     }
-    // cliente=document.getElementById('cliente').reset();//requerido estrictamente
-    // mesa=document.getElementById('numeroMesa').reset();//req
   };
 
   const cancelarPedido = () => {
@@ -120,18 +118,18 @@ export const TomarOrden = () => {
     console.log(padre.id);
   }
 
-  const countPlus = (e) =>{
-    const padre =e.target.parentNode.parentNode;
-    const indexE = pedidos.findIndex((obj) => obj.id===padre.id);
+  const countPlus = (id) =>{
+    //const padre =e.target.parentNode.parentNode;
+    const indexE = pedidos.findIndex((obj) => obj.id===id);
     let agregarCount=pedidos[indexE]
     agregarCount.count= agregarCount.count+1;
     setPedidos([...pedidos])
     console.log(indexE);
   }
   
-  const countMinus = (e) =>{
-    const padre =e.target.parentNode.parentNode;
-    const indexE = pedidos.findIndex((obj) => obj.id===padre.id);
+  const countMinus = (id) =>{
+    //const padre =e.target.parentNode.parentNode;
+    const indexE = pedidos.findIndex((obj) => obj.id===id);
     let restarCount=pedidos[indexE]
     if (restarCount.count === 1) {
       setPedidos((anterior) => {
@@ -140,7 +138,6 @@ export const TomarOrden = () => {
     } else {
     restarCount.count= restarCount.count-1;
     setPedidos([...pedidos])
-    console.log(padre.id);
   }}
 
   return (

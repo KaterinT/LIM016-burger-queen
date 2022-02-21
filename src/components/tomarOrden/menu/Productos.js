@@ -17,10 +17,10 @@ export const Productos = ({menuItems,moreClick}) => {
                 <p>S/{precio}.00</p>
               </div>
               <div className="btnAgregar">
-                <button onClick={moreClick} name={id} className="btnAgregarNav">
+                <button onClick={()=>moreClick(id)} name={id} className="btnAgregarNav">
                   Agregar
                 </button>
-                <button onClick={moreClick} name={id} className="btnResponsive">
+                <button onClick={()=>moreClick(id)} name={id} className="btnResponsive">
                   +
                 </button>
               </div>

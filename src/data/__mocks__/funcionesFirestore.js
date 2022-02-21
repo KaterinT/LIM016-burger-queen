@@ -89,3 +89,19 @@ export const actualizarDoc = jest.fn((nameColection, idDoc, actualizacion) => {
     const cambio=updateDoc(docRef,actualizacion)
     return console.log(cambio);
   })
+
+export const obtenerDataFirestore =jest.fn((nameCollection)=>Promise.resolve([{
+    id:1,
+    descripcion:"Café americano",
+    price:7,
+    category:"Desayuno",
+    imagen:''
+  },
+  {
+    id:2,
+    descripcion:"Sandwich de pollo",
+    price:7,
+    category:"Burger",
+    imagen:''
+  }
+  ]))

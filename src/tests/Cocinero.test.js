@@ -1,5 +1,4 @@
 import { screen, cleanup, render, fireEvent } from "@testing-library/react";
-import react from "react";
 import { Cocinero } from "../components/cocinero/CocineroInicio";
 
 

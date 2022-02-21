@@ -37,9 +37,9 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
           const {id, count,descripcion,precio}=pedido;
         return (<div key={id} className="boxDescripcionCadaItemOrden" id={id}>
                 <section className="descripcionOrdenItem count">
-                  <img src={plus} alt='' onClick={countPlus} className="plus" />
+                  <img src={plus} alt='plus' onClick={()=>countPlus(id)} className="plus" />
                   <p>{count}</p>
-                  <img src={minus2} alt='' onClick={countMinus} className="minus" />
+                  <img src={minus2} alt='minus' onClick={()=>countMinus(id)} className="minus" />
                 </section>
                 <section className="descripcionOrdenItem">
                   <p>{descripcion}</p>
@@ -48,7 +48,7 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
                   <p>S/ {precio}.00</p>
                 </section>
                 <section className="descripcionOrdenItem">
-                  <img src={tacho} alt="" onClick={eliminarItemPedido}/>
+                  <img src={tacho} alt="tacho" onClick={eliminarItemPedido}/>
                 </section>
               </div>)})}
               </div>
