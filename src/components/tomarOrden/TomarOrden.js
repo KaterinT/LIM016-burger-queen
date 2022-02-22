@@ -5,21 +5,7 @@ import { Modal } from "./modalExtras/modal";
 import "./tomarOrden.scss";
 import { obtenerDataById, subirPedidoFirestore } from "../../data/funcionesFirestore";
 
-export const TomarOrden = () => {
-
-  const locale = 'en';
-  const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
-
-  useEffect(() => {
-      const timer = setInterval(() => { 
-      setDate(new Date());
-    }, 1000);
-    return () => {
-      clearInterval(timer);
-    }
-  }, []);
-
-  const horaAc = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric',second:'numeric' });
+export const TomarOrden = ({horaAc}) => {
 
   // ****************
   const [estadoModal, setEstadoModal] = useState(false);

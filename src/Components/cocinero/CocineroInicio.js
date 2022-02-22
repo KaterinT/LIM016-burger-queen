@@ -7,7 +7,7 @@ import { actualizarDoc } from "../../data/funcionesFirestore";
  Aqui empieza la vista COCINERO
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
-export const Cocinero = ({orders, horaAc}) => {
+export const Cocinero = ({orders,horaAc}) => {
   
   const [ordenesFiltradas, setOrdenesFilter] = useState();
   const [estadoOrdenes, setEstado] = useState(false);

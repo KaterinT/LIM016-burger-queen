@@ -12,8 +12,15 @@ import { OrdersContext } from "../OrdersContext";
 export const DashboardRoutes = () => {
   
   const [orders, setOrders] = useState([]);
-  const [today, setDate] = useState(new Date());
-  const locale = "en";
+  const [today, setDate] = useState(new Date()); 
+
+  const locale = 'en';
+  const horaAc = today.toLocaleTimeString(locale, {
+    hour: "numeric",
+    hour12: true,
+    minute: "numeric",
+    second: "numeric",
+  });
 
   useEffect(()=>{
     const unsubscribe=onSnapshot(collection(db, "ordenes"), (snapshot) => {
@@ -34,22 +41,15 @@ export const DashboardRoutes = () => {
     }
   },[])
 
-  const horaAc = today.toLocaleTimeString(locale, {
-    hour: "numeric",
-    hour12: true,
-    minute: "numeric",
-    second: "numeric",
-  });
-
   return <>
     <div className="boxContainer">
       <Navbar
         condicion={useLocation().pathname === "/cocinero" ? "cocinero" : ""}
       />
       <Routes>
-        <Route path="cocinero" element={<Cocinero orders={orders} horaAc={horaAc} />} />
-        <Route path="pedidos" element={<Pedidos orders={orders} />} />
-        <Route path="tomarorden" element={<TomarOrden />} />
+        <Route path="cocinero" element={<Cocinero orders={orders} horaAc={horaAc}/>} />
+        <Route path="pedidos" element={<Pedidos orders={orders} horaAc={horaAc}/>} />
+        <Route path="tomarorden" element={<TomarOrden horaAc={horaAc} />} />
       </Routes>
     </div>
     </>;
