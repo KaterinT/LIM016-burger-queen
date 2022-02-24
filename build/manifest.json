@@ -1,20 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Taste Burger",
+  "name": "Taste Burger",
   "icons": [
     {
-      "src": "logoIco4.ico",
+      "src": "logoIco.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logoIco4.ico",
-      "type": "image/ico",
+      "src": "burger192px.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logoIco4.ico",
-      "type": "image/ico",
+      "src": "burger.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],

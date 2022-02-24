@@ -4,6 +4,7 @@ import { Menu } from "./menu/Menu";
 import { Modal } from "./modalExtras/modal";
 import "./tomarOrden.scss";
 import { obtenerDataById, subirPedidoFirestore } from "../../data/funcionesFirestore";
+// import { ModalNotific } from "./modalExtras/modalNotific";
 
 export const TomarOrden = ({horaAc}) => {
 
@@ -147,6 +148,7 @@ export const TomarOrden = ({horaAc}) => {
       {estadoModal === true && (
         <Modal confirmarModal={confirmarModal} cancelarModal={cancelarModal} alarm={alarmBurger} alarmSet={setAlarm} />
       )}
+        {/* <ModalNotific /> */}
     </>
   );
 };

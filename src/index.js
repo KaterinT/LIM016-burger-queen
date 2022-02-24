@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {BurguerApp} from './BurguerApp';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
+import reportWebVitals from './reportWebVitals';
 
 const container = document.querySelector('#root');
 
@@ -10,3 +11,5 @@ const container = document.querySelector('#root');
 ReactDOM.render(<BurguerApp />,container);
 
 serviceWorkerRegistration.register();
+
+reportWebVitals();
