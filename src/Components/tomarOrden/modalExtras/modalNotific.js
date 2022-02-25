@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+import 'animate.css';
 // export const ModalNotific = () => {
 //   return (
 //     <div className="modalBackground">
@@ -15,3 +17,32 @@
 //     </div>
 //   )
 // }
+export const ModalNotific = () => {
+  Swal.fire({
+      icon: 'error',
+      title: 'Oops...Nombre de cliente y/o mesa vacios!',
+      text: 'Por favor,intenta nuevamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+  })
+}
+
+export const ModalNotificOrdenVacio = () => {
+  Swal.fire({
+      icon: 'error',
+      title: 'Oops...Orden vacio!',
+      text: 'Por favor,intenta nuevamente',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+  })
+}
+
+

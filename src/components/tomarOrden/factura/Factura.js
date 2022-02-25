@@ -22,7 +22,19 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
             </div>
             <div className="boxnumMesa">
               <h3>MESA</h3>
-              <input type="text" id='numeroMesa' />
+              {/* <input type="text" id='numeroMesa' /> */}
+              <select id='numeroMesa'>
+                <option value="0">N°</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+
+              </select>
             </div>
           </div>
           

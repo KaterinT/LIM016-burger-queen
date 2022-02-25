@@ -1,4 +1,4 @@
-/* import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Menu } from "../components/tomarOrden/menu/Menu";
 
 jest.mock('../data/funcionesFirestore')
@@ -47,4 +47,4 @@ describe('Empecemos a testear Menu', () => {
         expect(screen.getByText('Cafe americano')).toBeInTheDocument()
 
     })
-}) */
+}) 

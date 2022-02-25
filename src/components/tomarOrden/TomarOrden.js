@@ -4,7 +4,8 @@ import { Menu } from "./menu/Menu";
 import { Modal } from "./modalExtras/modal";
 import "./tomarOrden.scss";
 import { obtenerDataById, subirPedidoFirestore } from "../../data/funcionesFirestore";
-// import { ModalNotific } from "./modalExtras/modalNotific";
+import { ModalNotific } from "./modalExtras/modalNotific";
+import {ModalNotificOrdenVacio} from "./modalExtras/modalNotific";
 
 export const TomarOrden = ({horaAc}) => {
 
@@ -75,9 +76,12 @@ export const TomarOrden = ({horaAc}) => {
     let cliente=document.getElementById('cliente').value;//requerido estrictamente
     let mesa=document.getElementById('numeroMesa').value;//requerido estrictamente
     if (cliente==="" || mesa==="" ) {
-      console.log('cliente y/o mesa vaxio')
+      // console.log('cliente y/o mesa vaxio');
+      ModalNotific()
+
     }else if (pedidos.length=== 0) {
-      console.log('Orden Vacia')
+      // console.log('Orden Vacia')
+      ModalNotificOrdenVacio();
     }else {
       const pedidoToSubir ={
         cliente:cliente,
