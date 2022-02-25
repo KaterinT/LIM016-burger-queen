@@ -25,7 +25,8 @@
   flex-direction: row;
   height: 3.5rem;
   flex-wrap: wrap;
-  justify-content: space-around;
+  // justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   div {
     display: flex;
@@ -46,7 +47,7 @@
       // background: $naranjaColor;
       background: #100f0c;
       border: 2px solid $brownBordes;
-      height: 1.2rem;
+      height: 1.3rem;
       border-radius: 0.2rem;
       cursor: pointer;
       color: azure;
@@ -55,6 +56,33 @@
         border:  solid #854F25;
         }
     }
+    .boxnumMesa {
+      position: relative;
+      font-family: Arial;
+    }
+    
+    /* Style items (options): */
+    .select {
+      background-color: black;
+      border: 2px solid #c77739;
+      border-radius: 0.2rem;
+      /* top: 100%; */
+      /* right: 0; */
+      /* z-index: 99; */
+      color: #ffffff;
+      padding: 3.5px 16px;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+        border:  solid #854F25;
+        background: #100f0c;
+        }
+    }
+    
+    .select div:hover{
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
   }
 }
 
@@ -68,9 +96,6 @@
   font-family: "RocknRoll One", sans-serif;
   color: aliceblue;
   align-items: center;
-  // margin: 0.5rem 0;
-  // padding: 1rem 0;
-  // background-color: #3a372c;
   
   background-color: #483b0a;
   padding: 0.4rem;
