@@ -1,8 +1,24 @@
-/* import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Menu } from "../components/tomarOrden/menu/Menu";
 
+const menuIt= [{
+    id:1,
+    descripcion:"Café americano",
+    price:7,
+    category:"Desayuno",
+    imagen:''
+  },
+  {
+    id:2,
+    descripcion:"Sandwich de pollo",
+    price:7,
+    category:"Burger",
+    imagen:''
+  }
+  ]
 jest.mock('../data/funcionesFirestore')
-jest.mock('../components/tomarOrden/menu/Productos',() => ({ Productos: ({menuItems, moreClick}) => {
+jest.mock('../components/tomarOrden/menu/Productos',() => ({ Productos: ({menuItems=menuIt, moreClick}) => {
+    console.log(menuItems)
     return <div>{menuItems.map((item) =>
     {
         return <div key={item.id}>
@@ -19,7 +35,7 @@ jest.mock('../components/tomarOrden/menu/MenuOptions',() => ({ MenuOptions: ({se
     </div>)
 } }) );
 
-const obtenerDataFirestore =jest.fn((nameCollection)=>Promise.resolve([{
+/* const obtenerDataFirestore =jest.fn((nameCollection)=>Promise.resolve([{
     id:1,
     descripcion:"Café americano",
     price:7,
@@ -33,7 +49,7 @@ const obtenerDataFirestore =jest.fn((nameCollection)=>Promise.resolve([{
     category:"Burger",
     imagen:''
   }
-  ]))
+  ])) */
 const moreClick=jest.fn();
 describe('Empecemos a testear Menu', () => {
     beforeAll((done) => {
@@ -47,4 +63,4 @@ describe('Empecemos a testear Menu', () => {
         expect(screen.getByText('Cafe americano')).toBeInTheDocument()
 
     })
-}) */
+})
