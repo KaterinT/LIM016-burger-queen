@@ -2,17 +2,41 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .modal{
+
   width: 100%;
   height: 100%;
   position: absolute;
   top:0;
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.856);
   .modalOpciones{
-    width: 40%;
+    position: relative;
+    border-radius: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
     background-color: aliceblue;
+    .bttn-Modal{
+      margin:2% ;
+      background: #FDD70B;
+      color:#6C3F1D
+    }
+    .closeModalBurger{
+      color: aliceblue;
+      background: #512626;
+      position: absolute;
+      top:1%;
+      right: 1%;
+      border-radius: 50%;
+    }
+    h3{
+      color:#6C3F1D
+    }
   }
 }
 .containert {

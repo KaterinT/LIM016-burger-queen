@@ -1,4 +1,4 @@
-import { useState ,useEffect} from "react";
+import { useState} from "react";
 import { Factura } from "./factura/Factura";
 import { Menu } from "./menu/Menu";
 import { Modal } from "./modalExtras/modal";
