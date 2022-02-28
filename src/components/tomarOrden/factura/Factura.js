@@ -18,7 +18,7 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
           <div className="BoxMC">
             <div className="boxnombreCliente">
               <h3>CLIENTE</h3>
-              <input type="text" id='cliente' />
+              <input type="text" id='cliente' oninput="this.value = this.value.toUpperCase()"/>
             </div>
             <div className="boxnumMesa">
               <h3>MESA</h3>

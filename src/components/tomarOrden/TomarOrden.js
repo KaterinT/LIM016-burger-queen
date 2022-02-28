@@ -75,7 +75,7 @@ export const TomarOrden = ({horaAc}) => {
   const subirDataPedido = () =>{
     let cliente=document.getElementById('cliente').value;//requerido estrictamente
     let mesa=document.querySelector('.numeroMesa').value;//requerido estrictamente
-    if (cliente==="" || mesa==="" ) {
+    if (cliente==="" || mesa==="0" ) {
       // console.log('cliente y/o mesa vaxio');
       ModalNotific()
 
