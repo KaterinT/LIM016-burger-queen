@@ -28,7 +28,7 @@
       height: 2rem;
       font-family: "Roboto", sans-serif;
       font-size: 18px;
-      margin: 2.5vh 5rem 0 5.3%;
+      margin: 7.5vh 5rem 0 5.3%;
     }
 
     .boxTomarOrdenMenu {
@@ -37,6 +37,7 @@
       height: 91%;
       margin: 0 1.3rem;
       padding: 0rem 1.5rem;
+      flex-direction: column;
       .boxTomarOrdenMenu2 {
         display: flex;
         justify-content: space-between;
@@ -92,23 +93,31 @@
       margin: 0 1.3rem;
       padding: 0rem 1.5rem;
       .boxTomarOrdenMenu2 {
+        // display: flex;
+        // flex-direction: column;
+        // height: 91%;
+        // margin: 0 1.3rem;
+        // padding: 0rem 1.5rem;
         display: flex;
+        height: 90%;
+        margin: 2.5vh 2% 1.4% 2%;
+        align-items: center;
         flex-direction: column;
-        height: 91%;
-        margin: 0 1.3rem;
-        padding: 0rem 1.5rem;
         
-      }
-    }
-    .containert {
-      .boxTomarOrden {
-        .horaAc {
-          margin: 8.5vh 5rem 0 5.3%;
-        }
       }
     }
 
   }
+  // @media(max-width:512px) {
+  //   .boxMenu{
+  //     .boxContenedorBtn {
+  //       .boxBtn{
+          
+  //       }
+
+  //     }
+  //   }
+  // }
 
 
 

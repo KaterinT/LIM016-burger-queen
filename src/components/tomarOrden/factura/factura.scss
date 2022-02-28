@@ -28,6 +28,7 @@
   // justify-content: space-around;
   justify-content: flex-start;
   align-items: center;
+  margin: 0rem 1rem;
   div {
     display: flex;
     justify-content: center;
@@ -38,12 +39,13 @@
       text-decoration: none;
       color: #ffff;
       font-family: "Roboto", sans-serif;
-      margin: 0 10px;
+      // margin: 0 10px;
+      margin: 0 7px;
       font-size: 1rem;
     }
     input {
       // width: 100%;
-      width: 5rem;
+      width: 4rem;
       // background: $naranjaColor;
       background: #100f0c;
       border: 2px solid $brownBordes;
@@ -105,7 +107,8 @@
 }
 
 .boxPedidos {
-  height: 258px;
+  // height: 258px;
+  height: 17rem;
   overflow: scroll;
   .boxDescripcionCadaItemOrden {
     color: aliceblue;
@@ -149,11 +152,16 @@
 @media(max-width:775px) {
   .boxPedidos {
     height: 168px;
-
   }
   .boxFactura {
     width: 100%;
     margin: 2rem 0 0 0;
+  }
+}
+
+@media only screen and (min-width: 776px) and (max-width:1199px) {
+  .boxPedidos {
+    height: 37rem;
   }
 }
 
