@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/LIM016-burger-queen/static/css/main.9ef5270b.css",
-    "main.js": "/LIM016-burger-queen/static/js/main.5a06989a.js",
+    "main.css": "/LIM016-burger-queen/static/css/main.b2b17f1a.css",
+    "main.js": "/LIM016-burger-queen/static/js/main.970d7026.js",
     "static/js/787.2d84b265.chunk.js": "/LIM016-burger-queen/static/js/787.2d84b265.chunk.js",
-    "static/media/burguerVideo2.gif": "/LIM016-burger-queen/static/media/burguerVideo2.80c03dd8a533d7563e7e.gif",
+    "static/media/burgerNav1.png": "/LIM016-burger-queen/static/media/burgerNav1.8286a3a2afb5cd8613f1.png",
+    "static/media/burgerNav2.png": "/LIM016-burger-queen/static/media/burgerNav2.6facb334bd21f2e5b306.png",
+    "static/media/burgerNav3.png": "/LIM016-burger-queen/static/media/burgerNav3.f18c8bff4cc8bbac5b25.png",
     "static/media/background2.png": "/LIM016-burger-queen/static/media/background2.9037c5b4ede8a687b4ea.png",
-    "static/media/deliciosBurger.gif": "/LIM016-burger-queen/static/media/deliciosBurger.3c2aaa382bf6d2280a08.gif",
+    "static/media/burgerNav4.png": "/LIM016-burger-queen/static/media/burgerNav4.b67332beb844f19effc9.png",
     "service-worker.js": "/LIM016-burger-queen/service-worker.js",
     "static/media/contenedor.png": "/LIM016-burger-queen/static/media/contenedor.509b82e24871a1557b2a.png",
     "index.html": "/LIM016-burger-queen/index.html",
-    "main.9ef5270b.css.map": "/LIM016-burger-queen/static/css/main.9ef5270b.css.map",
-    "main.5a06989a.js.map": "/LIM016-burger-queen/static/js/main.5a06989a.js.map",
+    "main.b2b17f1a.css.map": "/LIM016-burger-queen/static/css/main.b2b17f1a.css.map",
+    "main.970d7026.js.map": "/LIM016-burger-queen/static/js/main.970d7026.js.map",
     "787.2d84b265.chunk.js.map": "/LIM016-burger-queen/static/js/787.2d84b265.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ef5270b.css",
-    "static/js/main.5a06989a.js"
+    "static/css/main.b2b17f1a.css",
+    "static/js/main.970d7026.js"
   ]
 }
