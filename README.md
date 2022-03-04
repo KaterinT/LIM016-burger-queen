@@ -102,7 +102,7 @@ A continuación, se mostrará parte del prototipado de alta fidelidad, si desea 
 
 Finalmente, se adjuntará una breve videodemostración del resultado final tanto en diseño como en funcionalidad. Si desea verlo en detalle puede dar click en:
 
--  [Prototipado videodemostración completa](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/screen-recorder-mon-jan-03-2022-22-22-16.mp4)
+-  [Prototipado videodemostración completa](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/screen.mp4)
 
 -  [Link para visualizar la página](katerint.github.io/lim016-burger-queen/)
 
