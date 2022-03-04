@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
-import { TemplatePedidos } from "../components/cocinero/templatesCocinero";
+import { TemplatePedidos } from "../componentes/cocinero/templatesCocinero";
 // import ReactTestUtils, { renderIntoDocument } from 'react-dom/test-utils';
 
 describe('Prueba del template de los pedidos al cocinero', () => {

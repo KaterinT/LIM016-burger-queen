@@ -1,7 +1,7 @@
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 import { DashboardRoutes } from "./DashboardRoutes";
 
-import {Inicio} from "../components/inicio/Inicio";
+import {Inicio} from "../componentes/inicio/Inicio";
 
 export const AppRouter = () => {
   

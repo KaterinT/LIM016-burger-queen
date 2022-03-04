@@ -1,8 +1,8 @@
 import { screen, cleanup, render, fireEvent } from "@testing-library/react";
-import { Cocinero } from "../components/cocinero/CocineroInicio";
+import { Cocinero } from "../componentes/cocinero/CocineroInicio";
 
 
-jest.mock('../components/cocinero/templatesCocinero',() => ({ TemplatePedidos: ({objeto, cambioEstado}) => {
+jest.mock('../componentes/cocinero/templatesCocinero',() => ({ TemplatePedidos: ({objeto, cambioEstado}) => {
     return (<div key ={objeto.id}>
         <p>{objeto.cliente}</p>
         <button onClick={() => cambioEstado(objeto.id)}>{(objeto.estado===false)?'falso':'true'}</button>
