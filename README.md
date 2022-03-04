@@ -58,12 +58,20 @@ _____________________
 
 ## 4. 🚀Diseño de Interfaz de Usuario
 
-<p align="center">Versión Tablet </p>
+<p align="center">Mesero</p>
+<p align="center">
+  <img src="./src/imagenes/meseroGif.gif" align="center" alt="mesero" 
+</p>
+
+<p align="center">Cocinero</p>
+<p align="center">
+  <img src="./src/imagenes/cocineroGif.gif" align="center" alt="mesero" 
+</p>
 
 ## 5. 🗒Flowchart
 <p >Se implementó un Diagrama de Flujo que nos permitió difinir el proceso e interacción que tendriamos con Firebase y los requerimientos de cada Historia de Usuario.</p>
 <p align="center"> 
-  <img src="./src/imagenes/flowchart.png" alt="historias de usuario,criterios y definicon de terminado" width="50%" height="50%">
+  <img  src="./src/imagenes/flowchart.png" alt="historias de usuario,criterios y definicon de terminado" width="50%" height="50%">
 </p>
 
 ## 6. 💻Realización del proyecto
@@ -94,7 +102,7 @@ Finalmente, se adjuntará una breve videodemostración del resultado final tanto
 
 -  [Prototipado videodemostración completa](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/screen-recorder-mon-jan-03-2022-22-22-16.mp4)
 
--  [Link para visualizar la página](https://rjrch123.github.io/ECOGRAM-Social-network/)
+-  [Link para visualizar la página](katerint.github.io/lim016-burger-queen/)
 
 <div align="center">
 <img src="/src/img/Readme/gif.gif" width="800">
@@ -122,7 +130,7 @@ Finalmente, se adjuntará una breve videodemostración del resultado final tanto
 
 - [Repositorio de Laboratoria:](https://github.com/Laboratoria/LIM016-burger-queen) Se encuentran todas las condiciones y herramientas a trabajar para el proyecto.
 
-## 6. Autores 📍
+## 9. Autores 📍
 - [Yumari](https://github.com/Yumari081196)
 - [Katerin Tello](https://github.com/KaterinT)
 
