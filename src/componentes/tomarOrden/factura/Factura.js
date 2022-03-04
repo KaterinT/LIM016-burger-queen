@@ -4,7 +4,7 @@ import minus2 from '../../../imagenes/minus2.png'
 import './factura.scss'
 import tacho from '../../../imagenes/contenedor.png'
 
-export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
+export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus,cliente,handleUserInput}) => {
   let total = 0;
   for (const objeto of factura) {
     total= total+objeto.count*objeto.precio
@@ -18,14 +18,14 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus}) => {
           <div className="BoxMC">
             <div className="boxnombreCliente">
               <h3>CLIENTE</h3>
-              <input type="text" id='cliente' oninput="this.value = this.value.toUpperCase()"/>
+              <input type="text" id='cliente' oninput="this.value = this.value.toUpperCase()" value={cliente} onChange={handleUserInput}/>
             </div>
             <div className="boxnumMesa">
               <h3>MESA</h3>
               {/* <input type="text" id='numeroMesa' /> */}
 
               <select className="select ">
-                <option className='numeroMesa' value="0">N°</option>
+                <option className='numeroMesa' value="N°">N°</option>
                 <option className='numeroMesa' value="1">01</option>
                 <option className='numeroMesa' value="2">02</option>
                 <option className='numeroMesa' value="3">03</option>

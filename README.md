@@ -6,7 +6,7 @@
 <h3 align="center"> "La comida es mejor cuando comemos juntos" Original Taste Burger </h3> 
 
 <p align="center"> 
-  <img src="./src/imagenes/portada.gif" alt="TASTE BURGE" width="80%" height="280rem">
+  <img src="./src/imagenes/portada.gif" alt="TASTE BURGE" width="50%" height="200rem">
 </p>
 
 </br> 
@@ -52,7 +52,7 @@ _____________________
 
 ## 3. 📝Historias de usuario
 <p align="center"> 
-  <img src="./src/imagenes/historiaUsuario.jpg" alt="historias de usuario,criterios y definicon de terminado">
+  <img src="./src/imagenes/historiaUsuario.jpg" alt="historias de usuario,criterios y definicon de terminado" width="70%" height="70%">
 </p>
 
 
@@ -63,7 +63,7 @@ _____________________
 ## 5. 🗒Flowchart
 <p >Se implementó un Diagrama de Flujo que nos permitió difinir el proceso e interacción que tendriamos con Firebase y los requerimientos de cada Historia de Usuario.</p>
 <p align="center"> 
-  <img src="./src/imagenes/flowchart.png" alt="historias de usuario,criterios y definicon de terminado">
+  <img src="./src/imagenes/flowchart.png" alt="historias de usuario,criterios y definicon de terminado" width="50%" height="50%">
 </p>
 
 ## 6. 💻Realización del proyecto

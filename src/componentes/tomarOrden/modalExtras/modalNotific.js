@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import { useState } from "react";
 import 'animate.css';
 // export const ModalNotific = () => {
 //   return (
@@ -17,10 +18,12 @@ import 'animate.css';
 //     </div>
 //   )
 // }
+
+
 export const ModalNotific = () => {
   Swal.fire({
       icon: 'error',
-      title: 'Oops...Nombre de cliente y/o mesa vacios!',
+      title: 'Ups...Nombre de cliente y/o mesa vacios!',
       text: 'Por favor,intenta nuevamente',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
@@ -34,7 +37,7 @@ export const ModalNotific = () => {
 export const ModalNotificOrdenVacio = () => {
   Swal.fire({
       icon: 'error',
-      title: 'Oops...Orden vacio!',
+      title: 'Ups...Orden vacio!',
       text: 'Por favor,intenta nuevamente',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
@@ -44,5 +47,39 @@ export const ModalNotificOrdenVacio = () => {
       }
   })
 }
+
+  // /* inputOptions can be an object or Promise */
+  // const inputOptions = new Promise((resolve) => {
+  //   setTimeout(() => {
+  //     resolve({
+  //       'Res': 'Res',
+  //       'Pollo': 'Pollo',
+  //       'Vegana': 'Vegana'
+  //     })
+  //   }, 1000)
+  // })
+
+  // const { value: tipoRelleno } = await Swal.fire({
+  //   title: 'Opciones de hamburguesa',
+  //   input: 'radio',
+  //   inputOptions: inputOptions,
+  //   inputValidator: (value) => {
+  //     if (!value) {
+  //       return 'You need to choose something!'
+  //     }
+  //   }
+  // })
+  
+  // export const ModalNotificacion = ({confirmarModal}) => {
+  //   const [burger,setBurger] =useState('');
+  //   if (tipoRelleno) {
+
+  //     Swal.fire({ html: `You selected: ${tipoRelleno}` });
+  //     confirmarModal([burger])
+  //     setBurger(tipoRelleno);
+  //   }
+  // }  
+
+
 
 

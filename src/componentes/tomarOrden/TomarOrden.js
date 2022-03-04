@@ -53,11 +53,14 @@ export const TomarOrden = ({horaAc}) => {
               precio:(adicional==='')?pedido.precio:pedido.precio+1
             },
           ]);
+
       } else {
         const index =pedidos.findIndex((obj) => obj.id===pedido.id+burger+adicional)
         let agregarCount=pedidos[index];
         agregarCount.count=agregarCount.count+1;
         setPedidos([...pedidos]);
+
+
       }
     });
     
@@ -72,10 +75,24 @@ export const TomarOrden = ({horaAc}) => {
     setEstadoModal(false);
   };
 
+
+
+  const [cliente, setCliente] = useState("");
+
+    // Input Field handler
+    const handleUserInput = (e) => {
+      setCliente(e.target.value);
+    };
+    // Reset Input Field handler
+    const resetInputField = () => {
+      setCliente("");
+    };
+
   const subirDataPedido = () =>{
-    let cliente=document.getElementById('cliente').value;//requerido estrictamente
+    //  cliente=document.getElementById('cliente').value;//requerido estrictamente
     let mesa=document.querySelector('.numeroMesa').value;//requerido estrictamente
-    if (cliente==="" || mesa==="0" ) {
+
+    if (cliente==="" || mesa==="" ) {
       // console.log('cliente y/o mesa vaxio');
       ModalNotific()
 
@@ -92,6 +109,7 @@ export const TomarOrden = ({horaAc}) => {
       }
       subirPedidoFirestore(pedidoToSubir);
       setPedidos([]);
+      resetInputField();
     }
   };
 
@@ -140,7 +158,7 @@ export const TomarOrden = ({horaAc}) => {
           <div className="boxTomarOrdenMenu">
             <div className="boxTomarOrdenMenu2">
               <Menu moreClick={moreClick} />
-              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} countPlus={countPlus} countMinus={countMinus}/>
+              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} countPlus={countPlus} countMinus={countMinus} cliente={cliente} handleUserInput={handleUserInput}/>
             </div>
             <div className="boxBtnTomarOrden">
               <button onClick={cancelarPedido}>CANCELAR</button>
