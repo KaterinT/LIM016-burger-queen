@@ -31,8 +31,9 @@
 - [4. Diseño de Interfaz de Usuario](#diseño-de-interfaz-de-usuario)
 - [5. Flowchart](#flowcharts)
 - [6. Realización del proyecto](#realizacion-del-proyecto)
-- [7. Realización del proyecto](#realizaciob-del-proyecto)
-- [8. Test de usabilidad](#test-de-usabilidad)
+- [7. Tecnologías empleadas](#tecnologias-empleadas)
+- [8. Fuentes](#fuentes)
+- [8. Autores](#autores)
 
 <!-- ABOUT THE PROJECT -->
 ## 1. 📖 Resumen del proyecto.
@@ -58,12 +59,13 @@ _____________________
 
 ## 4. 🚀Diseño de Interfaz de Usuario
 
-<p align="center">Mesero</p>
+### 🤵 Mesero
 <p align="center">
   <img src="./src/imagenes/meseroGif.gif" align="center" alt="mesero" 
 </p>
 
-<p align="center">Cocinero</p>
+### 👩‍🍳 Cocinero
+
 <p align="center">
   <img src="./src/imagenes/cocineroGif.gif" align="center" alt="mesero" 
 </p>
@@ -82,17 +84,17 @@ _____________________
 
 <p >En esta fase se buscó realizar un esquema virtual de distribución más detallado en Figma.Si desea puede verlo en detalle dando click en:</p>
 
-* [Prototipado mobile y navegador](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/Wireframe/wireframeDesktop.png)
+* [Prototipado mobile y navegador](https://www.figma.com/file/Ayu1Z9OvyWQQzrnIK6oqwQ/Untitled?node-id=268%3A2)
 
 ### 6.1.2 Prototipado de Alta Fidelidad: 💁🏼
 
 Posteriormente, se realiza el diseño de la web en base a estilos, paleta de colores, entre otros recursos.
 A continuación, se mostrará parte del prototipado de alta fidelidad, si desea puede verlo en detalle dando click en:
 
-* [Prototipado mobile y navegador](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/HighFidelity/HF-Mobile.png)
+* [Prototipado mobile y navegador](https://www.figma.com/file/Ayu1Z9OvyWQQzrnIK6oqwQ/Untitled?node-id=0%3A1)
 
 <div align="center">
-<img src="/src/img/Readme/HighFidelity/Example-HF.png" width="800">
+<img src="./src/imagenes/prototipoAltaFidelidad.png"  width="800">
 </div>
 
 
