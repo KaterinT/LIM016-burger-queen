@@ -2,17 +2,21 @@
   "name": "burger-queen-tmp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://KaterinT.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
     "firebase": "^9.6.6",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "sass": "^1.49.7",
+    "sweetalert2": "^11.4.4",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.5.0",
     "workbox-broadcast-update": "^6.5.0",
@@ -29,8 +33,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -2,11 +2,11 @@
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Cocinero } from "../components/Cocinero/CocineroInicio";
-import { Navbar } from "../components/navBar/NavBar";
-import { Pedidos } from "../components/pedidos/Pedidos";
-import { Entregados } from "../components/pedidos/PedidosEntregados";
-import { TomarOrden } from "../components/tomarOrden/TomarOrden";
+import { Cocinero } from "../componentes/cocinero/CocineroInicio";
+import { Navbar } from "../componentes/navBar/NavBar";
+import { Pedidos } from "../componentes/pedidos/Pedidos";
+import { Entregados } from "../componentes/pedidos/PedidosEntregados";
+import { TomarOrden } from "../componentes/tomarOrden/TomarOrden";
 import { db } from "../firebase.config";
 
 export const DashboardRoutes = () => {

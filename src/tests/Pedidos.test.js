@@ -2,11 +2,11 @@ import '@testing-library/jest-dom';
 // import { shallow } from 'enzyme';
 import { render,cleanup,screen,queryByTestId } from '@testing-library/react';
 import React from 'react';
-import {Pedidos} from '../components/pedidos/Pedidos';
+import {Pedidos} from '../componentes/pedidos/Pedidos';
 // import { eliminarDocFirestore } from '../../data/listaProductos';
 
 
-// jest.mock('../components/pedidos/Pedidos', () => ({
+// jest.mock('../componentes/pedidos/Pedidos', () => ({
 //   TemplatePedidosListos:({pedidosListos,entregarPedido}) => {
 //     // console.log(pedidosListos);
 //     return pedidosListos.map((pedido) => {
