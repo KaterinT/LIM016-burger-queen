@@ -3,9 +3,9 @@
   "name": "Taste Burger",
   "icons": [
     {
-      "src": "logoIco.ico",
+      "src": "burger192px.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
       "src": "burger192px.png",

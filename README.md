@@ -14,7 +14,7 @@
 <!-- primary badges -------------------------------------->
 <p align="center">
    <!-- stars -->
-  <img src='https://img.shields.io/github/stars/KaterinT/radioactive-state?style=social&color=%23FFB31A' />
+  <img src='https://img.shields.io/github/stars/KaterinT/LIM016-burger-queen?style=social&color=%23FFB31A' />
   <!-- follow -->
   <img src='https://img.shields.io/github/followers/KaterinT?label=Follow&style=social&color=%23FFB31A' />
   <!-- Twitter intent -->
@@ -28,12 +28,13 @@
 - [1. Resumen del proyecto.](#1-resumen-del-proyecto)
 - [2. Definicion del producto](#2-definicion-del-producto)
 - [3. Historias de usuario](#3-historias-de-usuarios)
-- [4. Diseño de Interfaz de Usuario](#diseño-de-interfaz-de-usuario)
-- [5. Flowchart](#flowcharts)
-- [6. Realización del proyecto](#realizacion-del-proyecto)
+- [4. Flowchart](#flowcharts)
+- [5. Realización del proyecto](#realizacion-del-proyecto)
+- [6. Resultado final](#resultado-final)
 - [7. Tecnologías empleadas](#tecnologias-empleadas)
-- [8. Fuentes](#fuentes)
-- [8. Autores](#autores)
+- [8. Puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.](#puntuaciones-de-performance-progressive-web-app-accessibility-y-best-practices-de-lighthouse)
+- [9. Fuentes](#fuentes)
+- [10. Autores](#autores)
 
 <!-- ABOUT THE PROJECT -->
 ## 1. 📖 Resumen del proyecto.
@@ -56,37 +57,23 @@ _____________________
   <img src="./src/imagenes/historiaUsuario.jpg" alt="historias de usuario,criterios y definicon de terminado" width="70%" height="70%">
 </p>
 
-
-## 4. 🚀Diseño de Interfaz de Usuario
-
-### 🤵 Mesero
-<p align="center">
-  <img src="./src/imagenes/meseroGif.gif" align="center" alt="mesero" 
-</p>
-
-### 👩‍🍳 Cocinero
-
-<p align="center">
-  <img src="./src/imagenes/cocineroGif.gif" align="center" alt="mesero" 
-</p>
-
-## 5. 🗒Flowchart
+## 4. 🗒Flowchart
 <p >Se implementó un Diagrama de Flujo que nos permitió difinir el proceso e interacción que tendriamos con Firebase y los requerimientos de cada Historia de Usuario.</p>
 <p align="center"> 
   <img  src="./src/imagenes/flowchart.png" alt="historias de usuario,criterios y definicon de terminado" width="50%" height="50%">
 </p>
 
-## 6. 💻Realización del proyecto
+## 5. 💻Realización del proyecto
 
-## 6.1 Diseño 📱
+## 5.1 Diseño 📱
 
-### 6.1.1 Wireframe: 🙋🏼
+### 5.1.1 Wireframe: 🙋🏼
 
 <p >En esta fase se buscó realizar un esquema virtual de distribución más detallado en Figma.Si desea puede verlo en detalle dando click en:</p>
 
 * [Prototipado mobile y navegador](https://www.figma.com/file/Ayu1Z9OvyWQQzrnIK6oqwQ/Untitled?node-id=268%3A2)
 
-### 6.1.2 Prototipado de Alta Fidelidad: 💁🏼
+### 5.1.2 Prototipado de Alta Fidelidad: 💁🏼
 
 Posteriormente, se realiza el diseño de la web en base a estilos, paleta de colores, entre otros recursos.
 A continuación, se mostrará parte del prototipado de alta fidelidad, si desea puede verlo en detalle dando click en:
@@ -98,17 +85,25 @@ A continuación, se mostrará parte del prototipado de alta fidelidad, si desea 
 </div>
 
 
-## 6.2 Resultado final: 💁🏼
+## 6 🚀 Resultado final: 💁🏼
 
 Finalmente, se adjuntará una breve videodemostración del resultado final tanto en diseño como en funcionalidad. Si desea verlo en detalle puede dar click en:
 
 -  [Prototipado videodemostración completa](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/screen.mp4)
 
--  [Link para visualizar la página](katerint.github.io/lim016-burger-queen/)
+-  [Link para visualizar la página](tasteburger.netlify.app/)
 
-<div align="center">
-<img src="/src/img/Readme/gif.gif" width="800">
-</div>
+
+### 🤵 Mesero
+<p align="center">
+  <img src="./src/imagenes/meseroGif.gif" align="center" alt="mesero" 
+</p>
+
+### 👩‍🍳 Cocinero
+
+<p align="center">
+  <img src="./src/imagenes/cocineroGif.gif" align="center" alt="mesero" 
+</p>
 
 ## 7. Tecnologías empleadas 👩🏾‍💻
 -   [HTML:](https://developer.mozilla.org/es/docs/Web/HTML)  Siguiendo las reglas del HTML semántico se estructuró con un  `header`  que contiene una barra de navegación y el  `main`  para englobar el contenido principal.
@@ -128,11 +123,19 @@ Finalmente, se adjuntará una breve videodemostración del resultado final tanto
 
 - [PWA:](https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/) Progressive web apps (PWA) o aplicación web progresiva es una solución basada en la web tradicional que todos conocemos. La aplicación desplegada tiene más del 80% en puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
 
-## 8. Fuentes 📚
+
+## 8.📊 Puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
+
+<div align="center">
+<img src="./src/imagenes/prototipoAltaFidelidad.png"  width="800">
+</div>
+
+
+## 9. Fuentes 📚
 
 - [Repositorio de Laboratoria:](https://github.com/Laboratoria/LIM016-burger-queen) Se encuentran todas las condiciones y herramientas a trabajar para el proyecto.
 
-## 9. Autores 📍
+## 10. Autores 📍
 - [Yumari](https://github.com/Yumari081196)
 - [Katerin Tello](https://github.com/KaterinT)
 
