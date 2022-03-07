@@ -5,7 +5,8 @@ import logo from "../../imagenes/logo.png";
 import './navBar.scss'
 import {FaBars,FaRegClipboard} from "react-icons/fa";
 import {IoHomeOutline} from "react-icons/io5";
-import { BiAlarmExclamation } from "react-icons/bi";
+import { BiAlarmExclamation,BiCalendarCheck } from "react-icons/bi";
+
 
 const activeStyle =  ({ isActive }) => isActive? {color: '#E7D15E'}
 :{}
@@ -37,7 +38,7 @@ export const Navbar = ({condicion}) => {
                 <BiAlarmExclamation className="iconNav"/>PEDIDOS
               </NavLink>
               <NavLink to='/pedidos-entregados'>
-                ENTREGADOS
+                <BiCalendarCheck className="iconNav"/>ENTREGADOS
               </NavLink>
         </nav>
         <div className="linea"></div>
