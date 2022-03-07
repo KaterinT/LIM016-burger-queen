@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 // import { shallow } from 'enzyme';
 import { screen,render,cleanup,fireEvent } from '@testing-library/react';
-import { TemplatePedidosListos } from '../components/pedidos/templatesPedidos';
+import { TemplatePedidosListos } from '../componentes/pedidos/templatesPedidos';
 import eliminarDocFirestore from '../data/funcionesFirestore';
 
 // describe('Pruebas en Pedidos />' , () => {

@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { Menu } from "../components/tomarOrden/menu/Menu";
+import { Menu } from "../componentes/tomarOrden/menu/Menu";
 
 const menuIt= [{
     id:1,
@@ -17,7 +17,7 @@ const menuIt= [{
   }
   ]
 jest.mock('../data/funcionesFirestore')
-jest.mock('../components/tomarOrden/menu/Productos',() => ({ Productos: ({menuItems=menuIt, moreClick}) => {
+jest.mock('../componentes/tomarOrden/menu/Productos',() => ({ Productos: ({menuItems=menuIt, moreClick}) => {
     console.log(menuItems)
     return <div>{menuItems.map((item) =>
     {
@@ -29,7 +29,7 @@ jest.mock('../components/tomarOrden/menu/Productos',() => ({ Productos: ({menuIt
     </div>
 } }) );
 
-jest.mock('../components/tomarOrden/menu/MenuOptions',() => ({ MenuOptions: ({setCurrentCategory}) => {
+jest.mock('../componentes/tomarOrden/menu/MenuOptions',() => ({ MenuOptions: ({setCurrentCategory}) => {
     return (<div>
         <button onClick={setCurrentCategory('Desayuno')}>Boton Desayuno</button>
     </div>)

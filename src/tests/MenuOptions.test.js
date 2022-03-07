@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { MenuOptions } from "../components/tomarOrden/menu/MenuOptions";
+import { MenuOptions } from "../componentes/tomarOrden/menu/MenuOptions";
 
 
 describe('Empezaremos a testear las opciones del Menu',()=>{

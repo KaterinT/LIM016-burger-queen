@@ -1,5 +1,5 @@
 import { screen,cleanup, fireEvent, render } from "@testing-library/react";
-import { Factura } from "../components/tomarOrden/factura/Factura";
+import { Factura } from "../componentes/tomarOrden/factura/Factura";
 describe('Render de la factura',() => {
 
     beforeAll((done) => {

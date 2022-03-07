@@ -2,10 +2,10 @@
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Cocinero } from "../components/cocinero/CocineroInicio";
-import { Navbar } from "../components/navBar/NavBar";
-import { Pedidos } from "../components/pedidos/Pedidos";
-import { TomarOrden } from "../components/tomarOrden/TomarOrden";
+import { Cocinero } from "../componentes/cocinero/CocineroInicio";
+import { Navbar } from "../componentes/navBar/NavBar";
+import { Pedidos } from "../componentes/pedidos/Pedidos";
+import { TomarOrden } from "../componentes/tomarOrden/TomarOrden";
 import { db } from "../firebase.config";
 import { OrdersContext } from "../OrdersContext";
 

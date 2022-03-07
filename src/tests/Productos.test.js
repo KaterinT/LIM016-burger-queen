@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { Productos } from "../components/tomarOrden/menu/Productos";
+import { Productos } from "../componentes/tomarOrden/menu/Productos";
 
 
 const menuItems=[{
