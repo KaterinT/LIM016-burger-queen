@@ -1,5 +1,5 @@
 import { db } from "../firebase.config";
-import { getDocs, collection, doc, getDoc, deleteDoc, query, where, addDoc, onSnapshot, updateDoc } from "firebase/firestore"
+import { getDocs, collection, doc, getDoc, deleteDoc, query, where, addDoc, onSnapshot, updateDoc, setDoc } from "firebase/firestore"
 
 
 export const obtenerDataFiltrada =(nameColection,filter,condition) =>{
@@ -38,11 +38,16 @@ export const eliminarDocFirestore = (id,nameColection) => {
   deleteDoc(doc(db,nameColection,id))
 }
 
-export const subirPedidoFirestore = (pedido) => {
+export const subirPedidoFirestore = (pedido, nameColection) => {
   
-  const colRef =collection(db,'ordenes');
+  const colRef =collection(db,nameColection);
   const functionAdd = addDoc(colRef, pedido);
   return functionAdd;
+}
+
+export const subirPedidoConId = (pedido, nameColection, id) => {
+  const functionAdd = setDoc(doc(db,nameColection,id),pedido)
+  return functionAdd
 }
 
 export const actualizarDoc = (nameColection, idDoc, actualizacion) => {

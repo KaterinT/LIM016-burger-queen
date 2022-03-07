@@ -2,12 +2,12 @@
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Cocinero } from "../components/cocinero/CocineroInicio";
+import { Cocinero } from "../components/Cocinero/CocineroInicio";
 import { Navbar } from "../components/navBar/NavBar";
 import { Pedidos } from "../components/pedidos/Pedidos";
+import { Entregados } from "../components/pedidos/PedidosEntregados";
 import { TomarOrden } from "../components/tomarOrden/TomarOrden";
 import { db } from "../firebase.config";
-import { OrdersContext } from "../OrdersContext";
 
 export const DashboardRoutes = () => {
   
@@ -31,12 +31,21 @@ export const DashboardRoutes = () => {
       //sessionStorage.setItem('ArrayDePedidos', JSON.stringify(tempOrders));
       setOrders(tempOrders)
     });
-    const timer = setInterval(() => {
+/*     const timer = setInterval(() => {
       setDate(new Date());
-    }, 1000);
+    }, 1000); */
     return () =>{
       //sessionStorage.clear();
       unsubscribe();
+     // clearInterval(timer);
+    }
+  },[])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => {
       clearInterval(timer);
     }
   },[])
@@ -50,6 +59,7 @@ export const DashboardRoutes = () => {
         <Route path="cocinero" element={<Cocinero orders={orders} horaAc={horaAc}/>} />
         <Route path="pedidos" element={<Pedidos orders={orders} horaAc={horaAc}/>} />
         <Route path="tomarorden" element={<TomarOrden horaAc={horaAc} />} />
+        <Route path='pedidos-entregados' element={<Entregados/>}></Route>
       </Routes>
     </div>
     </>;

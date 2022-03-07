@@ -1,14 +1,17 @@
 import './pedidos.scss';
-import { eliminarDocFirestore } from '../../data/funcionesFirestore';
+import { eliminarDocFirestore, obtenerDataById, subirPedidoConId, subirPedidoFirestore } from '../../data/funcionesFirestore';
 import { TemplatePedidosListos } from "./templatesPedidos";
 
 const entregarPedido = (id) => {
-  eliminarDocFirestore(id,'ordenes')
+  obtenerDataById(id,'ordenes').then((pedido)=>{
+    console.log(pedido);
+    subirPedidoConId(pedido,'entregados',pedido.id)
+    eliminarDocFirestore(id,'ordenes'); 
+  })
 }
 
 export const Pedidos = ({orders,horaAc }) => {
 
-  console.log(orders);
 
   return <>
           <p className="horaAc">{horaAc}</p>

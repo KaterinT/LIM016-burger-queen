@@ -85,7 +85,7 @@ export const TomarOrden = ({horaAc}) => {
         hora: horaAc,
         estado:false,
       }
-      subirPedidoFirestore(pedidoToSubir);
+      subirPedidoFirestore(pedidoToSubir,'ordenes');
       setPedidos([]);
     }
   };

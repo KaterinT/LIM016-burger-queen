@@ -36,6 +36,9 @@ export const Navbar = ({condicion}) => {
               <NavLink className={condicion} style={activeStyle} to="/pedidos">
                 <BiAlarmExclamation className="iconNav"/>PEDIDOS
               </NavLink>
+              <NavLink to='/pedidos-entregados'>
+                ENTREGADOS
+              </NavLink>
         </nav>
         <div className="linea"></div>
       </div>
