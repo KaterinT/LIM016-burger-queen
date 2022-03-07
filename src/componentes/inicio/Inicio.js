@@ -2,7 +2,7 @@
 import {useNavigate}  from 'react-router-dom'
 // import ReacDOM from "react-dom";
 import './inicio.scss'
-import logo3 from '../../imagenes/logo3.png'
+import logo4 from '../../imagenes/logo4.png'
 
 export const Inicio = () => {
 
@@ -20,7 +20,7 @@ export const Inicio = () => {
     <div className="container">
       <div className="container-title">
         <div>
-          <img src={logo3} alt="" />
+          <img src={logo4} alt="" />
         </div>
         <h1>
           Original Taste

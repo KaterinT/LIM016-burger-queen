@@ -171,25 +171,25 @@
 
 @media(max-width:1774px) {
   .container {
-    background-image:url("../../imagenes/burgerNav2.png");
+    background-image:url("../../imagenes/burgerNav2.webp");
   }
 }
 
-@media(max-width:1191px) {
-  .container {
-    background-image:url("../../imagenes/burgerNav3.png");
-  }
-}
+// @media(max-width:1191px) {
+//   .container {
+//     background-image:url("../../imagenes/burgerNav3.png");
+//   }
+// }
 
-@media(max-width:708px) {
-  .container {
-    background-image:url("../../imagenes/burgerNav4.png");
-  }
-}
+// @media(max-width:708px) {
+//   .container {
+//     background-image:url("../../imagenes/burgerNav4.png");
+//   }
+// }
 
 @media(max-width:574px) {
   .container {
-    background-image:url("../../imagenes/burgerNav4.png");
+    // background-image:url("../../imagenes/burgerNav4.png");
     .container-title {
       img {
         width: 8rem;

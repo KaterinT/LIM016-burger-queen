@@ -125,6 +125,13 @@ Finalmente, se adjuntará una breve videodemostración del resultado final tanto
 
 
 ## 8.📊 Puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
+<p align="center"> 🖥 Vista Desktop</p>
+
+<img src="./src/imagenes/pwaD.png"  width="800">
+
+<p align="center"> 📱 Vista Mobile</p>
+
+
 
 <div align="center">
 <img src="./src/imagenes/prototipoAltaFidelidad.png"  width="800">
