@@ -23,8 +23,8 @@ export const Entregados = () => {
     <section className='pedidosListos'>
       <div>CLIENTE: {pedido.cliente}</div>
       <div >N° MESA: {pedido.mesa}</div>
-      <button>Ver detalles
-      </button>
+      <div >{pedido.horaEntrega}</div>
+      <div >Finalizado</div>
     </section>
     <section>{}</section>
   </li>})

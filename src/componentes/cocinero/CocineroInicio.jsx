@@ -1,21 +1,18 @@
-import "./cocinero.scss";
-import React, { useEffect, useState } from "react";
-import { TemplatePedidos } from "./templatesCocinero";
-import { actualizarDoc } from "../../data/funcionesFirestore";
+import './cocinero.scss';
+import React, { useEffect, useState } from 'react';
+import { TemplatePedidos } from './templatesCocinero';
+import { actualizarDoc } from '../../data/funcionesFirestore';
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
  Aqui empieza la vista COCINERO
 >>>>>>>>>>>>>>>>>>>>>>>> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>< */
 
-export const Cocinero = ({orders,horaAc}) => {
-  
+export function Cocinero({ orders, horaAc }) {
   const [ordenesFiltradas, setOrdenesFilter] = useState();
   const [estadoOrdenes, setEstado] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      setOrdenesFilter([]);
-    };
+  useEffect(() => () => {
+    setOrdenesFilter([]);
   }, []);
 
   useEffect(() => {
@@ -30,7 +27,7 @@ export const Cocinero = ({orders,horaAc}) => {
     setEstado(true);
   };
   const cambioEstadoOrden = (id) => {
-    actualizarDoc('ordenes',id,{ estado: true, horaEntrega:horaAc });
+    actualizarDoc('ordenes', id, { estado: true, horaEntrega: horaAc });
   };
 
   return (
@@ -38,16 +35,16 @@ export const Cocinero = ({orders,horaAc}) => {
       <p className="horaAc">{horaAc}</p>
       <h4>Cocinero</h4>
       <section className="pedidos-al-chef">
-        <button onClick={handleToDo} id="toDo" className={(estadoOrdenes===false)?'clicked':'no-clicked'}>
+        <button onClick={handleToDo} id="toDo" className={(estadoOrdenes === false) ? 'clicked' : 'no-clicked'}>
           <b>Por Preparar</b>
         </button>
-        <button onClick={handleDone} id="done" className={(estadoOrdenes===true)?'clicked':'no-clicked'}>
+        <button onClick={handleDone} id="done" className={(estadoOrdenes === true) ? 'clicked' : 'no-clicked'}>
           <b>Preparados</b>
         </button>
       </section>
       <section id="eventosChef">
-        {ordenesFiltradas !== undefined &&
-          ordenesFiltradas.map((objeto) => (
+        {ordenesFiltradas !== undefined
+          && ordenesFiltradas.map((objeto) => (
             <div key={objeto.id} id={objeto.id} className="pedidos">
               <TemplatePedidos
                 objeto={objeto}
@@ -58,4 +55,4 @@ export const Cocinero = ({orders,horaAc}) => {
       </section>
     </div>
   );
-};
+}
