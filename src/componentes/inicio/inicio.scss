@@ -24,10 +24,7 @@
 
 .container {
   background: $blackOscuro; 
-  // background-image: linear-gradient(rgba(20, 10, 10, 0.897), rgba(31, 28, 17, 0.822)),
-   background-image:url("../../imagenes/burgerNav1.png");
-  // background-image:url("../../imagenes/backgroundBurgerN1.png");
-  // background-image:url("../../imagenes/appBurger.gif");
+  background-image:url("../../imagenes/burgerNav1.png");
   background-size: 100vw 100vh;
   background-attachment: fixed ;
   padding: 0 2rem;
@@ -35,19 +32,12 @@
   
   h2 {
     color: $naranjaColor;
-    // font-family: "Luckiest Guy", cursive;
     font-family: 'Roboto';
-    // font-size: 7rem;
     font-size: 5rem;
     -webkit-text-stroke: 1px $brownOscuro;
     margin: 0rem;
   }
   h1 {
-    // color: $white;
-    // font-family: "Yellowtail", cursive;
-    // font-size: 4rem;
-    // margin: 0rem;
-
     color: $yellowClaroTitle;
     font-family: math;
     font-size: 4rem;
@@ -66,21 +56,9 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   .container-title {
-    // flex-direction: column;
-    // margin: 0 3rem;
-
-    // width: 100%;
-    // align-items: center;
-    // display: flex;
-    // flex-direction: column;
-    // /* margin: 0 3rem; */
-    // width: 100%;
-    // align-items: center;
     background: #0000009e;
     display: flex;
     flex-direction: column;
-    /* margin: 0 3rem; */
-    // width: 40%;
     width: 38rem;
     align-items: center;
     height: 100%;
@@ -92,47 +70,12 @@
 }
 
 .button_options {
-  // display: flex;
-  // flex-direction: column;
-
   display: flex;
   flex-direction: column;
   width: 20rem;
-
-  // button {
-  //   background-color:$yellowColor;
-  //   border-radius: 13px;
-  //   font-size: 3rem;
-  //   margin: 2rem;
-  //   padding: 1rem 2rem;
-  //   -webkit-text-stroke: 1px rgb(54, 44, 15);
-  //   cursor: pointer;
-  //   border-style: solid;
-  //   border-color: #ffc107;
-  //   /* border-width: 10px; */
-  //   font-weight: bold;
-  //   color: #3d2904;
-  //   &:hover {
-  //     background: #362c0f;
-  //     color: #f1c375;
-  //   }
-  // }
     button {
-    // background-color:$yellowColor;
-    // border-radius: 13px;
-    // font-size: 3rem;
-    // margin: 2rem;
-    // padding: 1rem 2rem;
-    // -webkit-text-stroke: 1px rgb(54, 44, 15);
-    // cursor: pointer;
-    // border-style: solid;
-    // border-color: #ffc107;
-    // /* border-width: 10px; */
-    // font-weight: bold;
-    // color: #3d2904;
     background-color: #1c1b19;
     border-radius: 13px;
-    // font-size: 3rem;
     font-size: 2rem;
     margin: 2rem;
     padding: 1rem 2rem;
@@ -140,7 +83,6 @@
     cursor: pointer;
     border-style: solid;
     border-color: #ffc107;
-    /* border-width: 10px; */
     font-weight: bold;
     color: #c89d4e;
     @keyframes button {
@@ -175,21 +117,8 @@
   }
 }
 
-// @media(max-width:1191px) {
-//   .container {
-//     background-image:url("../../imagenes/burgerNav3.png");
-//   }
-// }
-
-// @media(max-width:708px) {
-//   .container {
-//     background-image:url("../../imagenes/burgerNav4.png");
-//   }
-// }
-
 @media(max-width:574px) {
   .container {
-    // background-image:url("../../imagenes/burgerNav4.png");
     .container-title {
       img {
         width: 8rem;

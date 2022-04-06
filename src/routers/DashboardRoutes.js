@@ -29,12 +29,8 @@ export const DashboardRoutes = () => {
       snapshot.forEach((doc) =>{
         tempOrders.push({...doc.data(),id:doc.id});
       })
-      //sessionStorage.setItem('ArrayDePedidos', JSON.stringify(tempOrders));
       setOrders(tempOrders)
     });
-/*     const timer = setInterval(() => {
-      setDate(new Date());
-    }, 1000); */
     return () =>{
       //sessionStorage.clear();
       unsubscribe();

@@ -1,7 +1,5 @@
 /*eslint-disable */
-// import React from "react";
 import {useNavigate}  from 'react-router-dom'
-// import ReacDOM from "react-dom";
 import './inicio.scss'
 import logo4 from '../../imagenes/logo4.png'
 

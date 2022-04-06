@@ -31,7 +31,7 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus,cliente
               <h3>MESA</h3>
               {/* <input type="text" id='numeroMesa' /> */}
 
-              <select  className='numeroMesa' value={value} onChange={handleChange}>
+              <select  className='select' value={value} onChange={handleChange}>
                 <option className='numeroMesa' value="mesa"> Mesa</option>
                 <option className='numeroMesa' value="1">1</option>
                 <option className='numeroMesa' value="2">2</option>

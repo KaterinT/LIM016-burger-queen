@@ -1,14 +1,6 @@
 @import "../../../variables.scss";
 
 .boxFactura {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content:space-between;
-  // height: auto;
-  // width: 34%;
-  // background: rgba(0, 0, 0, 0.55);
-  // border: 1px solid $naranjaColor;
-  // box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +17,6 @@
   flex-direction: row;
   height: 3.5rem;
   flex-wrap: wrap;
-  // justify-content: space-around;
   justify-content: flex-start;
   align-items: center;
   margin: 0rem 1rem;
@@ -39,14 +30,11 @@
       text-decoration: none;
       color: #ffff;
       font-family: "Roboto", sans-serif;
-      // margin: 0 10px;
       margin: 0 7px;
       font-size: 1rem;
     }
     input {
-      // width: 100%;
       width: 4rem;
-      // background: $naranjaColor;
       background: #100f0c;
       border: 2px solid $brownBordes;
       height: 1.3rem;
@@ -63,14 +51,10 @@
       font-family: Arial;
     }
     
-    /* Style items (options): */
     .select {
       background-color: black;
       border: 2px solid #c77739;
       border-radius: 0.2rem;
-      /* top: 100%; */
-      /* right: 0; */
-      /* z-index: 99; */
       color: #ffffff;
       padding: 3.5px 16px;
       cursor: pointer;
@@ -107,7 +91,6 @@
 }
 
 .boxPedidos {
-  // height: 258px;
   height: 17rem;
   overflow: scroll;
   .boxDescripcionCadaItemOrden {
@@ -117,7 +100,6 @@
     grid-column-gap: -3rem;
     column-gap: 1%;
     padding: -1rem;
-    /* row-gap: 37%; */
     text-align: center;
     grid-template-rows: auto;
     align-items: center;
@@ -142,7 +124,6 @@
 
 .boxTotal {
   display: flex;
-  // background:#413932;
   background-color: #483b0a;
   justify-content: space-around;
 

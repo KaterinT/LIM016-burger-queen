@@ -6,7 +6,7 @@ import { Modal } from "./modalExtras/modal";
 import "./tomarOrden.scss";
 import { obtenerDataById, subirPedidoFirestore } from "../../data/funcionesFirestore";
 import { ModalNotific } from "./modalExtras/modalNotific";
-import {ModalNotificOrdenVacio} from "./modalExtras/modalNotific";
+import {ModalNotificOrdenVacio,ModalNotificOrdenEnviada} from "./modalExtras/modalNotific";
 
 export const TomarOrden = ({horaAc}) => {
 
@@ -80,11 +80,9 @@ export const TomarOrden = ({horaAc}) => {
 
   const [cliente, setCliente] = useState("");
 
-    // Input Field handler
     const handleUserInput = (e) => {
       setCliente(e.target.value);
     };
-    // Reset Input Field handler
     const resetInputField = () => {
       setCliente("");
     };
@@ -98,17 +96,11 @@ export const TomarOrden = ({horaAc}) => {
 
 
   const subirDataPedido = () =>{
-    //  cliente=document.getElementById('cliente').value;//requerido estrictamente
-
-    // let mesa=document.getElementsByClassName('.numeroMesa').value;
-    // console.log(mesa);//requerido estrictamente
 
     if (cliente==="" || value=== "mesa" ) {
-      // console.log('cliente y/o mesa vaxio');
       ModalNotific()
 
     }else if (pedidos.length=== 0) {
-      // console.log('Orden Vacia')
       ModalNotificOrdenVacio();
     }else {
       const pedidoToSubir ={
@@ -119,8 +111,10 @@ export const TomarOrden = ({horaAc}) => {
         estado:false,
       }
       subirPedidoFirestore(pedidoToSubir,'ordenes');
+      setValue("mesa")
       setPedidos([]);
       resetInputField();
+      ModalNotificOrdenEnviada();
     }
   };
 
@@ -139,7 +133,6 @@ export const TomarOrden = ({horaAc}) => {
   }
 
   const countPlus = (id) =>{
-    //const padre =e.target.parentNode.parentNode;
     const indexE = pedidos.findIndex((obj) => obj.id===id);
     let agregarCount=pedidos[indexE]
     agregarCount.count= agregarCount.count+1;
@@ -148,7 +141,6 @@ export const TomarOrden = ({horaAc}) => {
   }
   
   const countMinus = (id) =>{
-    //const padre =e.target.parentNode.parentNode;
     const indexE = pedidos.findIndex((obj) => obj.id===id);
     let restarCount=pedidos[indexE]
     if (restarCount.count === 1) {
@@ -183,7 +175,6 @@ export const TomarOrden = ({horaAc}) => {
       {estadoModal === true && (
         <Modal confirmarModal={confirmarModal} cancelarModal={cancelarModal} alarm={alarmBurger} alarmSet={setAlarm} />
       )}
-        {/* <ModalNotific /> */}
     </>
   );
 };
