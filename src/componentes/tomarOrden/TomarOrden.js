@@ -89,11 +89,21 @@ export const TomarOrden = ({horaAc}) => {
       setCliente("");
     };
 
+    const getInitialState = () => {
+      const value = "mesa";
+      return value;
+    };
+    const [value, setValue] = useState(getInitialState);
+    console.log(value)
+
+
   const subirDataPedido = () =>{
     //  cliente=document.getElementById('cliente').value;//requerido estrictamente
-    let mesa=document.querySelector('.numeroMesa').value;//requerido estrictamente
 
-    if (cliente==="" || mesa==="" ) {
+    // let mesa=document.getElementsByClassName('.numeroMesa').value;
+    // console.log(mesa);//requerido estrictamente
+
+    if (cliente==="" || value=== "mesa" ) {
       // console.log('cliente y/o mesa vaxio');
       ModalNotific()
 
@@ -103,7 +113,7 @@ export const TomarOrden = ({horaAc}) => {
     }else {
       const pedidoToSubir ={
         cliente:cliente,
-        mesa:mesa,
+        mesa: value,
         pedidosArray:pedidos,
         hora: horaAc,
         estado:false,
@@ -150,6 +160,8 @@ export const TomarOrden = ({horaAc}) => {
     setPedidos([...pedidos])
   }}
 
+
+
   return (
     <>
       <div className="containert">
@@ -159,7 +171,7 @@ export const TomarOrden = ({horaAc}) => {
           <div className="boxTomarOrdenMenu">
             <div className="boxTomarOrdenMenu2">
               <Menu moreClick={moreClick} />
-              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} countPlus={countPlus} countMinus={countMinus} cliente={cliente} handleUserInput={handleUserInput}/>
+              <Factura factura={pedidos} eliminarItemPedido={eliminarItemPedido} countPlus={countPlus} countMinus={countMinus} cliente={cliente} handleUserInput={handleUserInput} setValue={setValue} value={value}/>
             </div>
             <div className="boxBtnTomarOrden">
               <button onClick={cancelarPedido}>CANCELAR</button>
