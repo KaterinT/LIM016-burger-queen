@@ -1,3 +1,4 @@
+/*eslint-disable */
 import './pedidos.scss';
 import { eliminarDocFirestore, obtenerDataById, subirPedidoConId, subirPedidoFirestore } from '../../data/funcionesFirestore';
 import { TemplatePedidosListos } from "./templatesPedidos";

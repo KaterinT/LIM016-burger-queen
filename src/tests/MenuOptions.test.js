@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { MenuOptions } from "../componentes/tomarOrden/menu/MenuOptions";
 

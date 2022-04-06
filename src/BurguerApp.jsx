@@ -1,3 +1,4 @@
+/*eslint-disable */
 //Aquí vamos a renderizar el AppRouter
 import { AppRouter } from "./routers/AppRouter";
 

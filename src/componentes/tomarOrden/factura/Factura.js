@@ -1,3 +1,4 @@
+/*eslint-disable */
 // import { AiOutlineMinusCircle,AiOutlinePlusCircle } from "react-icons/ai";
 import plus from '../../../imagenes/plus.png'
 import minus2 from '../../../imagenes/minus2.png'
@@ -26,14 +27,14 @@ export const Factura = ({factura,eliminarItemPedido,countPlus,countMinus,cliente
 
               <select className="select ">
                 {/* <option className='numeroMesa' value="N°">N°</option> */}
-                <option className='numeroMesa' value="1">01</option>
-                <option className='numeroMesa' value="2">02</option>
-                <option className='numeroMesa' value="3">03</option>
-                <option className='numeroMesa' value="4">04</option>
-                <option className='numeroMesa' value="5">05</option>
-                <option className='numeroMesa' value="6">06</option>
-                <option className='numeroMesa' value="7">07</option>
-                <option className='numeroMesa' value="8">08</option>
+                <option className='numeroMesa' value="1">1</option>
+                <option className='numeroMesa' value="2">2</option>
+                <option className='numeroMesa' value="3">3</option>
+                <option className='numeroMesa' value="4">4</option>
+                <option className='numeroMesa' value="5">5</option>
+                <option className='numeroMesa' value="6">6</option>
+                <option className='numeroMesa' value="7">7</option>
+                <option className='numeroMesa' value="8">8</option>
 
               </select>
             </div>

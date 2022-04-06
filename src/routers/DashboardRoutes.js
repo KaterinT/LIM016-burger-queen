@@ -1,3 +1,4 @@
+/*eslint-disable */
 // este archivo se encarga de que todas las rutas que queramos este en el NavBar
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import './cocinero.scss';
 import React, { useEffect, useState } from 'react';
 import { TemplatePedidos } from './templatesCocinero';

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import Swal from 'sweetalert2';
 import { useState } from "react";
 import 'animate.css';

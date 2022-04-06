@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { screen,cleanup, fireEvent, render } from "@testing-library/react";
 import { Factura } from "../componentes/tomarOrden/factura/Factura";
 describe('Render de la factura',() => {

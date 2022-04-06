@@ -1,3 +1,4 @@
+/*eslint-disable */
 // import React from 'react'    -->Con la nueva actualización de react no es necesario importar React
 import {NavLink } from "react-router-dom";
 import {useState} from 'react'

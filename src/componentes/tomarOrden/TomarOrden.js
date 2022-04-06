@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { useState} from "react";
 import { Factura } from "./factura/Factura";
 import { Menu } from "./menu/Menu";

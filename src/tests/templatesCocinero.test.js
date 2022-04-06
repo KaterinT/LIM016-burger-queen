@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from "react";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 import { TemplatePedidos } from "../componentes/cocinero/templatesCocinero";

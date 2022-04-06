@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { screen, cleanup, render, fireEvent } from "@testing-library/react";
 import { Cocinero } from "../componentes/cocinero/CocineroInicio";
 

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import '@testing-library/jest-dom';
 import { AppRouter } from "../routers/AppRouter";
 

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { Routes, Route,BrowserRouter } from "react-router-dom";
 import { DashboardRoutes } from "./DashboardRoutes";
 

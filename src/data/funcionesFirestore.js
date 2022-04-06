@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { db } from "../firebase.config";
 import { getDocs, collection, doc, getDoc, deleteDoc, query, where, addDoc, onSnapshot, updateDoc, setDoc } from "firebase/firestore"
 

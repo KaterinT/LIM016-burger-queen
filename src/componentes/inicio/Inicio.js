@@ -1,3 +1,4 @@
+/*eslint-disable */
 // import React from "react";
 import {useNavigate}  from 'react-router-dom'
 // import ReacDOM from "react-dom";

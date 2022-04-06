@@ -1,3 +1,4 @@
+/*eslint-disable */
 import './menuOptions.scss'
 
 export const MenuOptions = ({ setCurrentCategory}) => {

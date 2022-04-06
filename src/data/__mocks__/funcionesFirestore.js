@@ -1,3 +1,4 @@
+/*eslint-disable */
 // aqui generaremos un array de pedidos , simularemos las data de la coleccion 'ordenes'
 const ordenes = [{
     id:1,

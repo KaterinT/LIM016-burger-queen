@@ -1,3 +1,4 @@
+/*eslint-disable */
 export const TemplatePedidosListos = ({pedidosListos, entregarPedido}) => {
   // console.log(pedidosListos);
   return pedidosListos.map((pedido) => {

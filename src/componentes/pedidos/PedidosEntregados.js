@@ -1,6 +1,8 @@
+/*eslint-disable */
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase.config";
+
 
 export const Entregados = () => {
     const [entregados,setEntregados]= useState([])

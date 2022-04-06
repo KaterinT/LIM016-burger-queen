@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { Productos } from "../componentes/tomarOrden/menu/Productos";
 

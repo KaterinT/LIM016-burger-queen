@@ -1,3 +1,4 @@
+/*eslint-disable */
 import '@testing-library/jest-dom';
 // import { shallow } from 'enzyme';
 import { screen,render,cleanup,fireEvent } from '@testing-library/react';

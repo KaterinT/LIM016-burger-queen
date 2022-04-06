@@ -1,3 +1,4 @@
+/*eslint-disable */
 import './productos.scss'
 
 export const Productos = ({menuItems,moreClick}) => {

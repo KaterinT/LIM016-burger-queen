@@ -1,3 +1,4 @@
+/*eslint-disable */
 import { useEffect, useState } from "react";
 import { MenuOptions } from "./MenuOptions";
 import { Productos } from "./Productos";
